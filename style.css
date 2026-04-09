@@ -288,3 +288,31 @@ footer {
 }
 
 .gallery-img:hover { transform: scale(1.05); border-color: var(--accent-color); }
+
+.analysis-box h4 {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.analysis-box p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.analysis-tags {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.analysis-tags li {
+    background: #252525;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: #fff;
+}
