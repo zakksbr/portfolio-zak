@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Zakaria Sabri - Étudiant en BUT Informatique">
-    <title>Zakaria Sabri | Portfolio BUT Informatique</title>
+    <title>Zakaria Sabri | Portfolio</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +18,7 @@
         <a href="#" class="logo">ZS.</a>
         <ul class="nav-links">
             <li><a href="#about">À propos</a></li>
+            <li><a href="#perso-projects">Projets Perso</a></li>
             <li><a href="#projects">Projets Universitaires</a></li>
             <li><a href="#skills">Compétences</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -29,7 +30,7 @@
             <div class="hero-content">
                 <h1>Zakaria Sabri</h1>
                 <h2>Étudiant en BUT Informatique</h2>
-                <p>SysAdmin et réseau à en devenir</p>
+                <p>Dévéloppeur Web, SysAdmin et réseau à en devenir</p>
                 <div class="cta-group">
                     <a href="#projects" class="btn btn-primary">Voir mes réalisations</a>
                     <a href="#contact" class="btn btn-secondary">Me contacter</a>
@@ -37,9 +38,15 @@
             </div>
         </section>
 
+        <section id="perso-projects" class="section-padding">
+            <h2 class="section-title">Projets Personnels</h2>
+            <div class="projects-grid" id="perso-container">
+                </div>
+        </section>
+
         <section id="projects" class="section-padding">
             <h2 class="section-title">Projets Universitaires</h2>
-            <div class="projects-grid" id="projects-container">
+            <div class="projects-grid" id="sae-container">
                 </div>
         </section>
 
@@ -58,7 +65,7 @@
                     <h3>Système & Outils</h3>
                     <ul>
                         <li>Linux (Bash)</li>
-                        <li>Git / GitHub</li>
+                        <li>GitLab / GitHub</li>
                         <li>Virtualisation</li>
                     </ul>
                 </div>
@@ -75,7 +82,7 @@
         
         <section id="contact" class="section-padding contact-section">
             <h2 class="section-title">Contact</h2>
-            <p>En recherche de Stage pour à partir d'Avril 2027</p>
+            <p>En recherche de Stage à partir d'Avril 2027</p>
             <div class="contact-actions">
                 <a href="mailto:zakaria.sabri@etu.u-bordeaux.fr" class="btn btn-primary">M'envoyer un email</a>
                 <a href="https://linkedin.com/in/zakaria-sabri-33b81b35b" target="_blank" class="btn btn-secondary">Mon LinkedIn</a>
@@ -100,8 +107,27 @@
                 <img id="modal-image" src="" alt="" class="modal-main-img">
                 
                 <div class="modal-text">
-                    <h3>Contexte & Solution</h3>
-                    <p id="modal-description" class="modal-description">Description détaillée...</p>
+                    <div class="analysis-grid">
+                        <div class="analysis-box">
+                            <h4>Cahier des charges</h4>
+                            <p id="analysis-cahier-text"></p>
+                        </div>
+                        
+                        <div class="analysis-box">
+                            <h4>Résultats (KPIs)</h4>
+                            <p id="analysis-resultats-text"></p>
+                        </div>
+                        
+                        <div class="analysis-box">
+                            <h4>Compétences Acquises</h4>
+                            <ul class="analysis-tags" id="analysis-competences-list"></ul>
+                        </div>
+                        
+                        <div class="analysis-box">
+                            <h4>Outils et méthodes</h4>
+                            <ul class="analysis-tags" id="analysis-outils-list"></ul>
+                        </div>
+                    </div>
                     
                     <div class="modal-actions">
                         <a id="modal-report" href="#" target="_blank" class="btn btn-primary">Voir le Rapport (PDF)</a>
