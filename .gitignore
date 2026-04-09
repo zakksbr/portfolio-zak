@@ -1,0 +1,24 @@
+---
+
+### 2. Le fichier `.gitignore`
+
+Ce fichier indique à Git quels fichiers il ne doit **pas** envoyer sur ton dépôt (fichiers temporaires de ton ordinateur ou de ton éditeur). Crée un fichier nommé exactement `.gitignore` (avec le point au début) à la racine de ton projet.
+
+```gitignore
+# Dossiers système
+.DS_Store
+Thumbs.db
+
+# Éditeurs (VS Code / IntelliJ)
+.vscode/
+.idea/
+*.swp
+*.log
+
+# Dossiers de dépendances (au cas où tu utiliserais npm plus tard)
+node_modules/
+dist/
+
+# Fichiers de configuration OS
+.env
+.env.local
