@@ -20,7 +20,7 @@ const saeProjects = [
         gallery: ["assets/img/odomo.png"], 
         report: "assets/pdf/odomo-report.pdf",
         tags: ["Java", "Algorithmie"],
-        link: "#" // "#" signifie qu'il n'y a pas de lien externe (ex: GitHub) pour le moment
+        link: "#" // "#" pour l'innstant puisque je n'ai pas encore integré le rapport 
     },
     {
         title: "Comparaisons d'algorithmes",
@@ -29,7 +29,7 @@ const saeProjects = [
             cahier: "Coder les règles du jeu (plantation d'un arbre, coupes, vitalité) et développement d'une première IA Gloutonne et une deuxième Visionnaire capable d'anticiper les conséquences de ses actions sur le long terme.",
             resultats: "Tactique de clonage de plateau opérationnelle pour anticiper les scores réels. Zéro disqualification grâce à un algorithme contre les coups illégaux",
             competences: ["Java", "Intelligence Artificielle", "Développement de tests", "Algorithmie"],
-            outils: ["Tests unitaires", "Simulation algorithmique", "Algorithmie"]
+            outils: ["Tests unitaires", "Simulation algorithmique"]
         },
         image: "assets/img/biosphere.png",
         gallery: ["assets/img/biosphere.png"],
@@ -39,24 +39,24 @@ const saeProjects = [
     },
     {
         title: "Installation de poste",
-        description: "Configuration d'une machine virtuelle Lubuntu optimisée (8 Go). Scripting Bash et environnement dév.",
+        description: "Configuration d'une machine virtuelle Lubuntu optimisée (8 Go) pour développer.",
         analyse: {
             cahier: "Créer un environnement de développement complet sur une machine virtuelle sous Lubuntu (LXQt) en respectant une contrainte stricte de 8 Go d'espace disque maximum.",
             resultats: "Intégration d'un stack complet (Java, Git, VS Code) validée par la réussite du script de test bash. Consommation disque maîtrisée.",
-            competences: ["Administration Système", "Optimisation logicielle", "Gestion de projet"],
-            outils: ["Linux (Lubuntu/LXQt)", "Bash", "VirtualBox"]
+            competences: ["Administration Système", "Optimisation logicielle", "Analyse du besoin"],
+            outils: ["Linux (Lubuntu)", "Bash", "Machine Virtuelle"]
         },
         image: "assets/img/vm-install.png",
         gallery: ["assets/img/vm-install.png"],
         report: "assets/pdf/vm-report.pdf",
-        tags: ["Linux", "S1.03"],
-        link: "#"
+        tags: ["Linux", "Bash", "Virtual Machine"],
+        link: "#" // rapport
     },
     {
         title: "Création de Base de données",
-        description: "Conception SQL pour événements culturels. Traduction de règles métier en contraintes.",
+        description: "Conception d'une Base de données pour une agence d'événements culturels. Traduction du cahier des charges en contraintes.",
         analyse: {
-            cahier: "Créer une base de données pour une agence événementielle en traduisant des règles métier textuelles complexes (horaires, formats) pour éviter les incohérences de planning.",
+            cahier: "Créer une base de données pour une agence événementielle en traduisant des règles textuelles complexes (horaires, formats) pour éviter les incohérences de planning.",
             resultats: "Scripts SQL robustes implémentés avec une gestion fine des contraintes. Insertion réussie d'un jeu de données réaliste.",
             competences: ["Modélisation relationnelle", "Traduction métier"],
             outils: ["SQL (DDL/DML)", "Win'Design", "Contraintes CHECK/UNIQUE"]
@@ -64,8 +64,8 @@ const saeProjects = [
         image: "assets/img/bdd.png",
         gallery: ["assets/img/bdd.png"],
         report: "assets/pdf/bdd-report.pdf",
-        tags: ["SQL", "S1.04"],
-        link: "#"
+        tags: ["SQL", "Base de données"],
+        link: "#" // AVANCEMENT ICI revérifier 
     },
     {
         title: "Recueil de besoin",
@@ -96,7 +96,42 @@ const saeProjects = [
         report: "assets/pdf/baillardran-report.pdf",
         tags: ["Gestion", "S1.06"],
         link: "#"
+    },
+
+{
+        title: "Réalisation d'une mission confié par une organisation",
+        description: "Programmation des fonctionnalités d'un jeu de plateau et conception de deux Intelligence Artificielle capable de jouer contre ou à la place de l'utilisateur",
+        analyse: {
+            cahier: "Coder les règles du jeu (plantation d'un arbre, coupes, vitalité) et développement d'une première IA Gloutonne et une deuxième Visionnaire capable d'anticiper les conséquences de ses actions sur le long terme.",
+            resultats: "Tactique de clonage de plateau opérationnelle pour anticiper les scores réels. Zéro disqualification grâce à un algorithme contre les coups illégaux",
+            competences: ["Java", "Intelligence Artificielle", "Développement de tests", "Algorithmie"],
+            outils: ["Tests unitaires", "Simulation algorithmique"]
+        },
+        image: "assets/img/biosphere.png",
+        gallery: ["assets/img/biosphere.png"],
+        report: "assets/pdf/biosphere-report.pdf",
+        tags: ["Java", "Algorithmie et Comparaison"],
+        link: "#"
+    },
+
+    {
+        title: "Développement d'une application",
+        description: "Programmation des fonctionnalités d'un jeu de plateau et conception de deux Intelligence Artificielle capable de jouer contre ou à la place de l'utilisateur",
+        analyse: {
+            cahier: "Coder les règles du jeu (plantation d'un arbre, coupes, vitalité) et développement d'une première IA Gloutonne et une deuxième Visionnaire capable d'anticiper les conséquences de ses actions sur le long terme.",
+            resultats: "Tactique de clonage de plateau opérationnelle pour anticiper les scores réels. Zéro disqualification grâce à un algorithme contre les coups illégaux",
+            competences: ["Java", "Intelligence Artificielle", "Développement de tests", "Algorithmie"],
+            outils: ["Tests unitaires", "Simulation algorithmique"]
+        },
+        image: "assets/img/biosphere.png",
+        gallery: ["assets/img/biosphere.png"],
+        report: "assets/pdf/biosphere-report.pdf",
+        tags: ["Java", "Algorithmie et Comparaison"],
+        link: "#"
     }
+
+
+
 ];
 
 // On stocke les projets personnels dans un tableau séparé

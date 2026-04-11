@@ -10,7 +10,7 @@ Le portfolio est une application web moderne, conçue avec une approche **"Clean
 - **Interactivité :** JavaScript Vanilla (ES6+) pour l'injection dynamique des projets et la gestion d'une interface modale.
 - **Design :** Thème sombre (Dark Mode) avec la police Montserrat.
 
-## 📁 Structure du Projet PORTFOLIO
+## Structure du Projet PORTFOLIO
 ```text
 .
 ├── index.html          # Structure principale

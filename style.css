@@ -5,6 +5,7 @@
     --text-muted: #a0a0a0;
     --accent-color: #0f33ff; 
     --font-main: 'Montserrat', sans-serif;
+    --accent-color: #FF6B00;
 }
 
 /* Reset */
@@ -315,4 +316,42 @@ footer {
     border-radius: 4px;
     font-size: 0.85rem;
     color: #fff;
+}
+
+
+/* photo et titre d'accueil*/
+.hero-title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-title-wrapper h1 {
+    margin-bottom: 0; /* annule la marge par défaut*/
+}
+
+.hero-profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* fait un rond  */
+    object-fit: cover;  /* évite que la photo soit écrasé */
+    border: 3px solid var(--accent-color); /* contout orange */
+}
+
+/* ajustement mobile */
+@media (max-width: 768px) {
+    .hero-title-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .cta-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .btn-secondary {
+        margin-left: 0;
+    }
 }
