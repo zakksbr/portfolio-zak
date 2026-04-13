@@ -107,8 +107,8 @@ const saeProjects = [
             competences: ["Java", "Intelligence Artificielle", "Développement de tests", "Algorithmie"],
             outils: ["Tests unitaires", "Simulation algorithmique"]
         },
-        image: "assets/img/biosphere.png",
-        gallery: ["assets/img/biosphere.png"],
+        image: "assets/img/mission.png",
+        gallery: ["assets/img/mission.png"],
         report: "assets/pdf/biosphere-report.pdf",
         tags: ["Java", "Algorithmie et Comparaison"],
         link: "#"
@@ -123,8 +123,8 @@ const saeProjects = [
             competences: ["Java", "Intelligence Artificielle", "Développement de tests", "Algorithmie"],
             outils: ["Tests unitaires", "Simulation algorithmique"]
         },
-        image: "assets/img/biosphere.png",
-        gallery: ["assets/img/biosphere.png"],
+        image: "assets/img/devApps.png",
+        gallery: ["assets/img/devApps.png"],
         report: "assets/pdf/biosphere-report.pdf",
         tags: ["Java", "Algorithmie et Comparaison"],
         link: "#"

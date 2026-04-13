@@ -355,3 +355,80 @@ footer {
         margin-left: 0;
     }
 }
+/* section à propos */
+
+/* 1. Le conteneur Flexbox */
+.about-container {
+    display: flex;
+    align-items: center; /* Aligne la photo verticalement au centre du texte */
+    gap: 3rem; /* Espace entre les deux colonnes */
+    max-width: 1100px;
+    margin: 0 auto; /* Centre tout le bloc sur l'écran */
+}
+
+/* 2. Colonne Image */
+.about-image-col {
+    flex: 1; /* Prend une part d'espace */
+}
+
+/* La photo : rectangulaire, bords arrondis comme demandés */
+.about-img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 12px; /* Bords arrondis */
+    border: 2px solid var(--accent-color); /* Ton orange classe pour le contour */
+    display: block;
+    margin: 0 auto;
+}
+
+/* 3. Colonne Texte */
+.about-text-col {
+    flex: 1.5; /* Prend un peu plus d'espace pour le texte */
+    text-align: left; /* Force l'alignement à gauche pour tout le texte */
+}
+
+/* Ton titre d'accroche (Enchanté...) : GROS, ORANGE et GRAS */
+.about-subtitle {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--accent-color); /* Applique l'orange */
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+/* Style des paragraphes */
+.about-text-col p {
+    color: #ccc;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+}
+
+/* Style des mots en gras (BUT, Web) */
+.about-text-col strong {
+    color: var(--text-color);
+}
+
+/* Alignement du bouton CV */
+.about-actions {
+    margin-top: 2rem;
+}
+
+/* --- Responsive pour mobiles --- */
+@media (max-width: 800px) {
+    .about-container {
+        flex-direction: column; /* Empile l'image au-dessus du texte sur téléphone */
+        gap: 2rem;
+    }
+    .about-image-col {
+        width: 100%;
+    }
+    .about-img {
+        width: 100%;
+        max-width: 300px;
+    }
+    .about-text-col {
+        text-align: center; /* Centre le texte sur téléphone */
+    }
+}
