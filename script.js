@@ -137,20 +137,43 @@ const saeProjects = [
 // On stocke les projets personnels dans un tableau séparé
 const persoProjects = [
     {
-        title: "Restructuration Orientée Objet (R.O.O)",
-        description: "Refonte totale d'un code procédural en architecture orientée objet propre et modulaire.",
+        title: "Réhabilitation d’un ordinateur obsolète",
+        description: "Upgrade matériel et configuration d'un Triple Boot (Win 10/11, Ubuntu) sur un Alienware Area-51 R1 de 2010.",
         analyse: {
-            cahier: "Nettoyer un code procédural comportant des fonctions à rallonge et une logique métier mélangée avec l'affichage, pour le passer en architecture Orientée Objet.",
-            resultats: "Code devenu modulaire et lisible. Résolution des bugs structurels silencieux grâce à la nouvelle architecture.",
-            competences: ["Nettoyage de code", "Architecture logicielle"],
-            outils: ["Java", "Conception UML", "Encapsulation / Héritage"]
+            cahier: "Rendre fonctionnelle une machine de 2010 pour du développement. Contraintes : Upgrade RAM/SSD, Triple Boot fonctionnel sur architecture Legacy/MBR, et boot rapide personnalisé via GRUB.",
+            resultats: "Temps de démarrage divisé par 4. Environnement de test multi-OS 100% stable et opérationnel. Machine sauvée de l'obsolescence pour un investissement de moins de 80€.",
+            competences: ["Maintenance Hardware", "Administration Système", "Gestion GRUB/MBR", "Troubleshooting"],
+            outils: ["Rufus", "Terminal Linux (Nano)", "Composants (RAM/SSD)"]
         },
-        image: "assets/img/retex-roo.png",
-        gallery: ["assets/img/retex-roo.png"],
-        report: "#",
-        tags: ["Java", "Clean Code"],
-        link: "https://github.com/ton-repo"
+        image: "assets/img/alienware1.jpg", 
+        gallery: ["assets/img/alienware2.jpg"],
+        gallery: ["assets/img/alienware1.jpg"],
+        gallery: ["assets/img/alienware.jpg"],
+        report: "assets/pdf/alienware-report.pdf", 
+        tags: ["Hardware", "SysAdmin", "Triple Boot"],
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_iutdebordeaux-greenit-linux-activity-7429419448949784577-m7ho?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
+        linkLabel: "Voir le post LinkedIn" 
+    },
+
+    {
+        title: "Création d'un assistant vocal",
+        description: "Upgrade matériel et configuration d'un Triple Boot (Win 10/11, Ubuntu) sur un Alienware Area-51 R1 de 2010.",
+        analyse: {
+            cahier: "Rendre fonctionnelle une machine de 2010 pour du développement. Contraintes : Upgrade RAM/SSD, Triple Boot fonctionnel sur architecture Legacy/MBR, et boot rapide personnalisé via GRUB.",
+            resultats: "Temps de démarrage divisé par 4. Environnement de test multi-OS 100% stable et opérationnel. Machine sauvée de l'obsolescence pour un investissement de moins de 80€.",
+            competences: ["Maintenance Hardware", "Administration Système", "Gestion GRUB/MBR", "Troubleshooting"],
+            outils: ["Rufus", "Terminal Linux (Nano)", "Composants (RAM/SSD)"]
+        },
+        image: "assets/img/alienware1.jpg", 
+        gallery: ["assets/img/alienware2.jpg"],
+        gallery: ["assets/img/alienware1.jpg"],
+        gallery: ["assets/img/alienware.jpg"],
+        report: "assets/pdf/alienware-report.pdf", 
+        tags: ["Hardware", "SysAdmin", "Triple Boot"],
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_iutdebordeaux-greenit-linux-activity-7429419448949784577-m7ho?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
+        linkLabel: "Voir le post LinkedIn" 
     }
+
 ];
 
 /* ==========================================================================
@@ -252,11 +275,12 @@ window.openModal = function(type, index) {
     const repoBtn = document.getElementById('modal-repo');
     if(project.link && project.link !== "#") {
         repoBtn.href = project.link;
+        // Si un label spécifique est défini (comme pour le projet Alienware), on l'utilise, sinon on met "Code Source" par défaut
+        repoBtn.innerText = project.linkLabel ? project.linkLabel : "Code Source / GitHub";
         repoBtn.style.display = "inline-block";
     } else {
         repoBtn.style.display = "none";
     }
-
     // On remplit les tags en haut de la modale
     document.getElementById('modal-tags').innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
 
