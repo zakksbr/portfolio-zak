@@ -1,6 +1,6 @@
-/* ==========================================================================
+/* 
    Les données du portfolio
-   ========================================================================== */
+*/
 
 // On stocke les projets universitaires (SAÉ) dans un tableau (Array) nommé saeProjects.
 // Chaque projet est un Objet (Object) entre accolades {}, contenant des paires clé/valeur.
@@ -10,7 +10,7 @@ const saeProjects = [
         description: "Programmation d'une station domotique en Java. Gestion de l'historique et des données.",
         // L'objet "analyse" contient les sous-parties de la grille que l'on affichera dans la modale
         analyse: {
-            cahier: "Intégrer l'entièreté des fonctionnalités de gestion, de mise à jour des données météorologiques et de programmation du chauffage de la station météo à partir d'un code incomplet.",
+            cahier: "Intégrer l'entièreté des fonctionnalités de gestion, de mise à jour des données météorologiques et de programmation du chauffage d'une station météo à partir d'un code incomplet.",
             resultats: "Algorithme de décalage de tableaux implémenté. Intégrité des données garantie et saisie utilisateur sécurisée par boucle de contrôle.",
             // Les compétences et outils sont des tableaux (Arrays) de chaînes de caractères (Strings)
             competences: ["Java", "Algorithmique", "Intégration des données"],
@@ -20,22 +20,26 @@ const saeProjects = [
         gallery: ["assets/img/odomo.png"], 
         report: "assets/pdf/odomo-report.pdf",
         tags: ["Java", "Algorithmie"],
-        link: "#" // "#" pour l'innstant puisque je n'ai pas encore integré le rapport 
+        link: "#", // "#" pour l'innstant puisque je n'ai pas encore integré le rapport 
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-projet-domotique-ugcPost-7395203244312043521-TFbM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        linkLabel: "Voir le post LinkedIn"
     },
     {
         title: "Comparaisons d'algorithmes",
         description: "Programmation des fonctionnalités d'un jeu de plateau et conception de deux Intelligence Artificielle capable de jouer contre ou à la place de l'utilisateur",
         analyse: {
-            cahier: "Coder les règles du jeu (plantation d'un arbre, coupes, vitalité) et développement d'une première IA Gloutonne et une deuxième Visionnaire capable d'anticiper les conséquences de ses actions sur le long terme.",
+            cahier: "Coder les règles d'un jeu de plateau (plantation d'un arbre, coupes, vitalité) et développement de deux Intelligences Artificielles capable de jouer, la première avec un algorithme glouton et une deuxième visionnaire capable d'anticiper les conséquences de ses actions sur le long terme.",
             resultats: "Tactique de clonage de plateau opérationnelle pour anticiper les scores réels. Zéro disqualification grâce à un algorithme contre les coups illégaux",
             competences: ["Java", "Intelligence Artificielle", "Développement de tests", "Algorithmie"],
-            outils: ["Tests unitaires", "Simulation algorithmique"]
+            outils: ["Tests unitaires", "Simulation algorithmique", "Java"]
         },
         image: "assets/img/biosphere.png",
         gallery: ["assets/img/biosphere.png"],
         report: "assets/pdf/biosphere-report.pdf",
         tags: ["Java", "Algorithmie et Comparaison"],
-        link: "#"
+        link: "#",
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-intelligenceartificielle-algorithmique-share-7423392852463906817-jtZ3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        linkLabel: "Voir le post LinkedIn"
     },
     {
         title: "Installation de poste",
@@ -51,23 +55,27 @@ const saeProjects = [
         gallery: ["assets/img/vm-install.png"],
         report: "assets/pdf/vm-report.pdf",
         tags: ["Linux", "Bash", "Virtual Machine"],
-        link: "#" // rapport
+        link: "#",
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_butinformatique-administrationsystaeyme-clojure-ugcPost-7391106933803438081-mx4s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        linkLabel: "Voir le post LinkedIn"
     },
     {
         title: "Création de Base de données",
         favorite: true,
-        description: "Conception d'une Base de données pour une agence d'événements culturels. Traduction du cahier des charges en contraintes.",
+        description: "Conception d'une Base de données pour une agence d'événements culturels fictive. Traduction du cahier des charges en contraintes.",
         analyse: {
-            cahier: "Créer une base de données pour une agence événementielle en traduisant des règles textuelles complexes (horaires, formats) pour éviter les incohérences de planning.",
+            cahier: "Créer une base de données pour une agence événementielle fictive en traduisant des règles textuelles complexes (horaires, formats) pour éviter les incohérences de planning.",
             resultats: "Scripts SQL robustes implémentés avec une gestion fine des contraintes. Insertion réussie d'un jeu de données réaliste.",
-            competences: ["Modélisation relationnelle", "Traduction métier"],
-            outils: ["SQL (DDL/DML)", "Win'Design", "Contraintes CHECK/UNIQUE"]
+            competences: ["Modélisation relationnelle", "SQL"],
+            outils: ["SQL", "Win'Design", "Contraintes CHECK/UNIQUE", "Schéma entités associations (MCD)"]
         },
         image: "assets/img/bdd.png",
         gallery: ["assets/img/bdd.png"],
         report: "assets/pdf/bdd-report.pdf",
         tags: ["SQL", "Base de données"],
-        link: "#" // AVANCEMENT ICI revérifier 
+        link: "#",
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_sqlserver-database-iutinformatique-ugcPost-7420940639481118720-z0sp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        linkLabel: "Voir le post LinkedIn"
     },
     {
         title: "Recueil de besoin",
@@ -76,14 +84,21 @@ const saeProjects = [
         analyse: {
             cahier: "Moderniser le code source du site web d'une entreprise fictive de PC Rétro, en abandonnant l'ancienne mise en page en tableaux.",
             resultats: "Refonte validée en HTML5 sémantique. Amélioration de l'accessibilité et réduction de la taille du code source, avec une petite touche Windows XP.",
-            competences: ["Intégration web", "Refactoring"],
+            competences: ["Intégration web", "Refactoring", "Écoute du client"],
             outils: ["HTML5", "CSS Grid", "Design System"]
         },
         image: "assets/img/retro-pc.png",
-        gallery: ["assets/img/retro-pc.png"],
+        gallery: [
+        "assets/img/retro-pc.png",
+        "assets/img/retro-pc1.png"
+        ],
         report: "assets/pdf/retro-report.pdf",
         tags: ["HTML/CSS", "Web"],
-        link: "#"
+        link: "#",
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_webdevelopment-html5-css3-ugcPost-7417162829536890880-ARre?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        linkLabel: "Voir le post LinkedIn"
+
+        
     },
     {
         title: "Environnement économique et écologique",
@@ -92,7 +107,7 @@ const saeProjects = [
             cahier: "En tant que Chef de Projet, coordonner une équipe de 5 personnes pour réaliser le diagnostic complet de l'entreprise Baillardran.",
             resultats: "Cartographie des 6 fonctions de l'entreprise et réalisation des matrices PESTEL et Porter. Formulation d'une stratégie de reconstruction éthique axée sur la transparence pour contrer la chute de rentabilité.",
             competences: ["Gestion de Projet", "Analyse Stratégique", "Management d'équipe"],
-            outils: ["Matrice PESTEL", "5 Forces de Porter", "Base de données Diane-BvD"]
+            outils: ["Outil PESTEL", "5 Forces de Porter", "Base de données Diane+"]
         },
         image: "assets/img/baillardran.png",
         gallery: ["assets/img/baillardran.png"],
@@ -119,12 +134,13 @@ const saeProjects = [
         "assets/img/jpo5.png"
         ],
         report: "assets/pdf/jpo-fiche-technique.pdf",
-        tags: ["Communication", "Organisation", "S1.03"],
+        tags: ["Communication", "Organisation"],
         link: "#"
     },
 
     {
         title: "Développement d'une application",
+        wip: true,
         description: "Application C# de gestion de personnages et simulateur de jeu de rôles avec architecture Orientée Objet intégrale.",
         analyse: {
             cahier: "Concevoir en équipe de 3 une application WinForms robuste traduisant des règles d'un jeu fictif.",
@@ -156,9 +172,11 @@ const persoProjects = [
             outils: ["Rufus", "Terminal Linux (Nano)", "Composants (RAM/SSD)"]
         },
         image: "assets/img/alienware1.jpg", 
-        gallery: ["assets/img/alienware2.jpg"],
-        gallery: ["assets/img/alienware1.jpg"],
-        gallery: ["assets/img/alienware.jpg"],
+        gallery: [
+        "assets/img/alienware2.jpg",
+        "assets/img/alienware1.jpg",
+        "assets/img/alienware.jpg"
+        ],
         report: "assets/pdf/alienware-report.pdf", 
         tags: ["Hardware", "SysAdmin", "Triple Boot"],
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_iutdebordeaux-greenit-linux-activity-7429419448949784577-m7ho?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
@@ -166,7 +184,7 @@ const persoProjects = [
     },
 
     {
-        title: "Assistant macOS (J.A.R.V.I.S.)" ,
+        title: "Assistant macOS (J.A.R.V.I.S.)" ,       
         wip: true,
         description: "Assistant vocal hybride pilotant l'environnement de travail macOS (via AppleScript) et intégré à l'IA Gemini.",
         analyse: {
@@ -185,21 +203,37 @@ const persoProjects = [
    
     },
 
-    {
+    {       // voit plus de détail --> le bouton ne marche plus 
         title: "Déploiement de macOS via Hackintosh sur un PC",
         wip:true,
         description: "Installation native de macOS Bigsur sur une tour PC HP en contournant les sécurités matérielles et logicielles.",
         analyse: {
             cahier: "Déployer macOS sur un matériel non-Apple (HP, Intel). Contraintes : créer un environnement matériel virtuel sans modifier le système d'exploitation cible, grâce à une base GitHub.",
             resultats: "Création d'un Bootloader (OpenCore) sur-mesure. Stabilité garantie avec un minimum de kexts (4 pilotes, 2 patchs). Contournement des sécurités HP (Hard Freezes, erreurs ACPI) et amorçage réussi du noyau XNU.",
-            competences: ["Architecture Système (XNU/ACPI)", "Administration Système (Unix)", "Troubleshooting (Logs Verbose)", "Ingénierie matérielle (SSDT)"],
-            outils: ["OpenCore Bootloader", "ProperTree (XML/Plist)", "Terminal (diskutil)", "Scripts Python (GenSMBIOS)"]
+            outils: ["OpenCore Bootloader", "ProperTree", "Terminal", "Scripts Python"]
         },
         image: "assets/img/hackintoch.jpg", // À ajuster selon votre fichier image
         gallery: ["assets/img/hackintoch.jpg"],
         report: "#", // À remplacer si vous avez un rapport ou un tutoriel
         tags: ["SysAdmin", "Hardware", "macOS"],
         link: "#" // À remplacer si vous avez un dépôt GitHub avec votre dossier EFI
+    },
+
+    {
+        title: "Portfolio Professionnel",
+        description: "Conception et développement d'une vitrine numérique responsive pour valoriser mes projets et compétences en BUT Informatique.",
+        analyse: {
+            cahier: "Créer une plateforme fluide et performante. Contraintes : Stack Vanilla (HTML/CSS/JS), Dark Mode 'Premium', Responsive Design complet et gestion dynamique des projets via manipulation du DOM.",
+            resultats: "Score Lighthouse optimisé. Navigation intuitive via modales d'analyse. Maintenance simplifiée grâce à une architecture de données centralisée en JavaScript.",
+            competences: ["Développement Front-End", "UI/UX Design", "Architecture de données", "Versionnage Git"],
+            outils: ["VS Code", "CSS Grid/Flexbox", "JavaScript Vanilla", "Git/GitHub"]
+        },
+        image: "assets/img/portfolio-preview.jpg", // Prends une capture d'écran de ton site !
+        gallery: ["assets/img/portfolio-preview.jpg"],
+        report: "#", 
+        tags: ["Web", "Design", "Vanilla JS"],
+        link: "https://github.com/ton-username/ton-repo-portfolio", // Ton lien GitHub
+        linkLabel: "Voir le code sur GitHub"
     }
     
 
@@ -243,7 +277,7 @@ function createCards(projectsArray, container, typeStr) {
         
         // On vérifie si le projet est marqué comme "En cours" (propriété wip: true)
         if (project.wip) {
-            statusBadgesHTML += `<span class="p-badge wip">⏳ En cours</span>`;
+            statusBadgesHTML += `<span class="p-badge wip">⏳ En cours de finalisation</span>`;
         }
 
         // Si au moins un badge existe, on l'enveloppe dans le conteneur flex
@@ -262,7 +296,7 @@ function createCards(projectsArray, container, typeStr) {
                 <div class="project-tags">
                     ${project.tags.map(tag => `<span>${tag}</span>`).join('')}
                 </div>
-                <button class="btn btn-secondary btn-sm" onclick="openModal('${typeStr}', ${index})" style="margin-top:1rem; width:100%">Voir l'analyse</button>
+                <button class="btn btn-secondary btn-sm" onclick="openModal('${typeStr}', ${index})" style="margin-top:1rem; width:100%">Plus de détails</button>
             </div>
         `;
         container.appendChild(card);
