@@ -221,9 +221,9 @@ const persoProjects = [
 
     {
         title: "Portfolio Professionnel",
-        description: "Conception et développement d'une vitrine numérique responsive pour valoriser mes projets et compétences en BUT Informatique.",
+        description: "Conception et développement de mon portfolio pour valoriser mes projets et compétences.",
         analyse: {
-            cahier: "Créer une plateforme fluide et performante. Contraintes : Stack Vanilla (HTML/CSS/JS), Dark Mode 'Premium', Responsive Design complet et gestion dynamique des projets via manipulation du DOM.",
+            cahier: "Créer une plateforme fluide et performante. Contraintes : Stack Vanilla (HTML/CSS/JS), Dark Mode, Responsive Design complet et gestion dynamique des projets via manipulation du DOM.",
             resultats: "Score Lighthouse optimisé. Navigation intuitive via modales d'analyse. Maintenance simplifiée grâce à une architecture de données centralisée en JavaScript.",
             competences: ["Développement Front-End", "UI/UX Design", "Architecture de données", "Versionnage Git"],
             outils: ["VS Code", "CSS Grid/Flexbox", "JavaScript Vanilla", "Git/GitHub"]
