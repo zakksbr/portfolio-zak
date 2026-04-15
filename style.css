@@ -371,15 +371,37 @@ footer {
     flex: 1; /* Prend une part d'espace */
 }
 
-/* La photo : rectangulaire, bords arrondis comme demandés */
+/* La photo : rectangulaire, bords arrondis avec animation */
 .about-img {
     width: 100%;
     height: auto;
     max-width: 400px;
-    border-radius: 12px; /* Bords arrondis */
-    border: 2px solid var(--accent-color); /* Ton orange classe pour le contour */
+    border-radius: 12px;
+    border: 2px solid var(--accent-color);
     display: block;
     margin: 0 auto;
+    
+    /* NOUVEAU : Ombre de base et transition */
+    box-shadow: 0 10px 30px rgba(194, 65, 12, 0.15); 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    
+    /* NOUVEAU : Lancement de l'animation de flottaison */
+    animation: floatImage 6s ease-in-out infinite;
+}
+
+/* Effet au survol de la souris (Hover) */
+.about-img:hover {
+    box-shadow: 0 15px 40px rgba(194, 65, 12, 0.4); /* L'ombre orange s'intensifie */
+    /* On suspend la flottaison pour un effet de soulèvement net */
+    animation-play-state: paused; 
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Clé d'animation pour l'effet flottant */
+@keyframes floatImage {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
 /* 3. Colonne Texte */
@@ -432,3 +454,109 @@ footer {
         text-align: center; /* Centre le texte sur téléphone */
     }
 }
+
+
+
+/* badges de statut */
+
+/* Il faut forcer le conteneur de l'image en position relative pour
+   pouvoir positionner les badges en absolu par-dessus */
+.card-img-holder {
+    position: relative;
+    /* ...tes autres styles existants... */
+}
+
+/* Conteneur pour empiler les badges verticalement si besoin */
+.project-badges {
+    position: absolute;
+    top: 10px; /* Espace depuis le haut */
+    right: 10px; /* Espace depuis la droite */
+    display: flex;
+    flex-direction: column; /* Empilement vertical */
+    gap: 5px; /* Espace entre les badges */
+    z-index: 10; /* Assure la visibilité au-dessus de l'image */
+}
+
+/* Style commun à tous les badges sur l'image */
+.p-badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase; /* Tout en majuscule, comme demandé pour les badges */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    backdrop-filter: blur(2px); /* Léger effet de flou pour intégration Dark Mode */
+}
+
+/* Badge "Coup de cœur" (Orange) */
+.p-badge.favorite {
+    background-color: rgba(255, 107, 0, 0.9); /* Ton orange classe, presque opaque */
+    color: #fff;
+    border: 1px solid var(--accent-color);
+}
+
+/* Badge "En cours" (Gris neutre) */
+.p-badge.wip {
+    background-color: rgba(30, 30, 30, 0.9); /* Gris foncé */
+    color: var(--text-muted);
+    border: 1px solid #444;
+}
+
+/* animations et accueil */
+
+/* 1. Apparition douce au scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px); /* L'élément commence un peu plus bas */
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0); /* Remonte à sa position finale */
+}
+
+/* 2. Dynamisation de la page d'accueil (Hero) */
+.hero-section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Halo lumineux renforcé derrière ton nom/photo */
+.hero-glow {
+    position: absolute;
+    width: 70vw; /* Légèrement plus large */
+    height: 70vw;
+    max-width: 800px;
+    max-height: 800px;
+    /* On passe l'opacité de 0.12 à 0.25 pour que l'orange se voie plus */
+    background: radial-gradient(circle, rgba(194, 65, 12, 0.25) 0%, rgba(12, 12, 12, 0) 70%); 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    border-radius: 50%;
+    animation: pulseGlow 5s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+}
+
+/* Ajout d'une aura lumineuse sur les boutons principaux (Orange) */
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 15px rgba(194, 65, 12, 0.4); /* Effet néon discret */
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover { 
+    background-color: transparent; 
+    box-shadow: 0 0 25px rgba(194, 65, 12, 0.7); /* Le néon s'intensifie au survol */
+}
+

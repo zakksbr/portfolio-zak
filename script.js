@@ -39,6 +39,7 @@ const saeProjects = [
     },
     {
         title: "Installation de poste",
+        favorite: true,
         description: "Configuration d'une machine virtuelle Lubuntu optimisée (8 Go) pour développer.",
         analyse: {
             cahier: "Créer un environnement de développement complet sur une machine virtuelle sous Lubuntu (LXQt) en respectant une contrainte stricte de 8 Go d'espace disque maximum.",
@@ -54,6 +55,7 @@ const saeProjects = [
     },
     {
         title: "Création de Base de données",
+        favorite: true,
         description: "Conception d'une Base de données pour une agence d'événements culturels. Traduction du cahier des charges en contraintes.",
         analyse: {
             cahier: "Créer une base de données pour une agence événementielle en traduisant des règles textuelles complexes (horaires, formats) pour éviter les incohérences de planning.",
@@ -69,64 +71,71 @@ const saeProjects = [
     },
     {
         title: "Recueil de besoin",
-        description: "Refactoring d'un site web legacy. Passage de tableaux à CSS Grid (Thème Windows XP).",
+        favorite: true,
+        description: "Refactoring d'un site web legacy. Passage de tableaux à un CSS Grid (avec un Thème Windows XP).",
         analyse: {
-            cahier: "Moderniser le code source du site web d'une entreprise fictive en abandonnant l'ancienne mise en page en tableaux, tout en respectant un thème visuel Windows XP imposé.",
-            resultats: "Refonte validée en HTML5 sémantique. Amélioration de l'accessibilité et réduction de la taille du code source.",
-            competences: ["Intégration web", "Refactoring", "Respect d'une charte"],
+            cahier: "Moderniser le code source du site web d'une entreprise fictive de PC Rétro, en abandonnant l'ancienne mise en page en tableaux.",
+            resultats: "Refonte validée en HTML5 sémantique. Amélioration de l'accessibilité et réduction de la taille du code source, avec une petite touche Windows XP.",
+            competences: ["Intégration web", "Refactoring"],
             outils: ["HTML5", "CSS Grid", "Design System"]
         },
         image: "assets/img/retro-pc.png",
         gallery: ["assets/img/retro-pc.png"],
         report: "assets/pdf/retro-report.pdf",
-        tags: ["HTML/CSS", "S1.05"],
+        tags: ["HTML/CSS", "Web"],
         link: "#"
     },
     {
-        title: "Environnement économique",
-        description: "Diagnostic stratégique Baillardran. Analyse SWOT et synthèse RSE.",
+        title: "Environnement économique et écologique",
+        description: "Analyse fonctionnelle et environnementale d'une entreprise locale face à une crise de crédibilité majeure (PESTEL & Porter).",
         analyse: {
-            cahier: "Coordonner l'équipe en tant que Chef de Projet pour compiler des informations disparates et réaliser le diagnostic stratégique de l'entreprise Baillardran face à sa crise.",
-            resultats: "Livrable complet remis. Recommandations stratégiques formulées pour redresser l'image de marque de l'entreprise.",
-            competences: ["Gestion de Projet", "Travail d'équipe", "Synthèse d'enjeux"],
-            outils: ["Analyse SWOT", "Matrice PESTEL", "Diagnostic RSE"]
+            cahier: "En tant que Chef de Projet, coordonner une équipe de 5 personnes pour réaliser le diagnostic complet de l'entreprise Baillardran.",
+            resultats: "Cartographie des 6 fonctions de l'entreprise et réalisation des matrices PESTEL et Porter. Formulation d'une stratégie de reconstruction éthique axée sur la transparence pour contrer la chute de rentabilité.",
+            competences: ["Gestion de Projet", "Analyse Stratégique", "Management d'équipe"],
+            outils: ["Matrice PESTEL", "5 Forces de Porter", "Base de données Diane-BvD"]
         },
         image: "assets/img/baillardran.png",
         gallery: ["assets/img/baillardran.png"],
         report: "assets/pdf/baillardran-report.pdf",
-        tags: ["Gestion", "S1.06"],
+        tags: ["Gestion", "Analyse"],
         link: "#"
     },
 
 {
         title: "Réalisation d'une mission confié par une organisation",
-        description: "Programmation des fonctionnalités d'un jeu de plateau et conception de deux Intelligence Artificielle capable de jouer contre ou à la place de l'utilisateur",
+        description: "Conception de la campagne de communication visuelle pour la Journée Portes Ouvertes du département informatique, puis organisation de celle-ci avec les autres étudiants bénévoles.",
         analyse: {
-            cahier: "Coder les règles du jeu (plantation d'un arbre, coupes, vitalité) et développement d'une première IA Gloutonne et une deuxième Visionnaire capable d'anticiper les conséquences de ses actions sur le long terme.",
-            resultats: "Tactique de clonage de plateau opérationnelle pour anticiper les scores réels. Zéro disqualification grâce à un algorithme contre les coups illégaux",
-            competences: ["Java", "Intelligence Artificielle", "Développement de tests", "Algorithmie"],
-            outils: ["Tests unitaires", "Simulation algorithmique"]
-        },
+        cahier: "Élaborer une identité visuelle complète (affiches A1/A2, programmes, signalétique) respectant la charte graphique de l'Université.",
+        resultats: "Production de 3 versions d'affiches et d'un plan de signalétique complet pour les deux étages du bâtiment.",
+        competences: ["Communication Visuelle", "Gestion de Projet", "Travail d'équipe"],
+        outils: ["Canva", "Appareil Photo", "Adobe Lightroom"]
+         },
         image: "assets/img/mission.png",
-        gallery: ["assets/img/mission.png"],
-        report: "assets/pdf/biosphere-report.pdf",
-        tags: ["Java", "Algorithmie et Comparaison"],
+        gallery: [
+        "assets/img/jpo1.png",
+        "assets/img/jpo2.png",
+        "assets/img/jpo3.png",
+        "assets/img/jpo4.png",
+        "assets/img/jpo5.png"
+        ],
+        report: "assets/pdf/jpo-fiche-technique.pdf",
+        tags: ["Communication", "Organisation", "S1.03"],
         link: "#"
     },
 
     {
         title: "Développement d'une application",
-        description: "Programmation des fonctionnalités d'un jeu de plateau et conception de deux Intelligence Artificielle capable de jouer contre ou à la place de l'utilisateur",
+        description: "Application C# de gestion de personnages et simulateur de jeu de rôles avec architecture Orientée Objet intégrale.",
         analyse: {
-            cahier: "Coder les règles du jeu (plantation d'un arbre, coupes, vitalité) et développement d'une première IA Gloutonne et une deuxième Visionnaire capable d'anticiper les conséquences de ses actions sur le long terme.",
-            resultats: "Tactique de clonage de plateau opérationnelle pour anticiper les scores réels. Zéro disqualification grâce à un algorithme contre les coups illégaux",
-            competences: ["Java", "Intelligence Artificielle", "Développement de tests", "Algorithmie"],
-            outils: ["Tests unitaires", "Simulation algorithmique"]
+            cahier: "Concevoir en équipe de 3 une application WinForms robuste traduisant des règles d'un jeu fictif.",
+            resultats: "Livrable, avec séparation Logique/IHM. Moteur de résolution des épreuves fictives validé par tests unitaires et interface ergonomique.",
+            competences: ["Programmation C#", "Conception UML", "Développement IHM", "Tests"],
+            outils: ["Visual Studio / .NET", "WinForms", "Git"]
         },
-        image: "assets/img/devApps.png",
-        gallery: ["assets/img/devApps.png"],
-        report: "assets/pdf/biosphere-report.pdf",
-        tags: ["Java", "Algorithmie et Comparaison"],
+        image: "assets/img/butopia.png",
+        gallery: ["assets/img/butopia.png"],
+        report: "assets/pdf/butopia-report.pdf",
+        tags: ["C#", ".NET", "Développement", "Git"],
         link: "#"
     }
 
@@ -138,6 +147,7 @@ const saeProjects = [
 const persoProjects = [
     {
         title: "Réhabilitation d’un ordinateur obsolète",
+        favorite: true,
         description: "Upgrade matériel et configuration d'un Triple Boot (Win 10/11, Ubuntu) sur un Alienware Area-51 R1 de 2010.",
         analyse: {
             cahier: "Rendre fonctionnelle une machine de 2010 pour du développement. Contraintes : Upgrade RAM/SSD, Triple Boot fonctionnel sur architecture Legacy/MBR, et boot rapide personnalisé via GRUB.",
@@ -156,29 +166,48 @@ const persoProjects = [
     },
 
     {
-        title: "Création d'un assistant vocal",
-        description: "Upgrade matériel et configuration d'un Triple Boot (Win 10/11, Ubuntu) sur un Alienware Area-51 R1 de 2010.",
+        title: "Assistant macOS (J.A.R.V.I.S.)" ,
+        wip: true,
+        description: "Assistant vocal hybride pilotant l'environnement de travail macOS (via AppleScript) et intégré à l'IA Gemini.",
         analyse: {
-            cahier: "Rendre fonctionnelle une machine de 2010 pour du développement. Contraintes : Upgrade RAM/SSD, Triple Boot fonctionnel sur architecture Legacy/MBR, et boot rapide personnalisé via GRUB.",
-            resultats: "Temps de démarrage divisé par 4. Environnement de test multi-OS 100% stable et opérationnel. Machine sauvée de l'obsolescence pour un investissement de moins de 80€.",
-            competences: ["Maintenance Hardware", "Administration Système", "Gestion GRUB/MBR", "Troubleshooting"],
-            outils: ["Rufus", "Terminal Linux (Nano)", "Composants (RAM/SSD)"]
+            cahier: "Développer un assistant capable de piloter physiquement macOS (écrans, apps) et de converser naturellement. Contraintes : mode Push-to-Talk pour la confidentialité.",
+            resultats: "Automatisation complète du déploiement du Workspace. Latence < 2s pour les requêtes Cloud et exécution système locale instantanée. Respect de la vie privée grâce à l'activation microphone à la demande.",
+            competences: ["Développement Python", "Intégration API Gemini", "Scripting AppleScript", "Conception d'Architecture"],
+            outils: ["Python 3", "API Google Gemini", "AppleScript", "Shell"]
         },
-        image: "assets/img/alienware1.jpg", 
-        gallery: ["assets/img/alienware2.jpg"],
-        gallery: ["assets/img/alienware1.jpg"],
-        gallery: ["assets/img/alienware.jpg"],
-        report: "assets/pdf/alienware-report.pdf", 
-        tags: ["Hardware", "SysAdmin", "Triple Boot"],
-        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_iutdebordeaux-greenit-linux-activity-7429419448949784577-m7ho?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
-        linkLabel: "Voir le post LinkedIn" 
+        image: "assets/img/jarvis2.png", 
+        gallery: ["assets/img/jarvis2.png"],
+        gallery: ["assets/img/jarvis1.png"],
+        report: "#", // À remplacer par le lien de ton rapport si disponible
+        tags: ["Python", "IA", "macOS"],
+        link: "#" // À remplacer par ton lien GitHub si tu souhaites le partager
+        
+   
+    },
+
+    {
+        title: "Déploiement de macOS via Hackintosh sur un PC",
+        wip:true,
+        description: "Installation native de macOS Bigsur sur une tour PC HP en contournant les sécurités matérielles et logicielles.",
+        analyse: {
+            cahier: "Déployer macOS sur un matériel non-Apple (HP, Intel). Contraintes : créer un environnement matériel virtuel sans modifier le système d'exploitation cible, grâce à une base GitHub.",
+            resultats: "Création d'un Bootloader (OpenCore) sur-mesure. Stabilité garantie avec un minimum de kexts (4 pilotes, 2 patchs). Contournement des sécurités HP (Hard Freezes, erreurs ACPI) et amorçage réussi du noyau XNU.",
+            competences: ["Architecture Système (XNU/ACPI)", "Administration Système (Unix)", "Troubleshooting (Logs Verbose)", "Ingénierie matérielle (SSDT)"],
+            outils: ["OpenCore Bootloader", "ProperTree (XML/Plist)", "Terminal (diskutil)", "Scripts Python (GenSMBIOS)"]
+        },
+        image: "assets/img/hackintoch.jpg", // À ajuster selon votre fichier image
+        gallery: ["assets/img/hackintoch.jpg"],
+        report: "#", // À remplacer si vous avez un rapport ou un tutoriel
+        tags: ["SysAdmin", "Hardware", "macOS"],
+        link: "#" // À remplacer si vous avez un dépôt GitHub avec votre dossier EFI
     }
+    
 
 ];
 
-/* ==========================================================================
-   2. CONNEXION AVEC LE HTML (Le DOM)
-   ========================================================================== */
+/* 
+   CONNEXION AVEC LE HTML
+    */
 
 // On "attrape" les balises HTML existantes en utilisant leur attribut id="...".
 // On les stocke dans des variables constantes (const) pour pouvoir les modifier plus tard.
@@ -187,9 +216,9 @@ const persoContainer = document.getElementById('perso-container');
 const modal = document.getElementById('project-modal');
 const closeBtn = document.querySelector('.close-btn');
 
-/* ==========================================================================
-   3. LES FONCTIONS (La mécanique du site)
-   ========================================================================== */
+/* 
+   les fcts
+   */
 
 /**
  * Fonction qui génère les petites cartes (vignettes) de projets sur la page d'accueil.
@@ -198,23 +227,34 @@ const closeBtn = document.querySelector('.close-btn');
  * @param {String} typeStr - Une chaîne de caractères ('sae' ou 'perso') pour savoir d'où vient le clic
  */
 function createCards(projectsArray, container, typeStr) {
-    if (!container) return; // Sécurité : si le conteneur n'existe pas, on arrête la fonction.
-    
-    // On vide le conteneur pour éviter de créer des doublons si la fonction est appelée 2 fois
+    if (!container) return; 
     container.innerHTML = "";
-    
-    // On parcourt chaque projet du tableau. "project" est l'objet en cours, "index" est sa position (0, 1, 2...)
     projectsArray.forEach((project, index) => {
-        // On crée virtuellement une balise <div>
         const card = document.createElement('div');
-        // On lui ajoute la classe CSS "project-card"
         card.classList.add('project-card');
+
+        // --- Logique d'injection des badges de statut sur l'image ---
+        let statusBadgesHTML = ""; // Chaîne vide par défaut
         
-        // On injecte le code HTML à l'intérieur de cette carte.
-        // L'utilisation des backticks (`) permet d'insérer des variables directement avec ${...}
+        // On vérifie si le projet est marqué comme "Coup de cœur" (propriété favorite: true)
+        if (project.favorite) {
+            statusBadgesHTML += `<span class="p-badge favorite">🧡 Coup de cœur</span>`;
+        }
+        
+        // On vérifie si le projet est marqué comme "En cours" (propriété wip: true)
+        if (project.wip) {
+            statusBadgesHTML += `<span class="p-badge wip">⏳ En cours</span>`;
+        }
+
+        // Si au moins un badge existe, on l'enveloppe dans le conteneur flex
+        if(statusBadgesHTML) {
+            statusBadgesHTML = `<div class="project-badges">${statusBadgesHTML}</div>`;
+        }
+
         card.innerHTML = `
             <div class="card-img-holder">
                 <img src="${project.image}" alt="${project.title}" class="project-img">
+                ${statusBadgesHTML}
             </div>
             <div class="project-info">
                 <h3>${project.title}</h3>
@@ -225,7 +265,6 @@ function createCards(projectsArray, container, typeStr) {
                 <button class="btn btn-secondary btn-sm" onclick="openModal('${typeStr}', ${index})" style="margin-top:1rem; width:100%">Voir l'analyse</button>
             </div>
         `;
-        // On ajoute physiquement la carte nouvellement créée dans le conteneur HTML de la page
         container.appendChild(card);
     });
 }
@@ -339,3 +378,29 @@ window.onclick = function(event) {
 // "Attends que tout le HTML de la page soit chargé (DOMContentLoaded) avant de lancer loadProjects()"
 // Sinon, le JS essaierait d'insérer des projets dans des conteneurs qui n'existent pas encore.
 document.addEventListener('DOMContentLoaded', loadProjects);
+
+/* animations au scroll */
+const observerOptions = {
+    threshold: 0.1, // Déclenche l'animation quand 10% de l'élément est visible à l'écran
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active'); // Déclenche l'animation
+            observer.unobserve(entry.target); // Ne joue l'animation qu'une seule fois
+        }
+    });
+}, observerOptions);
+
+// Une fois la page chargée, on cible ce qu'on veut animer
+document.addEventListener('DOMContentLoaded', () => {
+    // On cible toutes tes sections et tes cartes de compétences
+    const elementsToAnimate = document.querySelectorAll('.section-padding, .skill-card');
+    
+    elementsToAnimate.forEach(el => {
+        el.classList.add('reveal'); // On les cache par défaut
+        observer.observe(el); // On écoute leur apparition
+    });
+});
