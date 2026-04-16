@@ -1,18 +1,12 @@
-/* 
-   Les données du portfolio
-*/
-
-// On stocke les projets universitaires (SAÉ) dans un tableau (Array) nommé saeProjects.
-// Chaque projet est un Objet (Object) entre accolades {}, contenant des paires clé/valeur.
+// ici je stocke toutes les données des projets.
+// les projets que j'ai fait à l'iut, puis les perso
 const saeProjects = [
     {
         title: "Implémentation",
         description: "Programmation d'une station domotique en Java. Gestion de l'historique et des données.",
-        // L'objet "analyse" contient les sous-parties de la grille que l'on affichera dans la modale
         analyse: {
             cahier: "Intégrer l'entièreté des fonctionnalités de gestion, de mise à jour des données météorologiques et de programmation du chauffage d'une station météo à partir d'un code incomplet.",
             resultats: "Algorithme de décalage de tableaux implémenté. Intégrité des données garantie et saisie utilisateur sécurisée par boucle de contrôle.",
-            // Les compétences et outils sont des tableaux (Arrays) de chaînes de caractères (Strings)
             competences: ["Java", "Algorithmique", "Intégration des données"],
             outils: ["Boucle do...while", "Tableaux", "Conditions"]
         },
@@ -20,7 +14,6 @@ const saeProjects = [
         gallery: ["assets/img/odomo.png"], 
         report: "assets/pdf/odomo-report.pdf",
         tags: ["Java", "Algorithmie"],
-        link: "#", // "#" pour l'innstant puisque je n'ai pas encore integré le rapport 
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-projet-domotique-ugcPost-7395203244312043521-TFbM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
     },
@@ -37,7 +30,6 @@ const saeProjects = [
         gallery: ["assets/img/biosphere.png"],
         report: "assets/pdf/biosphere-report.pdf",
         tags: ["Java", "Algorithmie et Comparaison"],
-        link: "#",
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-intelligenceartificielle-algorithmique-share-7423392852463906817-jtZ3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
     },
@@ -55,7 +47,6 @@ const saeProjects = [
         gallery: ["assets/img/vm-install.png"],
         report: "assets/pdf/vm-report.pdf",
         tags: ["Linux", "Bash", "Virtual Machine"],
-        link: "#",
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_butinformatique-administrationsystaeyme-clojure-ugcPost-7391106933803438081-mx4s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
     },
@@ -73,7 +64,6 @@ const saeProjects = [
         gallery: ["assets/img/bdd.png"],
         report: "assets/pdf/bdd-report.pdf",
         tags: ["SQL", "Base de données"],
-        link: "#",
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_sqlserver-database-iutinformatique-ugcPost-7420940639481118720-z0sp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
     },
@@ -89,16 +79,13 @@ const saeProjects = [
         },
         image: "assets/img/retro-pc.png",
         gallery: [
-        "assets/img/retro-pc.png",
-        "assets/img/retro-pc1.png"
+            "assets/img/retro-pc.png",
+            "assets/img/retro-pc1.png"
         ],
         report: "assets/pdf/retro-report.pdf",
         tags: ["HTML/CSS", "Web"],
-        link: "#",
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_webdevelopment-html5-css3-ugcPost-7417162829536890880-ARre?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
-
-        
     },
     {
         title: "Environnement économique et écologique",
@@ -115,29 +102,27 @@ const saeProjects = [
         tags: ["Gestion", "Analyse"],
         link: "#"
     },
-
-{
+    {
         title: "Réalisation d'une mission confié par une organisation",
         description: "Conception de la campagne de communication visuelle pour la Journée Portes Ouvertes du département informatique, puis organisation de celle-ci avec les autres étudiants bénévoles.",
         analyse: {
-        cahier: "Élaborer une identité visuelle complète (affiches A1/A2, programmes, signalétique) respectant la charte graphique de l'Université.",
-        resultats: "Production de 3 versions d'affiches et d'un plan de signalétique complet pour les deux étages du bâtiment.",
-        competences: ["Communication Visuelle", "Gestion de Projet", "Travail d'équipe"],
-        outils: ["Canva", "Appareil Photo", "Adobe Lightroom"]
-         },
+            cahier: "Élaborer une identité visuelle complète (affiches A1/A2, programmes, signalétique) respectant la charte graphique de l'Université.",
+            resultats: "Production de 3 versions d'affiches et d'un plan de signalétique complet pour les deux étages du bâtiment.",
+            competences: ["Communication Visuelle", "Gestion de Projet", "Travail d'équipe"],
+            outils: ["Canva", "Appareil Photo", "Adobe Lightroom"]
+        },
         image: "assets/img/mission.png",
         gallery: [
-        "assets/img/jpo1.png",
-        "assets/img/jpo2.png",
-        "assets/img/jpo3.png",
-        "assets/img/jpo4.png",
-        "assets/img/jpo5.png"
+            "assets/img/jpo1.png",
+            "assets/img/jpo2.png",
+            "assets/img/jpo3.png",
+            "assets/img/jpo4.png",
+            "assets/img/jpo5.png"
         ],
         report: "assets/pdf/jpo-fiche-technique.pdf",
         tags: ["Communication", "Organisation"],
         link: "#"
     },
-
     {
         title: "Développement d'une application",
         wip: true,
@@ -154,12 +139,9 @@ const saeProjects = [
         tags: ["C#", ".NET", "Développement", "Git"],
         link: "#"
     }
-
-
-
 ];
 
-// On stocke les projets personnels dans un tableau séparé
+// et ici les projets perso pour montrer ce que je bidouille de mon côté
 const persoProjects = [
     {
         title: "Réhabilitation d’un ordinateur obsolète",
@@ -173,16 +155,15 @@ const persoProjects = [
         },
         image: "assets/img/alienware1.jpg", 
         gallery: [
-        "assets/img/alienware2.jpg",
-        "assets/img/alienware1.jpg",
-        "assets/img/alienware.jpg"
+            "assets/img/alienware2.jpg",
+            "assets/img/alienware1.jpg",
+            "assets/img/alienware.jpg"
         ],
-        report: "assets/pdf/alienware-report.pdf", 
+        report: "#", 
         tags: ["Hardware", "SysAdmin", "Triple Boot"],
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_iutdebordeaux-greenit-linux-activity-7429419448949784577-m7ho?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
         linkLabel: "Voir le post LinkedIn" 
     },
-
     {
         title: "Assistant macOS (J.A.R.V.I.S.)" ,       
         wip: true,
@@ -194,97 +175,75 @@ const persoProjects = [
             outils: ["Python 3", "API Google Gemini", "AppleScript", "Shell"]
         },
         image: "assets/img/jarvis2.png", 
-        gallery: ["assets/img/jarvis2.png"],
-        gallery: ["assets/img/jarvis1.png"],
-        report: "#", // À remplacer par le lien de ton rapport si disponible
+        gallery: ["assets/img/jarvis1.png", "assets/img/jarvis2.png"],
+        report: "#", 
         tags: ["Python", "IA", "macOS"],
-        link: "#" // À remplacer par ton lien GitHub si tu souhaites le partager
-        
-   
+        link: "#" 
     },
-
-    {       // voit plus de détail --> le bouton ne marche plus 
+    {       
         title: "Déploiement de macOS via Hackintosh sur un PC",
-        wip:true,
+        wip: true,
         description: "Installation native de macOS Bigsur sur une tour PC HP en contournant les sécurités matérielles et logicielles.",
         analyse: {
             cahier: "Déployer macOS sur un matériel non-Apple (HP, Intel). Contraintes : créer un environnement matériel virtuel sans modifier le système d'exploitation cible, grâce à une base GitHub.",
             resultats: "Création d'un Bootloader (OpenCore) sur-mesure. Stabilité garantie avec un minimum de kexts (4 pilotes, 2 patchs). Contournement des sécurités HP (Hard Freezes, erreurs ACPI) et amorçage réussi du noyau XNU.",
+            competences: ["Administration Système", "Troubleshooting", "Architecture Hardware"], 
             outils: ["OpenCore Bootloader", "ProperTree", "Terminal", "Scripts Python"]
         },
-        image: "assets/img/hackintoch.jpg", // À ajuster selon votre fichier image
+        image: "assets/img/hackintoch.jpg", 
         gallery: ["assets/img/hackintoch.jpg"],
-        report: "#", // À remplacer si vous avez un rapport ou un tutoriel
+        report: "#", 
         tags: ["SysAdmin", "Hardware", "macOS"],
-        link: "#" // À remplacer si vous avez un dépôt GitHub avec votre dossier EFI
+        link: "#" 
     },
-
     {
         title: "Portfolio Professionnel",
         description: "Conception et développement de mon portfolio pour valoriser mes projets et compétences.",
         analyse: {
-            cahier: "Créer une plateforme fluide et performante. Contraintes : Stack Vanilla (HTML/CSS/JS), Dark Mode, Responsive Design complet et gestion dynamique des projets via manipulation du DOM.",
-            resultats: "Score Lighthouse optimisé. Navigation intuitive via modales d'analyse. Maintenance simplifiée grâce à une architecture de données centralisée en JavaScript.",
-            competences: ["Développement Front-End", "UI/UX Design", "Architecture de données", "Versionnage Git"],
-            outils: ["VS Code", "CSS Grid/Flexbox", "JavaScript Vanilla", "Git/GitHub"]
+            cahier: "Créer une plateforme fluide et performante avec le stack Vanilla (HTML5 CSS3 et JavaScript). Contraintes: présenter l'ensemble des projets avec un site responsive et une gestion dynamique.",
+            resultats: "Projets clairs, et Navigation intuitive via des fenetres d'analyse. Maintenance simple grâce à une architecture de données centralisée en JavaScript.",
+            competences: ["Développement Front-End", "UI/UX Design", "JavaScript", "Versionnage Git"],
+            outils: ["VS Code", "CSS Grid/Flexbox", "JavaScript", "Git/GitHub"]
         },
-        image: "assets/img/portfolio-preview.jpg", // Prends une capture d'écran de ton site !
-        gallery: ["assets/img/portfolio-preview.jpg"],
+        image: "assets/img/portfolio1.png",
+        gallery: ["assets/img/portfolio.png", "assets/img/portfolio1.png"],
         report: "#", 
         tags: ["Web", "Design", "Vanilla JS"],
-        link: "https://github.com/ton-username/ton-repo-portfolio", // Ton lien GitHub
+        link: "#",
         linkLabel: "Voir le code sur GitHub"
     }
-    
-
 ];
 
-/* 
-   CONNEXION AVEC LE HTML
-    */
-
-// On "attrape" les balises HTML existantes en utilisant leur attribut id="...".
-// On les stocke dans des variables constantes (const) pour pouvoir les modifier plus tard.
+// là je récupére les blocs de ma page html pour pouvoir injecter les projets dedans après
 const saeContainer = document.getElementById('sae-container');
 const persoContainer = document.getElementById('perso-container');
 const modal = document.getElementById('project-modal');
 const closeBtn = document.querySelector('.close-btn');
 
-/* 
-   les fcts
-   */
 
-/**
- * Fonction qui génère les petites cartes (vignettes) de projets sur la page d'accueil.
- * @param {Array} projectsArray - Le tableau de données (soit saeProjects, soit persoProjects)
- * @param {HTMLElement} container - La balise HTML où injecter les cartes
- * @param {String} typeStr - Une chaîne de caractères ('sae' ou 'perso') pour savoir d'où vient le clic
- */
+
+// cette fonction fabrique les petites cartes des projets et les affiche sur l'accueil
 function createCards(projectsArray, container, typeStr) {
     if (!container) return; 
     container.innerHTML = "";
+    
     projectsArray.forEach((project, index) => {
         const card = document.createElement('div');
         card.classList.add('project-card');
 
-        // --- Logique d'injection des badges de statut sur l'image ---
-        let statusBadgesHTML = ""; // Chaîne vide par défaut
-        
-        // On vérifie si le projet est marqué comme "Coup de cœur" (propriété favorite: true)
+        // on vérifie s'il y a des statuts particuliers pour afficher les bons petits badges
+        let statusBadgesHTML = ""; 
         if (project.favorite) {
             statusBadgesHTML += `<span class="p-badge favorite">🧡 Coup de cœur</span>`;
         }
-        
-        // On vérifie si le projet est marqué comme "En cours" (propriété wip: true)
         if (project.wip) {
             statusBadgesHTML += `<span class="p-badge wip">⏳ En cours de finalisation</span>`;
         }
-
-        // Si au moins un badge existe, on l'enveloppe dans le conteneur flex
-        if(statusBadgesHTML) {
+        if (statusBadgesHTML) {
             statusBadgesHTML = `<div class="project-badges">${statusBadgesHTML}</div>`;
         }
 
+        // injection de tout le html de la carte
         card.innerHTML = `
             <div class="card-img-holder">
                 <img src="${project.image}" alt="${project.title}" class="project-img">
@@ -303,138 +262,118 @@ function createCards(projectsArray, container, typeStr) {
     });
 }
 
-/**
- * Fonction globale qui déclenche la création de toutes les cartes.
- */
+// une fonction qui regroupe la création de toutes les cartes d'un coup
 function loadProjects() {
     createCards(saeProjects, saeContainer, 'sae');
     createCards(persoProjects, persoContainer, 'perso');
 }
 
-/**
- * Fonction qui gère l'ouverture et le remplissage de la grande fenêtre (Modale).
- * On utilise window.openModal pour qu'elle soit accessible globalement depuis le HTML (onclick).
- * @param {String} type - Soit 'sae', soit 'perso'
- * @param {Number} index - Le numéro du projet dans le tableau (ex: 0 pour le premier)
- */
+// c'est ici que ça gère l'ouverture de la grande fenêtre quand on clique sur "plus de détails"
 window.openModal = function(type, index) {
-    // 1. On détermine quel projet afficher.
-    // Si type est strictement égal à 'sae', on pioche dans saeProjects, sinon on pioche dans persoProjects.
+    // on check d'abord si c'est une saé ou perso pour piocher dans le bon tableau
     const project = (type === 'sae') ? saeProjects[index] : persoProjects[index];
     
-    // 2. On remplace le texte et les images des éléments HTML de la modale avec les infos du projet
     document.getElementById('modal-title').innerText = project.title;
     document.getElementById('modal-image').src = project.image;
     
-    // Remplissage de la grille d'analyse
+    // on injecte les textes dans les bonnes cases de la grille d'analyse
     document.getElementById('analysis-cahier-text').innerHTML = project.analyse.cahier;
     document.getElementById('analysis-resultats-text').innerHTML = project.analyse.resultats;
-    
-    // Pour les compétences et outils (qui sont des tableaux de mots), on crée des balises <li> pour chaque mot
     document.getElementById('analysis-competences-list').innerHTML = project.analyse.competences.map(comp => `<li>${comp}</li>`).join('');
     document.getElementById('analysis-outils-list').innerHTML = project.analyse.outils.map(outil => `<li>${outil}</li>`).join('');
     
-    // 3. Gestion intelligente des boutons
+    // on gère l'affichage des boutons. si je n'ai pas mis de lien ou de rapport, le bouton se cache
     const reportBtn = document.getElementById('modal-report');
-    // S'il y a un lien de rapport ET que ce lien n'est pas "#" (vide), on affiche le bouton
-    if(project.report && project.report !== "#") {
+    if (project.report && project.report !== "#") {
         reportBtn.href = project.report;
         reportBtn.style.display = "inline-block";
     } else {
-        // Sinon on le cache
         reportBtn.style.display = "none";
     }
 
     const repoBtn = document.getElementById('modal-repo');
-    if(project.link && project.link !== "#") {
+    if (project.link && project.link !== "#") {
         repoBtn.href = project.link;
-        // Si un label spécifique est défini (comme pour le projet Alienware), on l'utilise, sinon on met "Code Source" par défaut
         repoBtn.innerText = project.linkLabel ? project.linkLabel : "Code Source / GitHub";
         repoBtn.style.display = "inline-block";
     } else {
         repoBtn.style.display = "none";
     }
-    // On remplit les tags en haut de la modale
+
+    // on récupère et on affiche les petits tags sous le titre
     document.getElementById('modal-tags').innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
 
-    // 4. Gestion de la galerie d'images
+    // gestion de la petite galerie d'images dans la modale
     const galleryContainer = document.getElementById('modal-gallery-grid');
-    galleryContainer.innerHTML = ""; // On vide l'ancienne galerie
+    galleryContainer.innerHTML = ""; 
     
-    // On fusionne l'image principale et les images de la galerie en un seul tableau
+    // on regroupe l'image principale et celles de la galerie pour tout afficher ensemble en supprimant les doublons
     const allImages = [project.image, ...(project.gallery || [])];
-    // On supprime les doublons (pour ne pas afficher 2 fois la même image) grâce à un "Set"
     const uniqueImages = [...new Set(allImages)];
 
-    if(uniqueImages.length > 0) {
-        // Pour chaque image unique, on crée une vignette
+    if (uniqueImages.length > 0) {
         uniqueImages.forEach(imgSrc => {
             const img = document.createElement('img');
             img.src = imgSrc;
             img.classList.add('gallery-img');
-            
-            // Si on clique sur une vignette, l'image principale de la modale change !
+            // un clic sur une petite image la met en grand
             img.onclick = function() {
                 document.getElementById('modal-image').src = this.src;
             };
             galleryContainer.appendChild(img);
         });
-        document.querySelector('.modal-gallery').style.display = 'block'; // On affiche le conteneur galerie
+        document.querySelector('.modal-gallery').style.display = 'block'; 
     } else {
-        document.querySelector('.modal-gallery').style.display = 'none'; // S'il n'y a pas d'images, on cache la galerie
+        document.querySelector('.modal-gallery').style.display = 'none'; 
     }
 
-    // 5. Affichage final
-    modal.classList.add('show'); // On ajoute la classe CSS qui rend la modale visible (opacity 1)
-    document.body.style.overflow = 'hidden'; // On empêche la page derrière de défiler (scroll)
+    // on affiche enfin la petite fenetre et on bloque le scroll en arrière-plan
+    modal.classList.add('show'); 
+    document.body.style.overflow = 'hidden'; 
 }
 
-/* ==========================================================================
-   4. LES ÉCOUTEURS D'ÉVÉNEMENTS (Les déclencheurs)
-   ========================================================================== */
 
-// Quand on clique sur la petite croix (X) en haut à droite
+// les déclencheurs
+
+// pour fermer la petite fenetre avec la petite croix
 closeBtn.onclick = function() {
-    modal.classList.remove('show'); // On cache la modale
-    document.body.style.overflow = 'auto'; // On réactive le défilement de la page principale
+    modal.classList.remove('show');
+    document.body.style.overflow = 'auto'; 
 }
 
-// Quand on clique n'importe où sur l'écran
+// ou pour la fermer en cliquant n'importe où dans le vide
 window.onclick = function(event) {
-    // Si l'élément cliqué est le fond sombre de la modale (et pas le contenu de la modale lui-même)
     if (event.target == modal) {
-        modal.classList.remove('show'); // On ferme la modale
+        modal.classList.remove('show');
         document.body.style.overflow = 'auto';
     }
 }
 
-// C'est la ligne la plus importante : elle dit au navigateur
-// "Attends que tout le HTML de la page soit chargé (DOMContentLoaded) avant de lancer loadProjects()"
-// Sinon, le JS essaierait d'insérer des projets dans des conteneurs qui n'existent pas encore.
+// très important, on attend que tout le html de la page soit bien chargé avant de lancer la création des projets
 document.addEventListener('DOMContentLoaded', loadProjects);
 
-/* animations au scroll */
+
+// les animations
 const observerOptions = {
-    threshold: 0.1, // Déclenche l'animation quand 10% de l'élément est visible à l'écran
+    threshold: 0.1, // ça s'active quand 10% de l'élément apparaît à l'écran
     rootMargin: "0px 0px -50px 0px"
 };
 
+// on crée un observeur qui va surveiller l'apparition des éléments
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('active'); // Déclenche l'animation
-            observer.unobserve(entry.target); // Ne joue l'animation qu'une seule fois
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // on joue l'animation qu'une seule fois
         }
     });
 }, observerOptions);
 
-// Une fois la page chargée, on cible ce qu'on veut animer
+// on l'applique sur toutes nos sections et cartes
 document.addEventListener('DOMContentLoaded', () => {
-    // On cible toutes tes sections et tes cartes de compétences
     const elementsToAnimate = document.querySelectorAll('.section-padding, .skill-card');
-    
     elementsToAnimate.forEach(el => {
-        el.classList.add('reveal'); // On les cache par défaut
-        observer.observe(el); // On écoute leur apparition
+        el.classList.add('reveal');
+        observer.observe(el);
     });
 });
