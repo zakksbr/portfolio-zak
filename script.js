@@ -12,7 +12,7 @@ const saeProjects = [
         },
         image: "assets/img/odomo.png",
         gallery: ["assets/img/odomo.png"], 
-        report: "assets/pdf/odomo-report.pdf",
+        report: "#",
         tags: ["Java", "Algorithmie"],
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-projet-domotique-ugcPost-7395203244312043521-TFbM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
@@ -28,7 +28,7 @@ const saeProjects = [
         },
         image: "assets/img/biosphere.png",
         gallery: ["assets/img/biosphere.png"],
-        report: "assets/pdf/biosphere-report.pdf",
+        report: "#",
         tags: ["Java", "Algorithmie et Comparaison"],
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-intelligenceartificielle-algorithmique-share-7423392852463906817-jtZ3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
@@ -45,7 +45,7 @@ const saeProjects = [
         },
         image: "assets/img/vm-install.png",
         gallery: ["assets/img/vm-install.png"],
-        report: "assets/pdf/vm-report.pdf",
+        report: "#",
         tags: ["Linux", "Bash", "Virtual Machine"],
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_butinformatique-administrationsystaeyme-clojure-ugcPost-7391106933803438081-mx4s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
@@ -62,7 +62,7 @@ const saeProjects = [
         },
         image: "assets/img/bdd.png",
         gallery: ["assets/img/bdd.png"],
-        report: "assets/pdf/bdd-report.pdf",
+        report: "#",
         tags: ["SQL", "Base de données"],
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_sqlserver-database-iutinformatique-ugcPost-7420940639481118720-z0sp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
@@ -82,7 +82,7 @@ const saeProjects = [
             "assets/img/retro-pc.png",
             "assets/img/retro-pc1.png"
         ],
-        report: "assets/pdf/retro-report.pdf",
+        report: "#",
         tags: ["HTML/CSS", "Web"],
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_webdevelopment-html5-css3-ugcPost-7417162829536890880-ARre?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
@@ -98,7 +98,7 @@ const saeProjects = [
         },
         image: "assets/img/baillardran.png",
         gallery: ["assets/img/baillardran.png"],
-        report: "assets/pdf/baillardran-report.pdf",
+        report: "#",
         tags: ["Gestion", "Analyse"],
         link: "#"
     },
@@ -119,7 +119,7 @@ const saeProjects = [
             "assets/img/jpo4.png",
             "assets/img/jpo5.png"
         ],
-        report: "assets/pdf/jpo-fiche-technique.pdf",
+        report: "#",
         tags: ["Communication", "Organisation"],
         link: "#"
     },
@@ -135,7 +135,7 @@ const saeProjects = [
         },
         image: "assets/img/butopia.png",
         gallery: ["assets/img/butopia.png"],
-        report: "assets/pdf/butopia-report.pdf",
+        report: "#",
         tags: ["C#", ".NET", "Développement", "Git"],
         link: "#"
     }
@@ -282,9 +282,9 @@ window.openModal = function(type, index) {
     document.getElementById('analysis-competences-list').innerHTML = project.analyse.competences.map(comp => `<li>${comp}</li>`).join('');
     document.getElementById('analysis-outils-list').innerHTML = project.analyse.outils.map(outil => `<li>${outil}</li>`).join('');
     
-    // on gère l'affichage des boutons. si je n'ai pas mis de lien ou de rapport, le bouton se cache
+    // on gère l'affichage des boutons avec une sécurité (.trim()) pour ignorer les espaces invisibles
     const reportBtn = document.getElementById('modal-report');
-    if (project.report && project.report !== "#") {
+    if (project.report && project.report.trim() !== "" && project.report.trim() !== "#") {
         reportBtn.href = project.report;
         reportBtn.style.display = "inline-block";
     } else {
@@ -292,7 +292,7 @@ window.openModal = function(type, index) {
     }
 
     const repoBtn = document.getElementById('modal-repo');
-    if (project.link && project.link !== "#") {
+    if (project.link && project.link.trim() !== "" && project.link.trim() !== "#") {
         repoBtn.href = project.link;
         repoBtn.innerText = project.linkLabel ? project.linkLabel : "Code Source / GitHub";
         repoBtn.style.display = "inline-block";
