@@ -3,9 +3,8 @@
     --card-bg: #161616;
     --text-color: #ffffff;
     --text-muted: #a0a0a0;
-    --accent-color: #0f33ff; 
-    --font-main: 'Montserrat', sans-serif;
     --accent-color: #e2725b;
+    --font-main: 'Montserrat', sans-serif;
 }
 
 /* Reset */
@@ -49,6 +48,8 @@ ul { list-style: none; }
     justify-content: center;
     text-align: center;
     padding-top: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 0.5rem; }
@@ -69,20 +70,26 @@ ul { list-style: none; }
     background-color: var(--accent-color);
     color: white;
     border: 2px solid var(--accent-color);
+    box-shadow: 0 0 15px rgba(194, 65, 12, 0.4); 
+    transition: all 0.3s ease;
 }
-.btn-primary:hover { background-color: transparent; }
+
+.btn-primary:hover { 
+    background-color: transparent; 
+    box-shadow: 0 0 25px rgba(194, 65, 12, 0.7);
+}
 
 .btn-secondary {
     border: 2px solid white;
     margin-left: 1rem;
 }
+
 .btn-secondary:hover { background-color: white; color: var(--bg-color); }
 .btn-sm { font-size: 0.8rem; padding: 0.5rem 1rem; margin-left: 0; }
 
-/* Projets Grid */
+/* Grille Projets */
 .section-padding { padding: 6rem 10%; }
 
-/* Titres centrés (Correction Bug Flexbox) */
 .section-title {
     font-size: 2.5rem;
     margin-bottom: 3rem;
@@ -116,8 +123,9 @@ ul { list-style: none; }
     border-color: var(--accent-color);
 }
 
-/* Gestion Images Projets */
+/* Images Projets */
 .card-img-holder {
+    position: relative;
     width: 100%;
     height: 180px;
     overflow: hidden;
@@ -135,6 +143,7 @@ ul { list-style: none; }
 
 .project-card:hover .project-img { transform: scale(1.05); }
 
+/* Infos Projets */
 .project-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
 .project-info h3 { margin-bottom: 0.8rem; font-size: 1.2rem; }
 .project-info p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; flex-grow: 1; }
@@ -148,36 +157,25 @@ ul { list-style: none; }
     color: #ddd;
 }
 
-/* Compétences */
-.skills-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-/*
-   Section Compétences avec animations
-   */
+/* Section Compétences */
 .skills-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
 }
 
-/* 1. État de base de la carte avec la transition préparée */
 .skill-card {
     background: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
     border: 1px solid #222;
-    /* La ligne magique qui rend les animations fluides */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* 2. L'animation globale de la carte quand la souris passe dessus */
 .skill-card:hover {
-    transform: translateY(-8px); /* Fait "décoller" la carte vers le haut */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6); /* Ajoute une ombre plus profonde */
-    border-color: var(--accent-color); /* Les bords s'allument en orange */
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    border-color: var(--accent-color);
 }
 
 .skill-card h3 { 
@@ -185,32 +183,29 @@ ul { list-style: none; }
     margin-bottom: 1.5rem; 
 }
 
-/* 3. Préparation de l'animation pour les éléments de la liste */
 .skill-card li { 
     margin-bottom: 0.8rem; 
     color: var(--text-muted); 
     transition: color 0.3s ease, transform 0.3s ease;
-    cursor: default; /* Montre que c'est du texte, pas un lien */
+    cursor: default;
 }
 
-/* 4. L'effet bonus : les textes glissent à droite et s'illuminent au survol */
 .skill-card li:hover {
-    color: var(--text-color); /* Le texte passe du gris au blanc éclatant */
-    transform: translateX(10px); /* Pousse le texte de 10 pixels vers la droite */
+    color: var(--text-color); 
+    transform: translateX(10px); 
 }
 
-
-/* --- Correction Contact --- */
+/* Section Contact */
 .contact-section { 
     text-align: center; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centre tous les éléments enfants */
+    align-items: center;
     width: 100%;
 }
 
 .contact-section p {
-    margin-bottom: 2rem; /* Espace entre le texte et les boutons */
+    margin-bottom: 2rem;
     max-width: 600px;
 }
 
@@ -225,7 +220,7 @@ ul { list-style: none; }
     margin-left: 0;
 }
 
-/* --- Correction Footer --- */
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem;
@@ -235,15 +230,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive Mobile */
-@media (max-width: 768px) {
-    .navbar { padding: 1rem; }
-    .nav-links { display: none; } /* TODO: Menu Burger */
-    .hero-content h1 { font-size: 2.5rem; }
-    .btn-secondary { margin-left: 0; margin-top: 1rem; display: block; width: 100%; text-align: center; }
-}
-
-/* --- MODALE --- */
+/* Modale */
 .modal {
     display: none;
     position: fixed;
@@ -295,7 +282,7 @@ footer {
 .modal-main-img {
     width: 100%;
     max-height: 400px;
-    object-fit: contain; /* Affiche l'image entière */
+    object-fit: contain;
     background: #000;
     border-radius: 6px;
     margin-bottom: 1.5rem;
@@ -307,7 +294,7 @@ footer {
 .modal-actions { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
 .modal-actions .btn-secondary { margin-left: 0; }
 
-/* Galerie dans la modale */
+/* Galerie Modale */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -327,6 +314,7 @@ footer {
 
 .gallery-img:hover { transform: scale(1.05); border-color: var(--accent-color); }
 
+/* Analyse Box */
 .analysis-box h4 {
     color: var(--accent-color);
     font-size: 1.1rem;
@@ -355,8 +343,7 @@ footer {
     color: #fff;
 }
 
-
-/* photo et titre d'accueil*/
+/* Accueil : Profil */
 .hero-title-wrapper {
     display: flex;
     align-items: center;
@@ -366,209 +353,23 @@ footer {
 }
 
 .hero-title-wrapper h1 {
-    margin-bottom: 0; /* annule la marge par défaut*/
+    margin-bottom: 0;
 }
 
 .hero-profile-pic {
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* fait un rond  */
-    object-fit: cover;  /* évite que la photo soit écrasé */
-    border: 3px solid var(--accent-color); /* contout orange */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
 }
 
-/* ajustement mobile */
-@media (max-width: 768px) {
-    .hero-title-wrapper {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .cta-group {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .btn-secondary {
-        margin-left: 0;
-    }
-}
-/* section à propos */
-
-/* 1. Le conteneur Flexbox */
-.about-container {
-    display: flex;
-    align-items: center; /* Aligne la photo verticalement au centre du texte */
-    gap: 3rem; /* Espace entre les deux colonnes */
-    max-width: 1100px;
-    margin: 0 auto; /* Centre tout le bloc sur l'écran */
-}
-
-/* 2. Colonne Image */
-.about-image-col {
-    flex: 1; /* Prend une part d'espace */
-}
-
-/* La photo : rectangulaire, bords arrondis avec animation */
-.about-img {
-    width: 100%;
-    height: auto;
-    max-width: 400px;
-    border-radius: 12px;
-    border: 2px solid var(--accent-color);
-    display: block;
-    margin: 0 auto;
-    
-    /* NOUVEAU : Ombre de base et transition */
-    box-shadow: 0 10px 30px rgba(194, 65, 12, 0.15); 
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    
-    /* NOUVEAU : Lancement de l'animation de flottaison */
-    animation: floatImage 6s ease-in-out infinite;
-}
-
-/* Effet au survol de la souris (Hover) */
-.about-img:hover {
-    box-shadow: 0 15px 40px rgba(194, 65, 12, 0.4); /* L'ombre orange s'intensifie */
-    /* On suspend la flottaison pour un effet de soulèvement net */
-    animation-play-state: paused; 
-    transform: translateY(-10px) scale(1.02);
-}
-
-/* Clé d'animation pour l'effet flottant */
-@keyframes floatImage {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-}
-
-/* 3. Colonne Texte */
-.about-text-col {
-    flex: 1.5; /* Prend un peu plus d'espace pour le texte */
-    text-align: left; /* Force l'alignement à gauche pour tout le texte */
-}
-
-/* Ton titre d'accroche (Enchanté...) : GROS, ORANGE et GRAS */
-.about-subtitle {
-    font-size: 1.6rem;
-    font-weight: 900;
-    color: var(--accent-color); /* Applique l'orange */
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.5px;
-    display: block;
-}
-
-/* Style des paragraphes */
-.about-text-col p {
-    color: #ccc;
-    margin-bottom: 1.2rem;
-    font-size: 0.95rem;
-}
-
-/* Style des mots en gras (BUT, Web) */
-.about-text-col strong {
-    color: var(--text-color);
-}
-
-/* Alignement du bouton CV */
-.about-actions {
-    margin-top: 2rem;
-}
-
-/* --- Responsive pour mobiles --- */
-@media (max-width: 800px) {
-    .about-container {
-        flex-direction: column; /* Empile l'image au-dessus du texte sur téléphone */
-        gap: 2rem;
-    }
-    .about-image-col {
-        width: 100%;
-    }
-    .about-img {
-        width: 100%;
-        max-width: 300px;
-    }
-    .about-text-col {
-        text-align: center; /* Centre le texte sur téléphone */
-    }
-}
-
-
-
-/* badges de statut */
-
-/* Il faut forcer le conteneur de l'image en position relative pour
-   pouvoir positionner les badges en absolu par-dessus */
-.card-img-holder {
-    position: relative;
-    /* ...tes autres styles existants... */
-}
-
-/* Conteneur pour empiler les badges verticalement si besoin */
-.project-badges {
-    position: absolute;
-    top: 10px; /* Espace depuis le haut */
-    right: 10px; /* Espace depuis la droite */
-    display: flex;
-    flex-direction: column; /* Empilement vertical */
-    gap: 5px; /* Espace entre les badges */
-    z-index: 10; /* Assure la visibilité au-dessus de l'image */
-}
-
-/* Style commun à tous les badges sur l'image */
-.p-badge {
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase; /* Tout en majuscule, comme demandé pour les badges */
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    backdrop-filter: blur(2px); /* Léger effet de flou pour intégration Dark Mode */
-}
-
-/* Badge "Coup de cœur" (Orange) */
-.p-badge.favorite {
-    background-color: rgba(255, 107, 0, 0.9); /* Ton orange classe, presque opaque */
-    color: #fff;
-    border: 1px solid var(--accent-color);
-}
-
-/* Badge "En cours" (Gris neutre) */
-.p-badge.wip {
-    background-color: rgba(30, 30, 30, 0.9); /* Gris foncé */
-    color: var(--text-muted);
-    border: 1px solid #444;
-}
-
-/* animations et accueil */
-
-/* 1. Apparition douce au scroll */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px); /* L'élément commence un peu plus bas */
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0); /* Remonte à sa position finale */
-}
-
-/* 2. Dynamisation de la page d'accueil (Hero) */
-.hero-section {
-    position: relative;
-    z-index: 1;
-}
-
-/* Halo lumineux renforcé derrière ton nom/photo */
 .hero-glow {
     position: absolute;
-    width: 70vw; /* Légèrement plus large */
+    width: 70vw;
     height: 70vw;
     max-width: 800px;
     max-height: 800px;
-    /* On passe l'opacité de 0.12 à 0.25 pour que l'orange se voie plus */
     background: radial-gradient(circle, rgba(194, 65, 12, 0.25) 0%, rgba(12, 12, 12, 0) 70%); 
     top: 50%;
     left: 50%;
@@ -583,17 +384,154 @@ footer {
     100% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
 }
 
-/* Ajout d'une aura lumineuse sur les boutons principaux (Orange) */
-.btn-primary {
-    background-color: var(--accent-color);
-    color: white;
+/* Section À Propos */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.about-image-col {
+    flex: 1;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 12px;
     border: 2px solid var(--accent-color);
-    box-shadow: 0 0 15px rgba(194, 65, 12, 0.4); /* Effet néon discret */
-    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(194, 65, 12, 0.15); 
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: floatImage 6s ease-in-out infinite;
 }
 
-.btn-primary:hover { 
-    background-color: transparent; 
-    box-shadow: 0 0 25px rgba(194, 65, 12, 0.7); /* Le néon s'intensifie au survol */
+.about-img:hover {
+    box-shadow: 0 15px 40px rgba(194, 65, 12, 0.4); 
+    animation-play-state: paused; 
+    transform: translateY(-10px) scale(1.02);
 }
 
+@keyframes floatImage {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.about-text-col {
+    flex: 1.5;
+    text-align: left;
+}
+
+.about-subtitle {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+.about-text-col p {
+    color: #ccc;
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+}
+
+.about-text-col strong {
+    color: var(--text-color);
+}
+
+.about-actions {
+    margin-top: 2rem;
+}
+
+/* Badges Projets */
+.project-badges {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 10;
+}
+
+.p-badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    backdrop-filter: blur(2px);
+}
+
+.p-badge.favorite {
+    background-color: rgba(255, 107, 0, 0.9);
+    color: #fff;
+    border: 1px solid var(--accent-color);
+}
+
+.p-badge.wip {
+    background-color: rgba(30, 30, 30, 0.9);
+    color: var(--text-muted);
+    border: 1px solid #444;
+}
+
+/* Animations Scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Mobile */
+@media (max-width: 800px) {
+    .about-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .about-image-col {
+        width: 100%;
+    }
+    .about-img {
+        width: 100%;
+        max-width: 300px;
+    }
+    .about-text-col {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 1rem; }
+    .nav-links { display: none; } 
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-title-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .cta-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .btn-secondary {
+        margin-left: 0;
+        display: block; 
+        width: 100%; 
+        text-align: center;
+    }
+}

@@ -209,7 +209,7 @@ const persoProjects = [
         gallery: ["assets/img/portfolio.png", "assets/img/portfolio1.png"],
         report: "#", 
         tags: ["Web", "Design", "Vanilla JS"],
-        link: "#",
+        link: "https://github.com/zakksbr/portfolio-zak.git",
         linkLabel: "Voir le code sur GitHub"
     }
 ];
