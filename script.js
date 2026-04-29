@@ -125,7 +125,6 @@ const saeProjects = [
     },
     {
         title: "Développement d'une application",
-        wip: true,
         description: "Application C# de gestion de personnages et simulateur de jeu de rôles avec architecture Orientée Objet intégrale.",
         analyse: {
             cahier: "Concevoir en équipe de 3 une application WinForms robuste traduisant des règles d'un jeu fictif.",
