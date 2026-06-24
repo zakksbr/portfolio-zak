@@ -32,7 +32,8 @@
 
     <main>
         <section id="about" class="hero-section">
-            <div class="hero-glow"></div> <div class="hero-content">
+            <div class="hero-glow"></div> 
+            <div class="hero-content">
                 <div class="hero-title-wrapper">
                     <img src="assets/img/ma-photo.jpg" alt="Photo de Zakaria" class="hero-profile-pic">
                     <h1>Zakaria SABRI</h1>
@@ -45,20 +46,25 @@
                     <a href="#presentation" class="btn btn-secondary">À propos de moi</a>
                     <a href="#contact" class="btn btn-secondary">Me contacter</a>
                 </div>
+
+                <div class="mode-toggle-container">
+                    <button id="switch-world-btn" class="btn btn-referee">Décourvrir mon deuxième métier ⚽</button>
+                </div>
             </div>
         </section>
 
-        <section id="perso-projects" class="section-padding">
-            <h2 class="section-title">Projets Personnels</h2>
-            <div class="projects-grid" id="perso-container">
+        <div id="world-dev">
+            <section id="perso-projects" class="section-padding">
+                <h2 class="section-title">Projets Personnels</h2>
+                <div class="projects-grid" id="perso-container">
                 </div>
-        </section>
+            </section>
 
-        <section id="projects" class="section-padding">
-            <h2 class="section-title">Projets Universitaires</h2>
-            <div class="projects-grid" id="sae-container">
+            <section id="projects" class="section-padding">
+                <h2 class="section-title">Projets Universitaires</h2>
+                <div class="projects-grid" id="sae-container">
                 </div>
-        </section>
+            </section>
 
         <section id="skills" class="section-padding">
             <h2 class="section-title">Compétences</h2>
@@ -122,18 +128,26 @@
                         <a href="assets/pdf/CV_Zakaria_Sabri.pdf" target="_blank" class="btn btn-primary">Consulter mon CV</a>
                     </div>
                 </div>
+            </section>
 
-            </div>
-        </section>
+            <section id="contact" class="section-padding contact-section">
+                <h2 class="section-title">Contact</h2>
+                <p>Rentrons en contact !</p>
+                <div class="contact-actions">
+                    <a href="mailto:zakaria.sabri@etu.u-bordeaux.fr" class="btn btn-primary">M'envoyer un email</a>
+                    <a href="https://linkedin.com/in/zakaria-sabri-33b81b35b" target="_blank" class="btn btn-secondary">Mon LinkedIn</a>
+                </div>
+            </section>
+        </div>
 
-        <section id="contact" class="section-padding contact-section">
-            <h2 class="section-title">Contact</h2>
-            <p>Rentrons en contact !</p>
-            <div class="contact-actions">
-                <a href="mailto:zakaria.sabri@etu.u-bordeaux.fr" class="btn btn-primary">M'envoyer un email</a>
-                <a href="https://linkedin.com/in/zakaria-sabri-33b81b35b" target="_blank" class="btn btn-secondary">Mon LinkedIn</a>
-            </div>
-        </section>
+        <div id="world-referee">
+            <section class="section-padding">
+                <h2>Tableau de Bord</h2>
+                <h2>Condition Physique</h2>
+                <h2>Retours & Observations</h2>
+            </section>
+        </div>
+
     </main>
 
     <footer>
@@ -143,48 +157,40 @@
     <div id="project-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            
             <div class="modal-header">
                 <h2 id="modal-title">Titre du Projet</h2>
                 <div id="modal-tags" class="project-tags"></div>
             </div>
-
             <div class="modal-body">
                 <img id="modal-image" src="" alt="" class="modal-main-img">
-                
                 <div class="modal-text">
                     <div class="analysis-grid">
                         <div class="analysis-box">
                             <h4>Cahier des charges</h4>
                             <p id="analysis-cahier-text"></p>
                         </div>
-                        
                         <div class="analysis-box">
                             <h4>Résultats (KPIs)</h4>
                             <p id="analysis-resultats-text"></p>
                         </div>
-                        
                         <div class="analysis-box">
                             <h4>Compétences Acquises</h4>
                             <ul class="analysis-tags" id="analysis-competences-list"></ul>
                         </div>
-                        
                         <div class="analysis-box">
                             <h4>Outils et méthodes</h4>
                             <ul class="analysis-tags" id="analysis-outils-list"></ul>
                         </div>
                     </div>
-                    
                     <div class="modal-actions">
                         <a id="modal-report" href="#" target="_blank" class="btn btn-primary">Voir le Rapport (PDF)</a>
                         <a id="modal-repo" href="#" target="_blank" class="btn btn-secondary">Code Source / GitHub</a>
                     </div>
                 </div>
-
                 <div class="modal-gallery">
                     <h3>Galerie</h3>
                     <div class="gallery-grid" id="modal-gallery-grid">
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-zak",
+  "version": "1.0.0",
+  "description": "Ceci est le dépôt de mon portfolio personnel, développé dans le cadre de ma formation en **BUT Informatique**. Ce site a pour objectif de présenter mes réalisations, personnelles mais aussi professionnelles via les recueils de **SAÉ (Situation d'Apprentissage et d'Évaluation)** validés durant mon cursus.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakksbr/portfolio-zak.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/zakksbr/portfolio-zak/issues"
+  },
+  "homepage": "https://github.com/zakksbr/portfolio-zak#readme"
+}
