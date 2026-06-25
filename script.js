@@ -453,3 +453,57 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
+
+
+// gestion du switch entre les deux mondes (développeur et arbitre)
+
+const switchBtn = document.getElementById('switch-world-btn');
+const worldDev = document.getElementById('world-dev');
+const worldReferee = document.getElementById('world-referee');
+
+// var pour suivre dans quel monde on se trouve
+let isRefereeMode = false;
+
+// on vérifie que le bouton existe bien sur la page pour éviter les erreurs
+if (switchBtn) {
+    // initialisation du bouton
+    switchBtn.innerHTML = 'DÉCOUVRIR MON DEUXIÈME MÉTIER ⚽';
+
+    switchBtn.addEventListener('click', () => {
+        isRefereeMode = !isRefereeMode; // On inverse l'état
+
+        if (isRefereeMode) {
+            // passage en mode arbitre
+            
+            // on masque le monde développeur
+            worldDev.style.display = 'none';
+            
+            // et on affiche le monde arbitre
+            worldReferee.style.display = 'block';
+            
+            //on change le texte du bouton pour indiquer qu'on peut revenir en arrière
+            switchBtn.innerHTML = 'RETOUR AU PROFIL TECH 💻';
+            
+            // pour faire jojo
+            document.body.style.backgroundColor = '#0a120d'; 
+
+        } else {
+            // retout en mode dev
+            
+            //On masque le monde arbitre
+            worldReferee.style.display = 'none';
+            
+            //on réaffiche le monde développeur
+            worldDev.style.display = 'block';
+            
+            // 3. On remet le texte initial du bouton
+            switchBtn.innerHTML = 'DÉCOUVRIR MON DEUXIÈME MÉTIER ⚽';
+            
+            // 4. On restaure la couleur de fond noire d'origine
+            document.body.style.backgroundColor = 'var(--bg-color)';
+        }
+        
+        // Petite astuce : on remonte la page automatiquement en haut au changement de monde
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
