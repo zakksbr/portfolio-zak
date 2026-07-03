@@ -28,6 +28,12 @@
             <li><a href="#presentation">Qui suis-je</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <ul class="nav-links-referee">
+            <li><a href="#ref-dashboard">Tableau de bord</a></li>
+            <li><a href="#ref-divisions">Divisions & Catégories</a></li>
+            <li><a href="#ref-history">Précédemment</a></li>
+            <li><a href="#ref-feedbacks">Retours</a></li>
+        </ul>
     </nav>
 
     <main>
@@ -38,17 +44,34 @@
                     <img src="assets/img/ma-photo.jpg" alt="Photo de Zakaria" class="hero-profile-pic">
                     <h1>Zakaria SABRI</h1>
                 </div>
-                <h2>Étudiant en BUT Informatique</h2>
-                <p>OBJECTIF: Stage en DevOps, Administration Système & Réseaux à partir de Janvier 2026</p>
-                
-                <div class="cta-group">
-                    <a href="#perso-projects" class="btn btn-primary">Voir mes réalisations</a>
-                    <a href="#presentation" class="btn btn-secondary">À propos de moi</a>
-                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
+
+                <div class="dev-content">
+                    <h2>Étudiant en deuxième année de BUT Informatique</h2>
+                    <p>OBJECTIF: Stage en DevOps, Administration Système & Réseaux à partir de Janvier 2026</p>
+                    
+                    <div class="cta-group">
+                        <a href="#perso-projects" class="btn btn-primary">Voir mes réalisations</a>
+                        <a href="#presentation" class="btn btn-secondary">À propos de moi</a>
+                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+                    </div>
+                </div>
+
+                <div class="referee-content">
+                    <h2>Jeune Arbitre District</h2>
+                    <div class="referee-affiliations-wrapper">
+                        <img src="assets/img/DISTRICT.png" alt="Logo District Gironde" class="referee-logo">
+                        
+                        <div class="referee-affiliations-text">
+                            <p>District de la Gironde</p>
+                            <p>SAM Football</p>
+                        </div>
+                        
+                        <img src="assets/img/SAM.svg" alt="Logo SAM Football" class="referee-logo">
+                    </div>
                 </div>
 
                 <div class="mode-toggle-container">
-                    <button id="switch-world-btn" class="btn btn-referee">Décourvrir mon deuxième métier ⚽</button>
+                    <button id="switch-world-btn" class="btn-referee">DÉCOUVRIR MON DEUXIÈME MÉTIER ⚽</button>
                 </div>
             </div>
         </section>
@@ -141,14 +164,98 @@
         </div>
 
         <div id="world-referee">
-            <section class="section-padding">
-                <h2>Tableau de Bord</h2>
-                <h2>Condition Physique</h2>
-                <h2>Retours & Observations</h2>
-            </section>
-        </div>
+            
+            <section id="ref-dashboard" class="section-padding referee-section">
+                <h2 class="referee-title">Tableau de Bord</h2>
+                <div class="referee-dashboard-grid">
+                    <div class="ref-stat-card">
+                        <div class="ref-card-header">
+                            <span class="ref-icon">⚽</span>
+                            <h3>Arbitre Central</h3>
+                        </div>
+                        <ul class="ref-stat-list">
+                            <li><strong>4</strong> Matchs Officiés</li>
+                            <li><strong>00</strong> Minutes</li>
+                            <li><strong>00</strong> Km parcourus</li>
+                        </ul>
+                    </div>
 
-    </main>
+                    <div class="ref-stat-card">
+                        <div class="ref-card-header">
+                            <span class="ref-icon">🚩</span>
+                            <h3>Arbitre Assistant</h3>
+                        </div>
+                        <ul class="ref-stat-list">
+                            <li><strong>0</strong> Matchs Officiés</li>
+                            <li><strong>00</strong> Minutes</li>
+                            <li><strong>00</strong> Km parcourus</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ref-divisions" class="section-padding referee-section">
+                <h2 class="referee-title">Divisions & Catégories</h2>
+                <div class="ref-table-wrapper">
+                    <table class="ref-table">
+                        <tbody>
+                            <tr>
+                                <td>Sénior Départemental 2</td>
+                                <td>1 Match</td>
+                            </tr>
+                            <tr>
+                                <td>U17 Départementale 4</td>
+                                <td>2 Matchs</td>
+                            </tr>
+                            <tr>
+                                <td>U15 Départementale 3</td>
+                                <td>1 Match</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="ref-history" class="section-padding referee-section">
+                <h2 class="referee-title">Précédemment...</h2>
+                <div class="ref-formation">
+                    <span class="ref-icon">-></span> Formation obtenue le : <strong>08 Février 2026</strong>
+                </div>
+
+                <div class="ref-timeline-container">
+                    <div class="ref-timeline-line"></div>
+                    
+                    <div class="ref-timeline-item">
+                        <div class="ref-timeline-top">
+                            <h4>Saison 25/26</h4>
+                            <p>Février 2026</p>
+                        </div>
+                        <div class="ref-timeline-dot"></div>
+                        <div class="ref-timeline-bottom">
+                            <p>JAS (Jeune Arbitre Stagiaire)</p>
+                        </div>
+                    </div>
+
+                    <div class="ref-timeline-item">
+                        <div class="ref-timeline-top">
+                            <h4>Saison 26/27</h4>
+                            <p>Juin 2026</p>
+                        </div>
+                        <div class="ref-timeline-dot"></div>
+                        <div class="ref-timeline-bottom">
+                            <p>JAD (Jeune Arbitre District)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ref-feedbacks" class="section-padding referee-section">
+                <h2 class="referee-title">Retours</h2>
+                <div class="feedback-grid" id="feedback-container">
+                    </div>
+            </section>
+
+        </div> </main>
 
     <footer>
         <p>&copy; 2026 Zakaria Sabri.</p>
@@ -191,6 +298,31 @@
                     <h3>Galerie</h3>
                     <div class="gallery-grid" id="modal-gallery-grid">
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content feedback-modal-content">
+            <span class="close-feedback-btn">&times;</span>
+            
+            <div class="feedback-modal-header">
+                <div class="logo-placeholder"></div>
+                <h3 id="modal-match-title">ÉQUIPE 1 - ÉQUIPE 2</h3>
+                <div class="logo-placeholder"></div>
+            </div>
+            
+            <div class="feedback-modal-body">
+                <div class="terrain-box">
+                    <h4>TERRAIN</h4>
+                    <img id="modal-terrain-img" src="" alt="Schéma du terrain" style="display:none;">
+                </div>
+                
+                <div class="matrices-box">
+                    <h4>TOUTES LES MATRICES</h4>
+                    <ul id="modal-matrices-list" class="matrices-list">
+                    </ul>
                 </div>
             </div>
         </div>

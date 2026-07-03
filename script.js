@@ -457,53 +457,128 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // gestion du switch entre les deux mondes (développeur et arbitre)
 
-const switchBtn = document.getElementById('switch-world-btn');
-const worldDev = document.getElementById('world-dev');
-const worldReferee = document.getElementById('world-referee');
+const switchBtn = document.getElementById('switch-world-btn')
+const worldDev = document.getElementById('world-dev')
+const worldReferee = document.getElementById('world-referee')
+let isRefereeMode = false
 
-// var pour suivre dans quel monde on se trouve
-let isRefereeMode = false;
-
-// on vérifie que le bouton existe bien sur la page pour éviter les erreurs
 if (switchBtn) {
-    // initialisation du bouton
-    switchBtn.innerHTML = 'DÉCOUVRIR MON DEUXIÈME MÉTIER ⚽';
-
+    switchBtn.innerHTML = 'DÉCOUVRIR MON DEUXIÈME MÉTIER ⚽'
     switchBtn.addEventListener('click', () => {
-        isRefereeMode = !isRefereeMode; // On inverse l'état
-
+        isRefereeMode = !isRefereeMode
         if (isRefereeMode) {
-            // passage en mode arbitre
+            document.body.classList.add('referee-mode')
+            worldDev.style.display = 'none'
+            worldReferee.style.display = 'block'
+            switchBtn.innerHTML = 'RETOUR EN INFORMATIQUE 💻'
+            document.body.style.backgroundColor = 'var(--bg-color)'
             
-            // on masque le monde développeur
-            worldDev.style.display = 'none';
+            document.querySelectorAll('#world-referee .reveal').forEach(el => {
+                el.classList.add('active')
+            })
             
-            // et on affiche le monde arbitre
-            worldReferee.style.display = 'block';
-            
-            //on change le texte du bouton pour indiquer qu'on peut revenir en arrière
-            switchBtn.innerHTML = 'RETOUR AU PROFIL TECH 💻';
-            
-            // pour faire jojo
-            document.body.style.backgroundColor = '#0a120d'; 
+            setTimeout(() => {
+                worldReferee.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }, 100)
 
         } else {
-            // retout en mode dev
+            document.body.classList.remove('referee-mode')
+            worldReferee.style.display = 'none'
+            worldDev.style.display = 'block'
+            switchBtn.innerHTML = 'DÉCOUVRIR MON DEUXIÈME MÉTIER ⚽'
+            document.body.style.backgroundColor = 'var(--bg-color)'
             
-            //On masque le monde arbitre
-            worldReferee.style.display = 'none';
-            
-            //on réaffiche le monde développeur
-            worldDev.style.display = 'block';
-            
-            // 3. On remet le texte initial du bouton
-            switchBtn.innerHTML = 'DÉCOUVRIR MON DEUXIÈME MÉTIER ⚽';
-            
-            // 4. On restaure la couleur de fond noire d'origine
-            document.body.style.backgroundColor = 'var(--bg-color)';
+            window.scrollTo({ top: 0, behavior: 'smooth' })
         }
-        
-        // Petite astuce : on remonte la page automatiquement en haut au changement de monde
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
+
+}
+
+
+// --- DONNÉES DES RETOURS D'ARBITRAGE ---
+const feedbackData = [
+    {
+        team1: "LOUBÉSIENS",
+        team2: "PIAN MEDOC",
+        date: "Le 15/03/2026",
+        appreciation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bon match dans l'ensemble.",
+        matrices: [
+            "<strong>CONDITION PHYSIQUE / DÉPLACEMENTS :</strong> Toujours à distance de jeu correcte.",
+            "<strong>COMPÉTENCES TECHNIQUES :</strong> Coups de sifflet clairs et précis.",
+            "<strong>GESTION DISCIPLINAIRE :</strong> Bonne prévention sur les fautes d'imprudence.",
+            "<strong>ATTITUDE COMPORTEMENT :</strong> Calme et serein face aux contestations."
+        ]
+    },
+    {
+        team1: "FC GIRONDE",
+        team2: "AC MILAN (U15)",
+        date: "Le 22/03/2026",
+        appreciation: "Très bon arbitrage dans un match avec beaucoup d'intensité.",
+        matrices: [
+            "<strong>CONDITION PHYSIQUE / DÉPLACEMENTS :</strong> Excellente anticipation sur les contre-attaques rapides.",
+            "<strong>COMPÉTENCES TECHNIQUES :</strong> Application rigoureuse des lois de l'IFAB, notamment sur les fautes de main.",
+            "<strong>GESTION DISCIPLINAIRE :</strong> Avertissements justifiés et distribués au bon moment.",
+            "<strong>ATTITUDE COMPORTEMENT :</strong> Communication excellente avec les deux capitaines."
+        ]
+    }
+];
+
+const feedbackContainer = document.getElementById('feedback-container');
+
+// Injection dynamique des cartes
+if (feedbackContainer) {
+    feedbackData.forEach((fb, index) => {
+        const card = document.createElement('div');
+        card.classList.add('feedback-card');
+        card.innerHTML = `
+            <div class="feedback-card-header">
+                <div class="logo-placeholder"></div>
+                <div class="feedback-match-info">
+                    <h4>${fb.team1} - ${fb.team2}</h4>
+                    <p>${fb.date}</p>
+                </div>
+                <div class="logo-placeholder"></div>
+            </div>
+            <div class="feedback-card-body">
+                <h5>Appréciation générale :</h5>
+                <p>${fb.appreciation}</p>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="openFeedbackModal(${index})">Voir plus</button>
+        `;
+        feedbackContainer.appendChild(card);
     });
 }
+
+// Gestion de la modale des retours
+const fbModal = document.getElementById('feedback-modal');
+const fbCloseBtn = document.querySelector('.close-feedback-btn');
+
+window.openFeedbackModal = function(index) {
+    const data = feedbackData[index];
+    
+    // Mise à jour des textes de la modale
+    document.getElementById('modal-match-title').innerText = `${data.team1} - ${data.team2}`;
+    
+    // Mise à jour de la liste des matrices
+    const matricesList = document.getElementById('modal-matrices-list');
+    matricesList.innerHTML = data.matrices.map(m => `<li>${m}</li>`).join('');
+    
+    // Affichage de la modale
+    fbModal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+if (fbCloseBtn) {
+    fbCloseBtn.onclick = function() {
+        fbModal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Fermeture au clic à l'extérieur de la modale
+window.addEventListener('click', function(event) {
+    if (event.target == fbModal) {
+        fbModal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+});
