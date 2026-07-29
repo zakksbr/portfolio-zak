@@ -507,7 +507,7 @@ const feedbackData = [
         category: "U17 D4",
         tutor: "GAGNAIRE Anthony",
         appreciation: "Très bon match dans l'ensemble. Condition physique + placement trop axiale et loin des fautes.",
-        conseils: "Travail sur la condition physique et sur le placement.",
+        conseils: "Travail sur la condition physique et sur le placement    .",
         evaluations: [
             {
                 titre: "Condition Physique / Déplacements / Placements",
