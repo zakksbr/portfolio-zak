@@ -900,7 +900,10 @@ body.referee-mode .nav-links-referee a:hover {
 }
 
 .feedback-modal-content {
-    max-width: 700px;
+    max-width: 1000px;
+    width: 90%;
+    position: relative; /* Indispensable pour que la croix s'aligne par rapport à la fenêtre */
+    border: 2px solid #2ecc71; /* Le fameux contour vert */
 }
 
 .feedback-modal-header {
@@ -970,4 +973,218 @@ body.referee-mode .nav-links-referee a:hover {
 .referee-affiliations-text p {
     margin: 0.2rem 0; /* Réduit l'espace entre les deux lignes de texte */
     line-height: 1.2;
+}
+
+.match-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.meta-badge {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.tutor-name {
+    color: #a0a0a0;
+    font-style: italic;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.appreciation-box {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.appreciation-box h4 {
+    color: #2ecc71;
+    margin-bottom: 1rem;
+}
+
+.appreciation-box p {
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.conseils-box {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+}
+
+.conseils-box h5 {
+    color: #e67e22; /* Orange pour attirer l'attention sur les axes d'amélioration */
+    margin-bottom: 0.5rem;
+}
+
+.eval-category {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.eval-category h5 {
+    color: #ffffff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.eval-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed #222;
+}
+
+.eval-item:last-child {
+    border-bottom: none;
+}
+
+.eval-item-name {
+    color: #ccc;
+    font-size: 0.95rem;
+    flex: 1;
+    padding-right: 1rem;
+}
+
+.eval-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.badge-acquis {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+}
+
+.badge-encours {
+    background-color: rgba(230, 126, 34, 0.15);
+    color: #e67e22;
+    border: 1px solid #e67e22;
+}
+
+.close-feedback-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.close-feedback-btn:hover {
+    color: #2ecc71;
+}
+
+.conseils-box h5 {
+    color: #2ecc71; 
+    margin-bottom: 0.5rem;
+}
+
+.badge-encours {
+    background-color: rgba(46, 204, 113, 0.1); /* Fond légèrement vert */
+    color: #2ecc71;
+    border: 1px solid #2ecc71; /* Bordure verte */
+}
+
+
+.match-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 5px;
+    border: 2px solid #333;
+}
+
+.feedback-modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Espace entre les logos et le texte central */
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #333;
+}
+
+.header-center-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.badge-nonobs {
+    background-color: rgba(160, 160, 160, 0.15);
+    color: #a0a0a0;
+    border: 1px solid #a0a0a0;
+}
+
+/* --- SECTION PRÉSENTATION ARBITRE --- */
+.ref-about-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1000px; /* Plus grand pour donner de la place à l'image */
+    margin: 0 auto;
+}
+
+.ref-about-img-col {
+    flex: 1; /* Équilibre parfait 50/50 avec le texte pour agrandir la photo */
+}
+
+.ref-about-img {
+    width: 100%;
+    border-radius: 15px;
+    border: 2px solid #2ecc71;
+    box-shadow: 0 0 25px rgba(46, 204, 113, 0.15);
+    object-fit: cover;
+}
+
+.ref-about-text-col {
+    flex: 1; /* Équilibre parfait 50/50 avec l'image */
+    text-align: left;
+}
+
+.ref-about-text-col h3 {
+    font-size: 2.2rem;
+    color: #2ecc71;
+    margin-bottom: 1.5rem; /* La marge est remontée ici */
+    font-weight: 700;
+}
+
+.ref-subtitle {
+    color: #2ecc71 !important; 
+    font-size: 1.3rem !important;
+    margin-left: 10px; /* Décale le texte à droite du prénom */
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Cible uniquement les paragraphes standards pour l'italique */
+.ref-about-text-col p:not(.ref-subtitle) {
+    color: #cccccc;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    font-style: italic; /* Mise en italique du texte */
 }

@@ -165,6 +165,21 @@
 
         <div id="world-referee" style="display: none;">
             
+            <section id="ref-about" class="section-padding referee-section reveal">
+                <div class="ref-about-container">
+                    <div class="ref-about-img-col">
+                        <!-- Pensez à glisser une photo de vous en tenue dans le dossier img -->
+                        <img src="assets/img/zak.jpg" alt="Zakaria Sabri - Arbitre" class="ref-about-img">
+                    </div>
+                    <div class="ref-about-text-col">
+                        <h3>Salut ! Moi c'est Zakaria <span class="ref-subtitle">(L'arbitre)</span></h3>
+                        <p>Passionné de football depuis l'âge de 6 ans, j'ai commencé mon parcours au sifflet en <strong>février 2026</strong>. Affilié au <strong>SAM Football</strong> depuis <strong>Juin 2026</strong> et officiant pour le <strong>District de la Gironde</strong>, j'ai à cœur de veiller au bon déroulement des rencontres et au respect des lois du jeu.</p>
+                        <p>L'arbitrage m'a enseigné plein de choses, comme par exemple la prise de décision rapide et la gestion de la pression, mais c'est aussi une école de la vie qui complète mon temps libre en plus de ma formation en Informatique.</p>
+                    </div>
+                </div>
+            </section>
+
+
             <section id="ref-dashboard" class="section-padding referee-section">
                 <h2 class="referee-title">Tableau de Bord</h2>
                 <div class="referee-dashboard-grid">
@@ -304,28 +319,44 @@
     </div>
 
     <div id="feedback-modal" class="modal">
+
         <div class="modal-content feedback-modal-content">
             <span class="close-feedback-btn">&times;</span>
             
             <div class="feedback-modal-header">
-                <div class="logo-placeholder"></div>
-                <h3 id="modal-match-title">ÉQUIPE 1 - ÉQUIPE 2</h3>
-                <div class="logo-placeholder"></div>
+                <img id="modal-logo1" src="" alt="Logo Domicile" class="match-logo">
+                
+                <div class="header-center-info">
+                    <div class="match-meta">
+                        <span id="modal-match-date" class="meta-badge"></span>
+                        <span id="modal-match-cat" class="meta-badge"></span>
+                    </div>
+                    <h3 id="modal-match-title">ÉQUIPE 1 - ÉQUIPE 2</h3>
+                    <p id="modal-match-tutor" class="tutor-name"></p>
+                </div>
+                
+                <img id="modal-logo2" src="" alt="Logo Extérieur" class="match-logo">
             </div>
             
             <div class="feedback-modal-body">
-                <div class="terrain-box">
-                    <h4>TERRAIN</h4>
-                    <img id="modal-terrain-img" src="" alt="Schéma du terrain" style="display:none;">
+                <div class="appreciation-box">
+                    <h4>Appréciation Générale</h4>
+                    <p id="modal-appreciation"></p>
+                    <div class="conseils-box">
+                        <h5>Conseils Prioritaires :</h5>
+                        <p id="modal-conseils"></p>
+                    </div>
                 </div>
                 
                 <div class="matrices-box">
-                    <h4>TOUTES LES MATRICES</h4>
-                    <ul id="modal-matrices-list" class="matrices-list">
-                    </ul>
+                    <h4>Détail des Évaluations</h4>
+                    <div id="modal-matrices-container" class="matrices-container">
+                        <!-- Les tableaux d'évaluation seront injectés ici par JS -->
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <script src="script.js"></script>

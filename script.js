@@ -498,70 +498,281 @@ if (switchBtn) {
 // --- DONNÉES DES RETOURS D'ARBITRAGE ---
 const feedbackData = [
     {
-        team1: "LOUBÉSIENS",
-        team2: "PIAN MEDOC",
-        date: "Le 15/03/2026",
-        appreciation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bon match dans l'ensemble.",
-        matrices: [
-            "<strong>CONDITION PHYSIQUE / DÉPLACEMENTS :</strong> Toujours à distance de jeu correcte.",
-            "<strong>COMPÉTENCES TECHNIQUES :</strong> Coups de sifflet clairs et précis.",
-            "<strong>GESTION DISCIPLINAIRE :</strong> Bonne prévention sur les fautes d'imprudence.",
-            "<strong>ATTITUDE COMPORTEMENT :</strong> Calme et serein face aux contestations."
+        // MATCH 1 (Bègles)
+        team1: "BÈGLES",
+        team2: "PAYS AUROSAIS",
+        logo1: "assets/img/begles.png.webp",
+        logo2: "assets/img/fcpa.png",
+        date: "23/05/2026",
+        category: "U17 D4",
+        tutor: "GAGNAIRE Anthony",
+        appreciation: "Très bon match dans l'ensemble. Condition physique + placement trop axiale et loin des fautes.",
+        conseils: "Travail sur la condition physique et sur le placement.",
+        evaluations: [
+            {
+                titre: "Condition Physique / Déplacements / Placements",
+                criteres: [
+                    { nom: "Échauffement", statut: "acquis" },
+                    { nom: "Suivre l'évolution du jeu et capacité à reproduire les efforts", statut: "en-cours" },
+                    { nom: "Utilisation des différentes courses", statut: "en-cours" },
+                    { nom: "Occupation adaptée de l'aire de jeu", statut: "acquis" },
+                    { nom: "Présence rapide sur faute importante ou conflit", statut: "acquis" },
+                    { nom: "Placement sur coup d'envoi", statut: "acquis" },
+                    { nom: "Placement coup de pied de but", statut: "acquis" },
+                    { nom: "Placement sur pénalty", statut: "acquis" },
+                    { nom: "Placement sur corner", statut: "en-cours" },
+                    { nom: "Placement sur rentrée de touche", statut: "acquis" },
+                    { nom: "Placement sur coups francs", statut: "acquis" }
+                ]
+            },
+            {
+                titre: "Compétences Techniques",
+                criteres: [
+                    { nom: "Application des lois du jeu", statut: "acquis" },
+                    { nom: "Exécution des remises en jeu", statut: "acquis" },
+                    { nom: "Détection des fautes", statut: "acquis" },
+                    { nom: "Utilisation du sifflet", statut: "acquis" },
+                    { nom: "Procédure des remplacements et blessés", statut: "acquis" },
+                    { nom: "Notion de l'avantage", statut: "acquis" },
+                    { nom: "Lisibilité des signalisations", statut: "acquis" },
+                    { nom: "Procédure CF avec placement d'un mur", statut: "acquis" },
+                    { nom: "Connaissance du hors-jeu", statut: "acquis" }
+                ]
+            },
+            {
+                titre: "Gestion Disciplinaire",
+                criteres: [
+                    { nom: "Gestion de la mise en garde (Forme/Méthode)", statut: "en-cours" },
+                    { nom: "Gestion des sanctions disciplinaires", statut: "en-cours" },
+                    { nom: "Autorité sur les acteurs du jeu", statut: "en-cours" }
+                ]
+            },
+            {
+                titre: "Attitude - Comportement",
+                criteres: [
+                    { nom: "Ponctualité (arrive à l'heure)", statut: "acquis" },
+                    { nom: "Détenir tous les outils nécessaires", statut: "acquis" },
+                    { nom: "Vérification du terrain", statut: "acquis" },
+                    { nom: "Vérification des licences et équipements", statut: "acquis" },
+                    { nom: "Consignes et collaboration avec AA", statut: "acquis" },
+                    { nom: "Maîtrise de la feuille de match", statut: "acquis" },
+                    { nom: "Relationnel avec les acteurs de la rencontre", statut: "acquis" },
+                    { nom: "Relation Tuteur - Arbitre stagiaire", statut: "acquis" }
+                ]
+            }
         ]
     },
     {
-        team1: "FC GIRONDE",
-        team2: "AC MILAN (U15)",
-        date: "Le 22/03/2026",
-        appreciation: "Très bon arbitrage dans un match avec beaucoup d'intensité.",
-        matrices: [
-            "<strong>CONDITION PHYSIQUE / DÉPLACEMENTS :</strong> Excellente anticipation sur les contre-attaques rapides.",
-            "<strong>COMPÉTENCES TECHNIQUES :</strong> Application rigoureuse des lois de l'IFAB, notamment sur les fautes de main.",
-            "<strong>GESTION DISCIPLINAIRE :</strong> Avertissements justifiés et distribués au bon moment.",
-            "<strong>ATTITUDE COMPORTEMENT :</strong> Communication excellente avec les deux capitaines."
+        // MATCH 2 (St Loubès)
+        team1: "ST LOUBÈS",
+        team2: "ARSAC LE PIAN",
+        logo1: "assets/img/loub.png", // À remplacer
+        logo2: "assets/img/arsa.png", // À remplacer
+        date: "15/03/2026",
+        category: "U15 D3",
+        tutor: "LAVOIE Gaëtan",
+        appreciation: "+ Prépa d'avant match, Bon placement, Avantage, Parle aux joueurs.\n- Mise en garde 'Bien écarter le joueur', Pas accorder sifflet à la bouche.",
+        conseils: "Aucun conseil prioritaire noté.",
+        evaluations: [
+            {
+                titre: "Condition Physique / Déplacements / Placements",
+                criteres: [
+                    { nom: "Échauffement", statut: "en-cours" },
+                    { nom: "Suivre l'évolution du jeu et capacité à reproduire les efforts", statut: "en-cours" },
+                    { nom: "Utilisation des différentes courses", statut: "en-cours" },
+                    { nom: "Occupation adaptée de l'aire de jeu", statut: "non-obs" },
+                    { nom: "Présence rapide sur faute importante ou conflit", statut: "en-cours" },
+                    { nom: "Placement sur coup d'envoi", statut: "acquis" },
+                    { nom: "Placement coup de pied de but", statut: "acquis" },
+                    { nom: "Placement sur pénalty", statut: "acquis" },
+                    { nom: "Placement sur corner", statut: "en-cours" },
+                    { nom: "Placement sur rentrée de touche", statut: "en-cours" },
+                    { nom: "Placement sur coups francs", statut: "acquis" }
+                ]
+            },
+            {
+                titre: "Compétences Techniques",
+                criteres: [
+                    { nom: "Application des lois du jeu", statut: "en-cours" },
+                    { nom: "Exécution des remises en jeu", statut: "acquis" },
+                    { nom: "Détection des fautes", statut: "en-cours" },
+                    { nom: "Utilisation du sifflet", statut: "en-cours" },
+                    { nom: "Procédure des remplacements et blessés", statut: "en-cours" },
+                    { nom: "Notion de l'avantage", statut: "acquis" },
+                    { nom: "Lisibilité des signalisations", statut: "en-cours" },
+                    { nom: "Procédure CF avec placement d'un mur", statut: "acquis" },
+                    { nom: "Connaissance du hors-jeu", statut: "acquis" }
+                ]
+            },
+            {
+                titre: "Gestion Disciplinaire",
+                criteres: [
+                    { nom: "Gestion de la mise en garde (Forme/Méthode)", statut: "en-cours" },
+                    { nom: "Gestion des sanctions disciplinaires", statut: "en-cours" },
+                    { nom: "Autorité sur les acteurs du jeu", statut: "en-cours" }
+                ]
+            },
+            {
+                titre: "Attitude - Comportement",
+                criteres: [
+                    { nom: "Ponctualité (arrive à l'heure)", statut: "acquis" },
+                    { nom: "Détenir tous les outils nécessaires", statut: "acquis" },
+                    { nom: "Vérification du terrain", statut: "acquis" },
+                    { nom: "Vérification des licences et équipements", statut: "acquis" },
+                    { nom: "Consignes et collaboration avec AA", statut: "acquis" },
+                    { nom: "Maîtrise de la feuille de match", statut: "en-cours" },
+                    { nom: "Relationnel avec les acteurs de la rencontre", statut: "en-cours" },
+                    { nom: "Relation Tuteur - Arbitre stagiaire", statut: "acquis" }
+                ]
+            }
+        ]
+    },
+    {
+        // MATCH 3 (Rive Droite)
+        team1: "RIVE DROITE",
+        team2: "CUBNEZAIS",
+        logo1: "assets/img/rd.png", // À remplacer
+        logo2: "assets/img/cubnezais.jpg", // À remplacer
+        date: "25/04/2026",
+        category: "U17 D4",
+        tutor: "RAPET Jean Marie",
+        appreciation: "Bon échauffement. Contrôle des joueurs et consignes aux capitaines / assistants sont corrects.",
+        conseils: "Améillorer la condition physique. Se raprocher des actions",
+        evaluations: [
+            {
+                titre: "Condition Physique / Déplacements / Placements",
+                criteres: [
+                    { nom: "Échauffement", statut: "acquis" },
+                    { nom: "Suivre l'évolution du jeu et capacité à reproduire les efforts", statut: "en-cours" },
+                    { nom: "Utilisation des différentes courses", statut: "en-cours" },
+                    { nom: "Occupation adaptée de l'aire de jeu", statut: "en-cours" },
+                    { nom: "Présence rapide sur faute importante ou conflit", statut: "en-cours" },
+                    { nom: "Placement sur coup d'envoi", statut: "non-obs" },
+                    { nom: "Placement coup de pied de but", statut: "en-cours" },
+                    { nom: "Placement sur pénalty", statut: "acquis" },
+                    { nom: "Placement sur corner", statut: "en-cours" },
+                    { nom: "Placement sur rentrée de touche", statut: "en-cours" },
+                    { nom: "Placement sur coups francs", statut: "en-cours" }
+                ]
+            },
+            {
+                titre: "Compétences Techniques",
+                criteres: [
+                    { nom: "Application des lois du jeu", statut: "en-cours" },
+                    { nom: "Exécution des remises en jeu", statut: "acquis" },
+                    { nom: "Détection des fautes", statut: "en-cours" },
+                    { nom: "Utilisation du sifflet", statut: "acquis" },
+                    { nom: "Procédure des remplacements et blessés", statut: "acquis" },
+                    { nom: "Notion de l'avantage", statut: "en-cours" },
+                    { nom: "Lisibilité des signalisations", statut: "non-obs" },
+                    { nom: "Procédure CF avec placement d'un mur", statut: "non-obs" },
+                    { nom: "Connaissance du hors-jeu", statut: "en-cours" }
+                ]
+            },
+            {
+                titre: "Gestion Disciplinaire",
+                criteres: [
+                    { nom: "Gestion de la mise en garde (Forme/Méthode)", statut: "acquis" },
+                    { nom: "Gestion des sanctions disciplinaires", statut: "acquis" },
+                    { nom: "Autorité sur les acteurs du jeu", statut: "acquis" }
+                ]
+            },
+            {
+                titre: "Attitude - Comportement",
+                criteres: [
+                    { nom: "Ponctualité (arrive à l'heure)", statut: "acquis" },
+                    { nom: "Détenir tous les outils nécessaires", statut: "acquis" },
+                    { nom: "Vérification du terrain", statut: "acquis" },
+                    { nom: "Vérification des licences et équipements", statut: "acquis" },
+                    { nom: "Consignes et collaboration avec AA", statut: "acquis" },
+                    { nom: "Maîtrise de la feuille de match", statut: "acquis" },
+                    { nom: "Relationnel avec les acteurs de la rencontre", statut: "en-cours" },
+                    { nom: "Relation Tuteur - Arbitre stagiaire", statut: "en-cours" }
+                ]
+            }
         ]
     }
 ];
 
 const feedbackContainer = document.getElementById('feedback-container');
 
-// Injection dynamique des cartes
+// Injection dynamique des cartes sur la page d'accueil
 if (feedbackContainer) {
+    feedbackContainer.innerHTML = ""; // On s'assure que c'est vide avant d'injecter
     feedbackData.forEach((fb, index) => {
         const card = document.createElement('div');
         card.classList.add('feedback-card');
         card.innerHTML = `
             <div class="feedback-card-header">
-                <div class="logo-placeholder"></div>
+                <img src="${fb.logo1}" alt="Logo ${fb.team1}" class="match-logo">
                 <div class="feedback-match-info">
                     <h4>${fb.team1} - ${fb.team2}</h4>
-                    <p>${fb.date}</p>
+                    <p>Le ${fb.date}</p>
                 </div>
-                <div class="logo-placeholder"></div>
+                <img src="${fb.logo2}" alt="Logo ${fb.team2}" class="match-logo">
             </div>
             <div class="feedback-card-body">
                 <h5>Appréciation générale :</h5>
-                <p>${fb.appreciation}</p>
+                <p>"${fb.appreciation}"</p>
             </div>
-            <button class="btn btn-secondary btn-sm" onclick="openFeedbackModal(${index})">Voir plus</button>
+            <button class="btn btn-secondary btn-sm" onclick="openFeedbackModal(${index})">Voir le rapport complet</button>
         `;
         feedbackContainer.appendChild(card);
     });
 }
-
-// Gestion de la modale des retours
 const fbModal = document.getElementById('feedback-modal');
 const fbCloseBtn = document.querySelector('.close-feedback-btn');
-
 window.openFeedbackModal = function(index) {
     const data = feedbackData[index];
     
-    // Mise à jour des textes de la modale
+    // Remplissage des logos
+    document.getElementById('modal-logo1').src = data.logo1;
+    document.getElementById('modal-logo2').src = data.logo2;
+
+    // Remplissage de l'en-tête
     document.getElementById('modal-match-title').innerText = `${data.team1} - ${data.team2}`;
+    document.getElementById('modal-match-date').innerText = data.date;
+    document.getElementById('modal-match-cat').innerText = data.category;
+    document.getElementById('modal-match-tutor').innerText = `Tuteur : ${data.tutor}`;
     
-    // Mise à jour de la liste des matrices
-    const matricesList = document.getElementById('modal-matrices-list');
-    matricesList.innerHTML = data.matrices.map(m => `<li>${m}</li>`).join('');
+    // Remplissage des textes généraux
+    document.getElementById('modal-appreciation').innerText = data.appreciation;
+    document.getElementById('modal-conseils').innerText = data.conseils;
+    
+    // Construction dynamique de la matrice d'évaluation
+    const matricesContainer = document.getElementById('modal-matrices-container');
+    matricesContainer.innerHTML = ""; // On vide avant de remplir
+    
+    data.evaluations.forEach(cat => {
+        const catDiv = document.createElement('div');
+        catDiv.classList.add('eval-category');
+        
+        let criteresHTML = cat.criteres.map(crit => {
+            let badgeClass = 'badge-nonobs';
+            let badgeText = 'Non obs.';
+            
+            if (crit.statut === 'acquis') {
+                badgeClass = 'badge-acquis';
+                badgeText = 'Acquis';
+            } else if (crit.statut === 'en-cours') {
+                badgeClass = 'badge-encours';
+                badgeText = 'En cours';
+            }
+            
+            return `
+                <div class="eval-item">
+                    <span class="eval-item-name">${crit.nom}</span>
+                    <span class="eval-badge ${badgeClass}">${badgeText}</span>
+                </div>
+            `;
+        }).join('');
+        
+        catDiv.innerHTML = `
+            <h5>${cat.titre}</h5>
+            ${criteresHTML}
+        `;
+        matricesContainer.appendChild(catDiv);
+    });
     
     // Affichage de la modale
     fbModal.classList.add('show');
