@@ -137,6 +137,27 @@ const saeProjects = [
         report: "#",
         tags: ["C#", ".NET", "Développement", "Git"],
         link: "#"
+    },
+    {
+        //sae graphes
+        title: "Exploration d'Algorithmes",
+        favorite: false,
+        description: "Refactoring d'un site web legacy. Passage de tableaux à un CSS Grid (avec un Thème Windows XP).",
+        analyse: {
+            cahier: "Moderniser le code source du site web d'une entreprise fictive de PC Rétro, en abandonnant l'ancienne mise en page en tableaux.",
+            resultats: "Refonte validée en HTML5 sémantique. Amélioration de l'accessibilité et réduction de la taille du code source, avec une petite touche Windows XP.",
+            competences: ["Intégration web", "Refactoring", "Écoute du client"],
+            outils: ["HTML5", "CSS Grid", "Design System"]
+        },
+        image: "assets/img/retro-pc.png",
+        gallery: [
+            "assets/img/retro-pc.png",
+            "assets/img/retro-pc1.png"
+        ],
+        report: "#",
+        tags: ["HTML/CSS", "Web"],
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_webdevelopment-html5-css3-ugcPost-7417162829536890880-ARre?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        linkLabel: "Voir le post LinkedIn"
     }
 ];
 
