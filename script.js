@@ -1,38 +1,7 @@
 // ici je stocke toutes les données des projets.
 // les projets que j'ai fait à l'iut, puis les perso
 const saeProjects = [
-    {
-        title: "Implémentation",
-        description: "Programmation d'une station domotique en Java. Gestion de l'historique et des données.",
-        analyse: {
-            cahier: "Intégrer l'entièreté des fonctionnalités de gestion, de mise à jour des données météorologiques et de programmation du chauffage d'une station météo à partir d'un code incomplet.",
-            resultats: "Algorithme de décalage de tableaux implémenté. Intégrité des données garantie et saisie utilisateur sécurisée par boucle de contrôle.",
-            competences: ["Java", "Algorithmique", "Intégration des données"],
-            outils: ["Boucle do...while", "Tableaux", "Conditions"]
-        },
-        image: "assets/img/odomo.png",
-        gallery: ["assets/img/odomo.png"], 
-        report: "#",
-        tags: ["Java", "Algorithmie"],
-        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-projet-domotique-ugcPost-7395203244312043521-TFbM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
-        linkLabel: "Voir le post LinkedIn"
-    },
-    {
-        title: "Comparaisons d'algorithmes",
-        description: "Programmation des fonctionnalités d'un jeu de plateau et conception de deux Intelligence Artificielle capable de jouer contre ou à la place de l'utilisateur",
-        analyse: {
-            cahier: "Coder les règles d'un jeu de plateau (plantation d'un arbre, coupes, vitalité) et développement de deux Intelligences Artificielles capable de jouer, la première avec un algorithme glouton et une deuxième visionnaire capable d'anticiper les conséquences de ses actions sur le long terme.",
-            resultats: "Tactique de clonage de plateau opérationnelle pour anticiper les scores réels. Zéro disqualification grâce à un algorithme contre les coups illégaux",
-            competences: ["Java", "Intelligence Artificielle", "Développement de tests", "Algorithmie"],
-            outils: ["Tests unitaires", "Simulation algorithmique", "Java"]
-        },
-        image: "assets/img/biosphere.png",
-        gallery: ["assets/img/biosphere.png"],
-        report: "#",
-        tags: ["Java", "Algorithmie et Comparaison"],
-        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-intelligenceartificielle-algorithmique-share-7423392852463906817-jtZ3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
-        linkLabel: "Voir le post LinkedIn"
-    },
+    
     {
         title: "Installation de poste",
         favorite: true,
@@ -50,6 +19,89 @@ const saeProjects = [
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_butinformatique-administrationsystaeyme-clojure-ugcPost-7391106933803438081-mx4s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
     },
+
+
+    {
+        title: "Pixel IUT War",
+        favorite: true,
+        description: "Création du client web d'une application collaborative (guerre des pixels) avec synchronisation continue d'une grille de 10 000 pixels.",
+        analyse: {
+            cahier: "Développer le client JavaScript d'un jeu multijoueur. Gérer l'authentification par UID, le système de factions, la coloration de la grille et les restrictions temporelles (cooldown) en dialoguant avec une API REST.",
+            resultats: "Interface fluide sans reflow massif grâce à l'optimisation du DOM (DocumentFragment). Communications asynchrones non-bloquantes (Fetch API, async/await). Des évolutions vers les WebSockets et le LocalStorage ont été modélisées.",
+            competences: ["JavaScript Vanilla (ES6+)", "Programmation Asynchrone", "Optimisation du DOM", "Manipulation de structures de données"],
+            outils: ["Fetch API", "DocumentFragment", "Méthodes Array (.flat, .filter)"]
+        },
+        image: "assets/img/js2.png",
+        gallery: [
+            "assets/img/js1.png"
+        ],
+        report: "#",
+        tags: ["JavaScript", "API REST", "Front-End"],
+        link: "https://github.com/zakksbr/pixelWar",
+        linkLabel: "Code Source / GitHub"
+    },
+
+
+    {
+        title: "Installation de Services Réseaux",
+        favorite: true,
+        description: "Déploiement d'une infrastructure réseau virtuelle sécurisée et intégration de services collaboratifs (Nextcloud & OnlyOffice).",
+        analyse: {
+            cahier: "Simuler et configurer un environnement réseau professionnel avec deux sous-réseaux isolés (Client LAN et Server LAN) reliés par un routeur central. Déployer une suite collaborative auto-hébergée complète.",
+            resultats: "Routage inter-réseaux (IP forwarding) et persistance des configurations IP assurés. Sécurisation totale des flux via la génération de certificats TLS (HTTPS) et la mise en place d'une authentification double facteur (TOTP).",
+            competences: ["Administration Système (Linux)", "Routage Réseau", "Sécurité (TLS/HTTPS, 2FA)", "Déploiement de Services (Snap)"],
+            outils: ["NEmu", "Nextcloud", "OnlyOffice", "Bash/Shell"]
+        },
+        image: "assets/img/res1.png",
+        gallery: [
+            "assets/img/res2.png",
+            "assets/img/res3.png"
+        ],
+        report: "#",
+        tags: ["SysAdmin", "Réseau", "DevOps"],
+        link: "https://github.com/zakksbr/installation-services-reseau/wiki/2.3NetworkInstallation",
+        linkLabel: "Voir le wiki"
+    },
+
+    {
+        title: "Coloration de graphes",
+        favorite: true,
+        description: "Développement de trois algorithmes de coloration (Welsh & Powell, 5-coloration, 6-coloration).",
+        analyse: {
+            cahier: "Implémenter l'interface IGraph et programmer trois algorithmes de coloration (Welsh et Powell, 6-coloration et 5-coloration récursive pour graphes planaires).",
+            resultats: "Création d'une structure optimisée par liste d'adjacence (HashMap) avec une complexité en O(N+M). Algorithmes validés par des tests unitaires sous JUnit.",
+            competences: ["Développement orienté Objet", "Théorie des Graphes", "Analyse de Complexité", "Tests Unitaires"],
+            outils: ["Java", "JUnit", "NetBeans", "UML"]
+        },
+        image: "assets/img/sae-graphes1.png",
+        gallery: [
+            
+            "assets/img/sae-graphes2.png",
+            "assets/img/sae-graphes3.png"
+        ],
+        
+        tags: ["Java", "Algorithmique", "Graphes"],
+        link: "#",
+        linkLabel: "Code Source / GitHub"
+    },
+    
+    {
+        title: "Comparaisons d'algorithmes",
+        description: "Programmation des fonctionnalités d'un jeu de plateau et conception de deux Intelligence Artificielle capable de jouer contre ou à la place de l'utilisateur",
+        analyse: {
+            cahier: "Coder les règles d'un jeu de plateau (plantation d'un arbre, coupes, vitalité) et développement de deux Intelligences Artificielles capable de jouer, la première avec un algorithme glouton et une deuxième visionnaire capable d'anticiper les conséquences de ses actions sur le long terme.",
+            resultats: "Tactique de clonage de plateau opérationnelle pour anticiper les scores réels. Zéro disqualification grâce à un algorithme contre les coups illégaux",
+            competences: ["Java", "Intelligence Artificielle", "Développement de tests", "Algorithmie"],
+            outils: ["Tests unitaires", "Simulation algorithmique", "Java"]
+        },
+        image: "assets/img/biosphere.png",
+        gallery: ["assets/img/biosphere.png"],
+        report: "#",
+        tags: ["Java", "Algorithmie et Comparaison"],
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-intelligenceartificielle-algorithmique-share-7423392852463906817-jtZ3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        linkLabel: "Voir le post LinkedIn"
+    },
+    
     {
         title: "Création de Base de données",
         favorite: true,
@@ -87,6 +139,42 @@ const saeProjects = [
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_webdevelopment-html5-css3-ugcPost-7417162829536890880-ARre?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
         linkLabel: "Voir le post LinkedIn"
     },
+
+
+    {
+        title: "Développement d'une application",
+        description: "Application C# de gestion de personnages et simulateur de jeu de rôles avec architecture Orientée Objet intégrale.",
+        analyse: {
+            cahier: "Concevoir en équipe de 3 une application WinForms robuste traduisant des règles d'un jeu fictif.",
+            resultats: "Livrable, avec séparation Logique/IHM. Moteur de résolution des épreuves fictives validé par tests unitaires et interface ergonomique.",
+            competences: ["Programmation C#", "Conception UML", "Développement IHM", "Tests"],
+            outils: ["Visual Studio / .NET", "WinForms", "Git"]
+        },
+        image: "assets/img/butopia.png",
+        gallery: ["assets/img/butopia.png"],
+        report: "#",
+        tags: ["C#", ".NET", "Développement", "Git"],
+        link: "#"
+    },
+    
+
+    {
+        title: "Implémentation",
+        description: "Programmation d'une station domotique en Java. Gestion de l'historique et des données.",
+        analyse: {
+            cahier: "Intégrer l'entièreté des fonctionnalités de gestion, de mise à jour des données météorologiques et de programmation du chauffage d'une station météo à partir d'un code incomplet.",
+            resultats: "Algorithme de décalage de tableaux implémenté. Intégrité des données garantie et saisie utilisateur sécurisée par boucle de contrôle.",
+            competences: ["Java", "Algorithmique", "Intégration des données"],
+            outils: ["Boucle do...while", "Tableaux", "Conditions"]
+        },
+        image: "assets/img/odomo.png",
+        gallery: ["assets/img/odomo.png"], 
+        report: "#",
+        tags: ["Java", "Algorithmie"],
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-projet-domotique-ugcPost-7395203244312043521-TFbM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        linkLabel: "Voir le post LinkedIn"
+    },
+
     {
         title: "Environnement économique et écologique",
         description: "Analyse fonctionnelle et environnementale d'une entreprise locale face à une crise de crédibilité majeure (PESTEL & Porter).",
@@ -122,43 +210,11 @@ const saeProjects = [
         report: "#",
         tags: ["Communication", "Organisation"],
         link: "#"
-    },
-    {
-        title: "Développement d'une application",
-        description: "Application C# de gestion de personnages et simulateur de jeu de rôles avec architecture Orientée Objet intégrale.",
-        analyse: {
-            cahier: "Concevoir en équipe de 3 une application WinForms robuste traduisant des règles d'un jeu fictif.",
-            resultats: "Livrable, avec séparation Logique/IHM. Moteur de résolution des épreuves fictives validé par tests unitaires et interface ergonomique.",
-            competences: ["Programmation C#", "Conception UML", "Développement IHM", "Tests"],
-            outils: ["Visual Studio / .NET", "WinForms", "Git"]
-        },
-        image: "assets/img/butopia.png",
-        gallery: ["assets/img/butopia.png"],
-        report: "#",
-        tags: ["C#", ".NET", "Développement", "Git"],
-        link: "#"
-    },
-    {
-        //sae graphes
-        title: "Exploration d'Algorithmes",
-        favorite: false,
-        description: "Refactoring d'un site web legacy. Passage de tableaux à un CSS Grid (avec un Thème Windows XP).",
-        analyse: {
-            cahier: "Moderniser le code source du site web d'une entreprise fictive de PC Rétro, en abandonnant l'ancienne mise en page en tableaux.",
-            resultats: "Refonte validée en HTML5 sémantique. Amélioration de l'accessibilité et réduction de la taille du code source, avec une petite touche Windows XP.",
-            competences: ["Intégration web", "Refactoring", "Écoute du client"],
-            outils: ["HTML5", "CSS Grid", "Design System"]
-        },
-        image: "assets/img/retro-pc.png",
-        gallery: [
-            "assets/img/retro-pc.png",
-            "assets/img/retro-pc1.png"
-        ],
-        report: "#",
-        tags: ["HTML/CSS", "Web"],
-        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_webdevelopment-html5-css3-ugcPost-7417162829536890880-ARre?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
-        linkLabel: "Voir le post LinkedIn"
     }
+    
+
+    
+
 ];
 
 // et ici les projets perso pour montrer ce que je bidouille de mon côté
@@ -186,7 +242,7 @@ const persoProjects = [
     },
     {
         title: "Assistant macOS (J.A.R.V.I.S.)" ,       
-        wip: true,
+        wip: false,
         description: "Assistant vocal hybride pilotant l'environnement de travail macOS (via AppleScript) et intégré à l'IA Gemini.",
         analyse: {
             cahier: "Développer un assistant capable de piloter physiquement macOS (écrans, apps) et de converser naturellement. Contraintes : mode Push-to-Talk pour la confidentialité.",
