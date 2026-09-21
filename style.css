@@ -1255,6 +1255,15 @@ body.referee-mode .nav-links-referee a:hover {
         width: 100%;
         height: auto;
     }
+
+    /* Tableau « Matchs Joués » : voir le bloc responsive en fin de fichier */
+    .carousel-img { height: 250px; }
+    .carousel-wrapper { position: relative; }
+    .carousel-btn { position: absolute; top: 40%; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); }
+    .prev-btn { left: 10px; }
+    .next-btn { right: 10px; }
+
+
 }
 
 @media (max-width: 800px) {
@@ -1292,5 +1301,631 @@ body.referee-mode .nav-links-referee a:hover {
         display: block; 
         width: 100%; 
         text-align: center;
+    }
+}
+
+
+.matches-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.match-cat-card {
+    border: 1px solid #fff;
+    border-radius: 12px;
+    background: transparent;
+}
+.m-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid #fff;
+}
+.m-logo {
+    height: 45px;
+    object-fit: contain;
+}
+.m-emoji {
+    font-size: 2.2rem;
+}
+.m-card-header h3 {
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #fff;
+}
+.m-row {
+    display: flex;
+    border-bottom: 1px solid #fff;
+}
+.m-row:last-child {
+    border-bottom: none;
+}
+.m-col-left {
+    flex: 6;
+    padding: 1.5rem;
+    border-right: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #fff;
+}
+.m-col-right {
+    flex: 4;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.1rem;
+}
+.m-col-flex {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+    padding-left: 2.5rem;
+}
+.m-badge {
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+.badge-d2 { background-color: #007BFF; }
+.badge-u17 { background-color: #28A745; }
+.badge-u15 { background-color: #17A2B8; }
+.badge-r3 { background-color: #6F42C1; }
+.badge-r1 { background-color: #6F42C1; }
+.badge-n2 { background-color: #0056B3; }
+
+.m-logos-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 0.5rem;
+}
+.m-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    font-size: 0.65rem;
+    font-weight: bold;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.carousel-btn {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+.carousel-btn:hover {
+    background: #fff;
+    color: var(--bg-color);
+}
+.carousel-container {
+    border: 1px solid #fff;
+    border-radius: 12px;
+    padding: 10px;
+    overflow: hidden;
+    flex: 1;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+.carousel-slide {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.carousel-img {
+    width: 100%;
+    border-radius: 8px;
+    height: 450px;
+    object-fit: cover;
+    border: 1px solid #333;
+}
+.carousel-caption {
+    padding: 0 0.5rem 0.5rem 0.5rem;
+}
+.carousel-caption h4 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+.carousel-caption p {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+/* Fichier : style.css (à ajouter DANS votre  existant) */
+
+
+/* ==========================================================
+   Univers arbitrage — ajouts septembre 2026
+   (placés en fin de fichier pour passer après les règles de base)
+   ========================================================== */
+
+/* --- Tableau de bord : lignes de discipline --- */
+.ref-stat-list li.ref-discipline {
+    font-size: 1rem;
+}
+.ref-stat-list li.ref-discipline:first-of-type {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.ref-card-icon {
+    display: inline-block;
+    width: 12px;
+    height: 17px;
+    border-radius: 2px;
+    margin-right: 0.3rem;
+    flex-shrink: 0;
+}
+.card-yellow { background-color: #f1c40f; }
+.card-red { background-color: #e74c3c; }
+
+/* --- Actualités : méta, pagination, flèches désactivées --- */
+.carousel-caption p + p {
+    margin-top: 0.8rem;
+}
+.carousel-caption .carousel-meta {
+    color: #2ecc71;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+}
+.carousel-caption .carousel-meta + h4 {
+    margin-top: 0;
+}
+/* Le padding est porté par chaque slide : la slide suivante ne dépasse plus du cadre */
+.carousel-container {
+    padding: 0;
+}
+.carousel-slide {
+    box-sizing: border-box;
+    padding: 10px;
+}
+.carousel-btn:disabled {
+    opacity: 0.25;
+    cursor: default;
+    pointer-events: none;
+}
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+}
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background: transparent;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, width 0.3s;
+}
+.carousel-dot.active {
+    width: 26px;
+    border-radius: 5px;
+    background: #2ecc71;
+    border-color: #2ecc71;
+}
+
+/* --- Matchs joués : rôle, date, sous-ligne --- */
+.m-col-left {
+    min-width: 0;
+    flex-wrap: wrap;
+}
+.m-col-right {
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+.m-match {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+}
+.m-date {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+.m-role {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.role-central {
+    color: #2ecc71;
+    border: 1px solid #2ecc71;
+}
+.role-assistant {
+    color: #f1c40f;
+    border: 1px solid #f1c40f;
+}
+
+/* --- Responsive : on garde libellé à gauche / nombre à droite --- */
+@media (max-width: 992px) {
+    .m-card-header { padding: 1rem; }
+    .m-card-header h3 { font-size: 1.1rem; }
+    .m-logo { height: 36px; }
+    .m-col-left {
+        flex: 3;
+        padding: 0.8rem 0.9rem;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+    .m-col-right {
+        flex: 2;
+        padding: 0.8rem 0.6rem;
+        font-size: 0.9rem;
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+    .m-col-flex {
+        align-items: center;
+        padding-left: 0.6rem;
+        text-align: center;
+    }
+    .m-badge { font-size: 0.7rem; padding: 0.2rem 0.45rem; }
+    .m-circle { width: 30px; height: 30px; font-size: 0.55rem; }
+    .m-date { font-size: 0.75rem; }
+    .carousel-img { height: 250px; }
+    /* Flèches centrées sur la photo et non plus sur toute la carte */
+    .carousel-btn { top: 135px; background: rgba(0, 0, 0, 0.6); }
+}
+
+@media (max-width: 480px) {
+    .m-col-left { padding: 0.7rem; font-size: 0.8rem; }
+    .m-col-right { padding: 0.7rem 0.4rem; font-size: 0.8rem; }
+    .m-logos-inline { display: none; }
+    .m-role { font-size: 0.6rem; padding: 0.15rem 0.4rem; }
+    .carousel-img { height: 200px; }
+    .carousel-btn { top: 110px; width: 38px; height: 38px; }
+}
+
+
+/* --- Tableau de bord : maquette photo + statistiques --- */
+.ref-dash-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.ref-dash-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.03);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.ref-dash-card:hover {
+    border-color: #2ecc71;
+    box-shadow: 0 10px 25px rgba(46, 204, 113, 0.15);
+}
+.ref-dash-photo {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+}
+.ref-dash-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+.ref-dash-card:hover .ref-dash-photo img {
+    transform: scale(1.04);
+}
+.ref-dash-stats {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.ref-dash-stats .ref-stat-list {
+    padding-left: 0.5rem;
+}
+
+/* --- Logos de clubs et de compétitions --- */
+.m-circle {
+    width: 44px;
+    height: 44px;
+    background: #ffffff;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.m-circle img {
+    width: 78%;
+    height: 78%;
+    object-fit: contain;
+}
+.m-logo-cup {
+    border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+    .ref-dash-list { gap: 2rem; }
+    .ref-dash-card {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .ref-dash-photo { aspect-ratio: 4 / 3; }
+    .ref-dash-stats { padding: 1.5rem 1.2rem; }
+}
+@media (max-width: 992px) {
+    .m-circle { width: 34px; height: 34px; }
+}
+@media (max-width: 480px) {
+    /* Logos des clubs conservés sur petit écran, en plus petit */
+    .m-logos-inline { display: flex; }
+    .m-circle { width: 28px; height: 28px; }
+}
+
+/* --- Retouches maquette tableau de bord + logos de coupes --- */
+.ref-dash-stats {
+    justify-content: flex-start;
+    padding-top: 2.5rem;
+}
+.ref-dash-stats .ref-card-header {
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+.ref-dash-stats .ref-stat-list {
+    padding-left: 0;
+    width: fit-content;
+    margin: 0 auto;
+}
+.ref-dash-stats .ref-stat-list li {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+.ref-dash-stats .ref-stat-list li strong {
+    font-size: 1.5rem;
+    min-width: 2.2ch;
+}
+.ref-dash-photo img {
+    object-position: 50% 30%;
+}
+.m-logo-cup { height: 52px; }
+.m-logo-gambardella { height: 70px; }
+
+@media (max-width: 700px) {
+    .ref-dash-photo { aspect-ratio: 1 / 1; }
+    .ref-dash-stats { padding-top: 1.5rem; }
+    .ref-dash-stats .ref-card-header { margin-bottom: 1.5rem; }
+    .ref-dash-stats .ref-stat-list li { font-size: 1.05rem; }
+    .ref-dash-stats .ref-stat-list li strong { font-size: 1.3rem; }
+    .m-logo-cup { height: 42px; }
+    .m-logo-gambardella { height: 56px; }
+}
+
+
+/* ==========================================================
+   Accueil — nouvelle disposition (maquette septembre 2026)
+   ========================================================== */
+.hero-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.6rem;
+    max-width: 920px;
+    width: 100%;
+    padding: 0 5%;
+}
+.hero-identity {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+.hero-layout .hero-profile-pic {
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
+}
+.hero-identity-text h1 {
+    margin-bottom: 0.2rem;
+    line-height: 1.1;
+}
+.hero-identity-text h2 {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+}
+.hero-objective {
+    font-size: 1.1rem;
+    color: #d0d0d0;
+}
+.hero-objective strong {
+    color: var(--accent-color);
+    letter-spacing: 0.05em;
+}
+body.referee-mode .hero-layout .referee-content {
+    margin-bottom: 0;
+}
+.hero-layout .referee-affiliations-wrapper {
+    justify-content: flex-start;
+    margin-top: 0;
+}
+
+/* Rangée de boutons : réalisations / deuxième métier / à propos */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+}
+.hero-actions .btn,
+.hero-actions .btn-referee {
+    flex: 1 1 0;
+    min-width: 200px;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+body.referee-mode .hero-actions .btn-referee {
+    flex: 0 1 auto;
+}
+
+/* Flèche animée « Swipez pour en savoir plus ! » */
+.hero-scroll {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.hero-scroll {
+    --arrow-color: var(--accent-color);
+}
+body.referee-mode .hero-scroll {
+    --arrow-color: #2ecc71;
+}
+/* Fenêtre dans laquelle la flèche descend en boucle */
+.hero-scroll-arrow {
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 90px;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: var(--arrow-color);
+}
+.hero-scroll-arrow svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: hero-arrow-fall 1.8s cubic-bezier(0.55, 0, 0.35, 1) infinite;
+}
+@keyframes hero-arrow-fall {
+    0%   { transform: translateY(-60px); opacity: 0; }
+    20%  { opacity: 1; }
+    80%  { opacity: 1; }
+    100% { transform: translateY(90px); opacity: 0; }
+}
+.hero-scroll-text {
+    transition: color 0.3s;
+}
+.hero-scroll:hover .hero-scroll-text {
+    color: var(--arrow-color);
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-scroll-arrow svg { animation: none; transform: translateY(15px); }
+}
+
+@media (max-width: 992px) {
+    .hero-layout { gap: 1.2rem; }
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        margin-top: 0;
+    }
+    .hero-actions .btn,
+    .hero-actions .btn-referee {
+        max-width: none;
+        width: 100%;
+        min-width: 0;
+    }
+}
+@media (max-width: 600px) {
+    .hero-identity { gap: 1rem; }
+    .hero-layout .hero-profile-pic { width: 84px; height: 84px; }
+    .hero-identity-text h1 { font-size: 1.9rem; }
+    .hero-identity-text h2 { font-size: 0.95rem; }
+    .hero-objective { font-size: 0.95rem; }
+    .hero-scroll { margin-top: 1rem; font-size: 1rem; }
+    .hero-scroll-arrow { height: 70px; }
+}
+
+
+/* --- Accueil, univers arbitrage : identité à gauche, bouton retour à droite --- */
+body.referee-mode .hero-layout {
+    display: grid;
+    grid-template-columns: max-content auto;
+    justify-content: start;
+    align-items: start;
+    column-gap: 4rem;
+    row-gap: 1.2rem;
+}
+body.referee-mode .hero-layout .hero-identity {
+    grid-column: 1;
+    grid-row: 1;
+}
+body.referee-mode .hero-identity-text h1 {
+    white-space: nowrap;
+}
+body.referee-mode .hero-layout > .referee-content {
+    grid-column: 1;
+    grid-row: 2;
+    padding-left: 65px; /* décalé sous le nom, comme sur la maquette */
+}
+body.referee-mode .hero-layout .hero-actions {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    width: auto;
+}
+body.referee-mode .hero-layout .hero-scroll {
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
+
+@media (max-width: 992px) {
+    /* Sur tablette / mobile on revient à l'empilement vertical */
+    body.referee-mode .hero-layout {
+        display: flex;
+    }
+    body.referee-mode .hero-layout > .referee-content {
+        padding-left: 0;
+    }
+    body.referee-mode .hero-layout .hero-actions {
+        width: 100%;
     }
 }

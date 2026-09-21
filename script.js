@@ -460,17 +460,35 @@ document.addEventListener('DOMContentLoaded', () => {
 const switchBtn = document.getElementById('switch-world-btn')
 const worldDev = document.getElementById('world-dev')
 const worldReferee = document.getElementById('world-referee')
+const heroPic = document.getElementById('hero-profile-pic')
+const heroScroll = document.getElementById('hero-scroll')
 let isRefereeMode = false
 
+// Photo de profil propre à chaque univers (lue dans les attributs data-* de l'image)
+const setHeroPic = (world) => {
+    if (!heroPic) return
+    const src = heroPic.dataset[`src${world}`]
+    const alt = heroPic.dataset[`alt${world}`]
+    if (src) heroPic.src = src
+    if (alt) heroPic.alt = alt
+}
+
+// Précharge la photo arbitre pour que la bascule soit instantanée
+if (heroPic && heroPic.dataset.srcReferee) {
+    window.addEventListener('load', () => { new Image().src = heroPic.dataset.srcReferee })
+}
+
 if (switchBtn) {
-    switchBtn.innerHTML = 'DÉCOUVRIR MON DEUXIÈME MÉTIER ⚽'
+    switchBtn.innerHTML = 'Mon deuxième métier ⚽'
     switchBtn.addEventListener('click', () => {
         isRefereeMode = !isRefereeMode
         if (isRefereeMode) {
             document.body.classList.add('referee-mode')
+            setHeroPic('Referee')
+            if (heroScroll) heroScroll.setAttribute('href', '#ref-about')
             worldDev.style.display = 'none'
             worldReferee.style.display = 'block'
-            switchBtn.innerHTML = 'RETOUR EN INFORMATIQUE 💻'
+            switchBtn.innerHTML = 'Retour en informatique 💻'
             document.body.style.backgroundColor = 'var(--bg-color)'
             
             document.querySelectorAll('#world-referee .reveal').forEach(el => {
@@ -483,9 +501,11 @@ if (switchBtn) {
 
         } else {
             document.body.classList.remove('referee-mode')
+            setHeroPic('Dev')
+            if (heroScroll) heroScroll.setAttribute('href', '#perso-projects')
             worldReferee.style.display = 'none'
             worldDev.style.display = 'block'
-            switchBtn.innerHTML = 'DÉCOUVRIR MON DEUXIÈME MÉTIER ⚽'
+            switchBtn.innerHTML = 'Mon deuxième métier ⚽'
             document.body.style.backgroundColor = 'var(--bg-color)'
             
             window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -792,4 +812,71 @@ window.addEventListener('click', function(event) {
         fbModal.classList.remove('show');
         document.body.style.overflow = 'auto';
     }
+});
+
+// Fichier : script.js (à ajouter à la fin)
+
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    if (!track) return;
+
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next-btn');
+    const prevButton = document.querySelector('.prev-btn');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    let currentSlideIndex = 0;
+
+    // Points de pagination générés automatiquement (un par slide)
+    const dots = slides.map((slide, i) => {
+        if (!dotsContainer) return null;
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot';
+        dot.setAttribute('role', 'tab');
+        const title = slide.querySelector('h4');
+        dot.setAttribute('aria-label', title ? title.textContent : `Actualité ${i + 1}`);
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+        return dot;
+    });
+
+    const updateSlidePosition = () => {
+        track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+        // Flèches désactivées en bout de course
+        prevButton.disabled = currentSlideIndex === 0;
+        nextButton.disabled = currentSlideIndex === slides.length - 1;
+        dots.forEach((dot, i) => {
+            if (!dot) return;
+            dot.classList.toggle('active', i === currentSlideIndex);
+            dot.setAttribute('aria-selected', i === currentSlideIndex);
+        });
+        slides.forEach((slide, i) => slide.setAttribute('aria-hidden', i !== currentSlideIndex));
+    };
+
+    const goTo = (index) => {
+        currentSlideIndex = Math.max(0, Math.min(slides.length - 1, index));
+        updateSlidePosition();
+    };
+
+    nextButton.addEventListener('click', () => goTo(currentSlideIndex + 1));
+    prevButton.addEventListener('click', () => goTo(currentSlideIndex - 1));
+
+    // Balayage tactile sur mobile
+    let touchStartX = null;
+    track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+        if (touchStartX === null) return;
+        const delta = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(delta) > 50) goTo(currentSlideIndex + (delta < 0 ? 1 : -1));
+        touchStartX = null;
+    });
+
+    // Une seule slide : pas de navigation à afficher
+    if (slides.length < 2) {
+        prevButton.style.visibility = 'hidden';
+        nextButton.style.visibility = 'hidden';
+        if (dotsContainer) dotsContainer.style.display = 'none';
+    }
+
+    updateSlidePosition();
 });
