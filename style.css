@@ -1930,3 +1930,110 @@ body.referee-mode .hero-layout .hero-scroll {
         width: 100%;
     }
 }
+
+
+/* ==========================================================
+   Bandeau « Prochainement » (après les projets perso)
+   ========================================================== */
+.teaser-banner {
+    display: grid;
+    grid-template-columns: minmax(240px, 340px) 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 2.5rem;
+    border: 1px solid #222;
+    border-left: 3px solid var(--accent-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.teaser-banner:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+.teaser-brand .p-badge.wip {
+    display: inline-flex;
+    margin-bottom: 1.2rem;
+}
+.teaser-title {
+    /* taille adaptative : le mot et ses points doivent tenir dans la colonne */
+    font-size: clamp(1.5rem, 2.3vw, 2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    overflow-wrap: anywhere;
+}
+.teaser-dots {
+    white-space: nowrap;
+}
+/* Les trois points s'allument l'un après l'autre */
+.teaser-dots span {
+    color: var(--accent-color);
+    animation: teaser-dot 1.6s ease-in-out infinite;
+}
+.teaser-dots span:nth-child(2) { animation-delay: 0.25s; }
+.teaser-dots span:nth-child(3) { animation-delay: 0.5s; }
+@keyframes teaser-dot {
+    0%, 60%, 100% { opacity: 0.25; }
+    30% { opacity: 1; }
+}
+.teaser-tagline {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+}
+/* Le cahier des charges occupe toute la largeur, les deux listes se partagent la ligne du dessous */
+.teaser-box:first-child {
+    grid-column: 1 / -1;
+}
+.teaser-box {
+    background-color: #1c1c1c;
+    border: 1px solid #262626;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.teaser-banner:hover .teaser-box {
+    border-color: #333;
+}
+.teaser-box h4 {
+    color: var(--accent-color);
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+}
+.teaser-box p {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+.teaser-box .analysis-tags li {
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.teaser-box .analysis-tags li:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1080px) {
+    .teaser-banner {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+        padding: 1.5rem;
+    }
+    .teaser-title { font-size: clamp(1.5rem, 6vw, 1.9rem); }
+    .teaser-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .teaser-dots span { animation: none; opacity: 1; }
+    .teaser-banner:hover { transform: none; }
+}
+}
+
