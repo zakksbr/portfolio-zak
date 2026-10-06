@@ -86,6 +86,46 @@ const saeProjects = [
     },
     
     {
+        title: "Labyrinthe",
+        favorite: false,
+        wip: false,
+        description: "Jeu de labyrinthe multi-étages en Java/JavaFX, développé seul : héros piloté au clavier, monstres autonomes et déplacements fluides.",
+        analyse: {
+            cahier: "Concevoir seul, en deux semaines, un jeu de labyrinthe complet en Java/JavaFX pour remobiliser la programmation orientée objet. Contraintes : implémenter des interfaces imposées sans les modifier, valider les objectifs dans l'ordre et livrer un programme sans erreur ni avertissement sur les postes de l'IUT.",
+            resultats: "Labyrinthe sur plusieurs étages chargé depuis des fichiers texte, héros jouable au clavier et monstres autonomes grâce au polymorphisme. La logique du jeu est séparée du rendu, ce qui donne un déplacement fluide au pixel près. Plus de 50 commits sur GitLab, projet validé sur les postes de l'IUT.",
+            competences: ["Programmation orientée objet", "Interface graphique événementielle", "Débogage", "Versionnage Git"],
+            outils: ["Java", "JavaFX", "Maven", "Git / GitLab"]
+        },
+        image: "assets/img/labyrinthe.jpg",
+        gallery: ["assets/img/labyrinthe-2.jpg"],
+        report: "#",
+        tags: ["Java", "JavaFX", "POO"],
+        link: "#",
+        linkLabel: "Code Source / GitHub"
+    },
+
+
+    {
+        title: "Capteurs : statistiques de température",
+        favorite: false,
+        wip: false,
+        description: "Outil en ligne de commande écrit en C qui analyse des relevés de capteurs de température (fichier JSON ou URL) et génère un rapport CSV.",
+        analyse: {
+            cahier: "Compléter en binôme un analyseur de capteurs en C : calcul des statistiques, série de mesures en mémoire dynamique, export CSV et programme principal. Contraintes : norme C11 compilée sans aucun warning (-Wall -Wextra -Wpedantic), modules réseau et JSON fournis à ne pas modifier, historique Git évalué.",
+            resultats: "Minimum, maximum, moyenne et écart intérieur/extérieur calculés, export CSV et gestion complète des options en ligne de commande. Tests unitaires et 12 scénarios en ligne de commande validés. Aucune fuite mémoire selon Valgrind (1 422 allocations, 1 422 libérations).",
+            competences: ["Gestion dynamique de la mémoire", "Pointeurs et structures", "Compilation séparée (Makefile)", "Arguments en ligne de commande", "Travail en binôme"],
+            outils: ["C11 / gcc", "Make", "Valgrind", "cppcheck", "Git / GitLab"]
+        },
+        image: "assets/img/capteurs-terminal.jpg",
+        gallery: [],
+        report: "#",
+        tags: ["C", "Makefile", "Valgrind"],
+        link: "#",
+        linkLabel: "Code Source / GitHub"
+    },
+
+
+    {
         title: "Comparaisons d'algorithmes",
         description: "Programmation des fonctionnalités d'un jeu de plateau et conception de deux Intelligence Artificielle capable de jouer contre ou à la place de l'utilisateur",
         analyse: {
