@@ -1,7 +1,5 @@
-// ici je stocke toutes les données des projets.
-// les projets que j'ai fait à l'iut, puis les perso
+// ici je stocke toutes les données des projets, d'abord ceux de l'iut, puis les perso plus bas
 const saeProjects = [
-    
     {
         title: "Installation de poste",
         favorite: true,
@@ -16,10 +14,9 @@ const saeProjects = [
         gallery: ["assets/img/vm-install.png"],
         report: "#",
         tags: ["Linux", "Bash", "Virtual Machine"],
-        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_butinformatique-administrationsystaeyme-clojure-ugcPost-7391106933803438081-mx4s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_butinformatique-administrationsystaeyme-clojure-ugcPost-7391106933803438081-mx4s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
         linkLabel: "Voir le post LinkedIn"
     },
-
 
     {
         title: "Pixel IUT War",
@@ -40,7 +37,6 @@ const saeProjects = [
         link: "https://github.com/zakksbr/pixelWar",
         linkLabel: "Code Source / GitHub"
     },
-
 
     {
         title: "Installation de Services Réseaux",
@@ -75,16 +71,15 @@ const saeProjects = [
         },
         image: "assets/img/sae-graphes1.png",
         gallery: [
-            
             "assets/img/sae-graphes2.png",
             "assets/img/sae-graphes3.png"
         ],
-        
+
         tags: ["Java", "Algorithmique", "Graphes"],
         link: "#",
         linkLabel: "Code Source / GitHub"
     },
-    
+
     {
         title: "Labyrinthe",
         favorite: false,
@@ -103,7 +98,6 @@ const saeProjects = [
         link: "#",
         linkLabel: "Code Source / GitHub"
     },
-
 
     {
         title: "Capteurs : statistiques de température",
@@ -124,7 +118,6 @@ const saeProjects = [
         linkLabel: "Code Source / GitHub"
     },
 
-
     {
         title: "Comparaisons d'algorithmes",
         description: "Programmation des fonctionnalités d'un jeu de plateau et conception de deux Intelligence Artificielle capable de jouer contre ou à la place de l'utilisateur",
@@ -138,10 +131,10 @@ const saeProjects = [
         gallery: ["assets/img/biosphere.png"],
         report: "#",
         tags: ["Java", "Algorithmie et Comparaison"],
-        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-intelligenceartificielle-algorithmique-share-7423392852463906817-jtZ3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-intelligenceartificielle-algorithmique-share-7423392852463906817-jtZ3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
         linkLabel: "Voir le post LinkedIn"
     },
-    
+
     {
         title: "Création de Base de données",
         favorite: true,
@@ -156,7 +149,7 @@ const saeProjects = [
         gallery: ["assets/img/bdd.png"],
         report: "#",
         tags: ["SQL", "Base de données"],
-        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_sqlserver-database-iutinformatique-ugcPost-7420940639481118720-z0sp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_sqlserver-database-iutinformatique-ugcPost-7420940639481118720-z0sp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
         linkLabel: "Voir le post LinkedIn"
     },
     {
@@ -176,10 +169,9 @@ const saeProjects = [
         ],
         report: "#",
         tags: ["HTML/CSS", "Web"],
-        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_webdevelopment-html5-css3-ugcPost-7417162829536890880-ARre?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_webdevelopment-html5-css3-ugcPost-7417162829536890880-ARre?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
         linkLabel: "Voir le post LinkedIn"
     },
-
 
     {
         title: "Développement d'une application",
@@ -196,7 +188,6 @@ const saeProjects = [
         tags: ["C#", ".NET", "Développement", "Git"],
         link: "#"
     },
-    
 
     {
         title: "Implémentation",
@@ -208,10 +199,10 @@ const saeProjects = [
             outils: ["Boucle do...while", "Tableaux", "Conditions"]
         },
         image: "assets/img/odomo.png",
-        gallery: ["assets/img/odomo.png"], 
+        gallery: ["assets/img/odomo.png"],
         report: "#",
         tags: ["Java", "Algorithmie"],
-        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-projet-domotique-ugcPost-7395203244312043521-TFbM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung", 
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-projet-domotique-ugcPost-7395203244312043521-TFbM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
         linkLabel: "Voir le post LinkedIn"
     },
 
@@ -251,13 +242,10 @@ const saeProjects = [
         tags: ["Communication", "Organisation"],
         link: "#"
     }
-    
-
-    
 
 ];
 
-// et ici les projets perso pour montrer ce que je bidouille de mon côté
+// et là les projets perso, ce que je bidouille de mon côté
 const persoProjects = [
     {
         title: "Réhabilitation d’un ordinateur obsolète",
@@ -269,19 +257,19 @@ const persoProjects = [
             competences: ["Maintenance Hardware", "Administration Système", "Gestion GRUB/MBR", "Troubleshooting"],
             outils: ["Rufus", "Terminal Linux (Nano)", "Composants (RAM/SSD)"]
         },
-        image: "assets/img/alienware1.jpg", 
+        image: "assets/img/alienware1.jpg",
         gallery: [
             "assets/img/alienware2.jpg",
             "assets/img/alienware1.jpg",
             "assets/img/alienware.jpg"
         ],
-        report: "#", 
+        report: "#",
         tags: ["Hardware", "SysAdmin", "Triple Boot"],
         link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_iutdebordeaux-greenit-linux-activity-7429419448949784577-m7ho?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
-        linkLabel: "Voir le post LinkedIn" 
+        linkLabel: "Voir le post LinkedIn"
     },
     {
-        title: "Assistant macOS (J.A.R.V.I.S.)" ,       
+        title: "Assistant macOS (J.A.R.V.I.S.)" ,
         wip: false,
         description: "Assistant vocal hybride pilotant l'environnement de travail macOS (via AppleScript) et intégré à l'IA Gemini.",
         analyse: {
@@ -290,27 +278,27 @@ const persoProjects = [
             competences: ["Développement Python", "Intégration API Gemini", "Scripting AppleScript", "Conception d'Architecture"],
             outils: ["Python 3", "API Google Gemini", "AppleScript", "Shell"]
         },
-        image: "assets/img/jarvis2.png", 
+        image: "assets/img/jarvis2.png",
         gallery: ["assets/img/jarvis1.png", "assets/img/jarvis2.png"],
-        report: "#", 
+        report: "#",
         tags: ["Python", "IA", "macOS"],
-        link: "#" 
+        link: "#"
     },
-    {       
+    {
         title: "Déploiement de macOS via Hackintosh sur un PC",
         wip: true,
         description: "Installation native de macOS Bigsur sur une tour PC HP en contournant les sécurités matérielles et logicielles.",
         analyse: {
             cahier: "Déployer macOS sur un matériel non-Apple (HP, Intel). Contraintes : créer un environnement matériel virtuel sans modifier le système d'exploitation cible, grâce à une base GitHub.",
             resultats: "Création d'un Bootloader (OpenCore) sur-mesure. Stabilité garantie avec un minimum de kexts (4 pilotes, 2 patchs). Contournement des sécurités HP (Hard Freezes, erreurs ACPI) et amorçage réussi du noyau XNU.",
-            competences: ["Administration Système", "Troubleshooting", "Architecture Hardware"], 
+            competences: ["Administration Système", "Troubleshooting", "Architecture Hardware"],
             outils: ["OpenCore Bootloader", "ProperTree", "Terminal", "Scripts Python"]
         },
-        image: "assets/img/hackintoch.jpg", 
+        image: "assets/img/hackintoch.jpg",
         gallery: ["assets/img/hackintoch.jpg"],
-        report: "#", 
+        report: "#",
         tags: ["SysAdmin", "Hardware", "macOS"],
-        link: "#" 
+        link: "#"
     },
     {
         title: "Portfolio Professionnel",
@@ -323,32 +311,30 @@ const persoProjects = [
         },
         image: "assets/img/portfolio1.png",
         gallery: ["assets/img/portfolio.png", "assets/img/portfolio1.png"],
-        report: "#", 
+        report: "#",
         tags: ["Web", "Design", "Vanilla JS"],
         link: "https://github.com/zakksbr/portfolio-zak.git",
         linkLabel: "Voir le code sur GitHub"
     }
 ];
 
-// là je récupére les blocs de ma page html pour pouvoir injecter les projets dedans après
+// je récupère les blocs de la page où on va injecter les cartes
 const saeContainer = document.getElementById('sae-container');
 const persoContainer = document.getElementById('perso-container');
 const modal = document.getElementById('project-modal');
 const closeBtn = document.querySelector('.close-btn');
 
-
-
-// cette fonction fabrique les petites cartes des projets et les affiche sur l'accueil
+// cette fonction fabrique les cartes des projets et les affiche dans le bon bloc
 function createCards(projectsArray, container, typeStr) {
-    if (!container) return; 
+    if (!container) return;
     container.innerHTML = "";
-    
+
     projectsArray.forEach((project, index) => {
         const card = document.createElement('div');
         card.classList.add('project-card');
 
-        // on vérifie s'il y a des statuts particuliers pour afficher les bons petits badges
-        let statusBadgesHTML = ""; 
+        // on ajoute les petits badges seulement si le projet est en coup de cœur ou en cours
+        let statusBadgesHTML = "";
         if (project.favorite) {
             statusBadgesHTML += `<span class="p-badge favorite">🧡 Coup de cœur</span>`;
         }
@@ -359,7 +345,6 @@ function createCards(projectsArray, container, typeStr) {
             statusBadgesHTML = `<div class="project-badges">${statusBadgesHTML}</div>`;
         }
 
-        // injection de tout le html de la carte
         card.innerHTML = `
             <div class="card-img-holder">
                 <img src="${project.image}" alt="${project.title}" class="project-img">
@@ -378,27 +363,25 @@ function createCards(projectsArray, container, typeStr) {
     });
 }
 
-// une fonction qui regroupe la création de toutes les cartes d'un coup
 function loadProjects() {
     createCards(saeProjects, saeContainer, 'sae');
     createCards(persoProjects, persoContainer, 'perso');
 }
 
-// c'est ici que ça gère l'ouverture de la grande fenêtre quand on clique sur "plus de détails"
+// ouverture de la grande fenêtre quand on clique sur "plus de détails"
 window.openModal = function(type, index) {
-    // on check d'abord si c'est une saé ou perso pour piocher dans le bon tableau
+    // on pioche dans le bon tableau selon si c'est une saé ou un projet perso
     const project = (type === 'sae') ? saeProjects[index] : persoProjects[index];
-    
+
     document.getElementById('modal-title').innerText = project.title;
     document.getElementById('modal-image').src = project.image;
-    
-    // on injecte les textes dans les bonnes cases de la grille d'analyse
+
     document.getElementById('analysis-cahier-text').innerHTML = project.analyse.cahier;
     document.getElementById('analysis-resultats-text').innerHTML = project.analyse.resultats;
     document.getElementById('analysis-competences-list').innerHTML = project.analyse.competences.map(comp => `<li>${comp}</li>`).join('');
     document.getElementById('analysis-outils-list').innerHTML = project.analyse.outils.map(outil => `<li>${outil}</li>`).join('');
-    
-    // on gère l'affichage des boutons avec une sécurité (.trim()) pour ignorer les espaces invisibles
+
+    // les boutons rapport et code ne s'affichent que si un vrai lien est renseigné (pas vide, pas "#")
     const reportBtn = document.getElementById('modal-report');
     if (project.report && project.report.trim() !== "" && project.report.trim() !== "#") {
         reportBtn.href = project.report;
@@ -416,14 +399,12 @@ window.openModal = function(type, index) {
         repoBtn.style.display = "none";
     }
 
-    // on récupère et on affiche les petits tags sous le titre
     document.getElementById('modal-tags').innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
 
-    // gestion de la petite galerie d'images dans la modale
     const galleryContainer = document.getElementById('modal-gallery-grid');
-    galleryContainer.innerHTML = ""; 
-    
-    // on regroupe l'image principale et celles de la galerie pour tout afficher ensemble en supprimant les doublons
+    galleryContainer.innerHTML = "";
+
+    // on met l'image principale avec celles de la galerie, en virant les doublons
     const allImages = [project.image, ...(project.gallery || [])];
     const uniqueImages = [...new Set(allImages)];
 
@@ -432,32 +413,28 @@ window.openModal = function(type, index) {
             const img = document.createElement('img');
             img.src = imgSrc;
             img.classList.add('gallery-img');
-            // un clic sur une petite image la met en grand
+
             img.onclick = function() {
                 document.getElementById('modal-image').src = this.src;
             };
             galleryContainer.appendChild(img);
         });
-        document.querySelector('.modal-gallery').style.display = 'block'; 
+        document.querySelector('.modal-gallery').style.display = 'block';
     } else {
-        document.querySelector('.modal-gallery').style.display = 'none'; 
+        document.querySelector('.modal-gallery').style.display = 'none';
     }
 
-    // on affiche enfin la petite fenetre et on bloque le scroll en arrière-plan
-    modal.classList.add('show'); 
-    document.body.style.overflow = 'hidden'; 
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
 }
 
-
-// les déclencheurs
-
-// pour fermer la petite fenetre avec la petite croix
+// pour fermer la fenêtre avec la petite croix
 closeBtn.onclick = function() {
     modal.classList.remove('show');
-    document.body.style.overflow = 'auto'; 
+    document.body.style.overflow = 'auto';
 }
 
-// ou pour la fermer en cliquant n'importe où dans le vide
+// ou en cliquant n'importe où dans le vide
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.classList.remove('show');
@@ -465,27 +442,24 @@ window.onclick = function(event) {
     }
 }
 
-// très important, on attend que tout le html de la page soit bien chargé avant de lancer la création des projets
+// très important, on attend que le html soit bien chargé avant de créer les cartes
 document.addEventListener('DOMContentLoaded', loadProjects);
 
-
-// les animations
+// les animations : chaque section apparaît quand elle arrive à l'écran
 const observerOptions = {
-    threshold: 0.1, // ça s'active quand 10% de l'élément apparaît à l'écran
+    threshold: 0.1,
     rootMargin: "0px 0px -50px 0px"
 };
 
-// on crée un observeur qui va surveiller l'apparition des éléments
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            observer.unobserve(entry.target); // on joue l'animation qu'une seule fois
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// on l'applique sur toutes nos sections et cartes
 document.addEventListener('DOMContentLoaded', () => {
     const elementsToAnimate = document.querySelectorAll('.section-padding, .skill-card');
     elementsToAnimate.forEach(el => {
@@ -494,9 +468,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
-// gestion du switch entre les deux mondes (développeur et arbitre)
-
+// gestion du switch entre les deux mondes (informatique et arbitrage)
 const switchBtn = document.getElementById('switch-world-btn')
 const worldDev = document.getElementById('world-dev')
 const worldReferee = document.getElementById('world-referee')
@@ -504,7 +476,7 @@ const heroPic = document.getElementById('hero-profile-pic')
 const heroScroll = document.getElementById('hero-scroll')
 let isRefereeMode = false
 
-// Photo de profil propre à chaque univers (lue dans les attributs data-* de l'image)
+// chaque univers a sa propre photo de profil, rangée dans les attributs data- de l'image
 const setHeroPic = (world) => {
     if (!heroPic) return
     const src = heroPic.dataset[`src${world}`]
@@ -513,7 +485,7 @@ const setHeroPic = (world) => {
     if (alt) heroPic.alt = alt
 }
 
-// Précharge la photo arbitre pour que la bascule soit instantanée
+// on précharge la photo arbitre pour que le changement soit instantané
 if (heroPic && heroPic.dataset.srcReferee) {
     window.addEventListener('load', () => { new Image().src = heroPic.dataset.srcReferee })
 }
@@ -522,18 +494,19 @@ const heroSection = document.getElementById('about')
 const heroLayout = document.querySelector('.hero-layout')
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
 
-// Rejoue l'animation d'arrivée de l'accueil (au chargement et à chaque changement d'univers)
+// rejoue l'animation d'arrivée de l'accueil, au chargement et à chaque changement d'univers
+// si la personne a désactivé les animations sur son appareil, on ne fait rien
 const playHeroIntro = () => {
     if (!heroLayout || reduceMotion.matches) return
     heroLayout.classList.remove('hero-animate')
     if (heroSection) heroSection.classList.remove('hero-animate-glow')
-    void heroLayout.offsetWidth // force le navigateur à relancer l'animation
+    // petite astuce : ça oblige le navigateur à relancer l'animation depuis le début
+    void heroLayout.offsetWidth
     heroLayout.classList.add('hero-animate')
     if (heroSection) heroSection.classList.add('hero-animate-glow')
 }
 playHeroIntro()
 
-// Affiche l'univers courant (informatique ou arbitrage)
 const applyWorld = () => {
     if (isRefereeMode) {
         document.body.classList.add('referee-mode')
@@ -554,6 +527,7 @@ const applyWorld = () => {
         switchBtn.innerHTML = 'Mon deuxième métier ⚽'
     }
     document.body.style.backgroundColor = 'var(--bg-color)'
+
     // on reste en haut de page, sur l'accueil de l'univers choisi
     window.scrollTo({ top: 0, behavior: 'instant' })
     playHeroIntro()
@@ -567,11 +541,9 @@ if (switchBtn) {
     })
 }
 
-
-// --- DONNÉES DES RETOURS D'ARBITRAGE ---
+// les retours de mes observateurs, match par match
 const feedbackData = [
     {
-        // MATCH 1 (Bègles)
         team1: "BÈGLES",
         team2: "PAYS AUROSAIS",
         logo1: "assets/img/begles.png.webp",
@@ -636,11 +608,10 @@ const feedbackData = [
         ]
     },
     {
-        // MATCH 2 (St Loubès)
         team1: "ST LOUBÈS",
         team2: "ARSAC LE PIAN",
-        logo1: "assets/img/loub.png", // À remplacer
-        logo2: "assets/img/arsa.png", // À remplacer
+        logo1: "assets/img/loub.png",
+        logo2: "assets/img/arsa.png",
         date: "15/03/2026",
         category: "U15 D3",
         tutor: "LAVOIE Gaëtan",
@@ -701,11 +672,10 @@ const feedbackData = [
         ]
     },
     {
-        // MATCH 3 (Rive Droite)
         team1: "RIVE DROITE",
         team2: "CUBNEZAIS",
-        logo1: "assets/img/rd.png", // À remplacer
-        logo2: "assets/img/cubnezais.jpg", // À remplacer
+        logo1: "assets/img/rd.png",
+        logo2: "assets/img/cubnezais.jpg",
         date: "25/04/2026",
         category: "U17 D4",
         tutor: "RAPET Jean Marie",
@@ -769,9 +739,9 @@ const feedbackData = [
 
 const feedbackContainer = document.getElementById('feedback-container');
 
-// Injection dynamique des cartes sur la page d'accueil
+// on fabrique les cartes des retours dans la partie arbitrage
 if (feedbackContainer) {
-    feedbackContainer.innerHTML = ""; // On s'assure que c'est vide avant d'injecter
+    feedbackContainer.innerHTML = "";
     feedbackData.forEach((fb, index) => {
         const card = document.createElement('div');
         card.classList.add('feedback-card');
@@ -795,35 +765,33 @@ if (feedbackContainer) {
 }
 const fbModal = document.getElementById('feedback-modal');
 const fbCloseBtn = document.querySelector('.close-feedback-btn');
+// ouverture du rapport complet d'un match
 window.openFeedbackModal = function(index) {
     const data = feedbackData[index];
-    
-    // Remplissage des logos
+
     document.getElementById('modal-logo1').src = data.logo1;
     document.getElementById('modal-logo2').src = data.logo2;
 
-    // Remplissage de l'en-tête
     document.getElementById('modal-match-title').innerText = `${data.team1} - ${data.team2}`;
     document.getElementById('modal-match-date').innerText = data.date;
     document.getElementById('modal-match-cat').innerText = data.category;
     document.getElementById('modal-match-tutor').innerText = `Tuteur : ${data.tutor}`;
-    
-    // Remplissage des textes généraux
+
     document.getElementById('modal-appreciation').innerText = data.appreciation;
     document.getElementById('modal-conseils').innerText = data.conseils;
-    
-    // Construction dynamique de la matrice d'évaluation
+
     const matricesContainer = document.getElementById('modal-matrices-container');
-    matricesContainer.innerHTML = ""; // On vide avant de remplir
-    
+    matricesContainer.innerHTML = "";
+
+    // on construit la grille d'évaluation catégorie par catégorie
     data.evaluations.forEach(cat => {
         const catDiv = document.createElement('div');
         catDiv.classList.add('eval-category');
-        
+
         let criteresHTML = cat.criteres.map(crit => {
             let badgeClass = 'badge-nonobs';
             let badgeText = 'Non obs.';
-            
+
             if (crit.statut === 'acquis') {
                 badgeClass = 'badge-acquis';
                 badgeText = 'Acquis';
@@ -831,7 +799,7 @@ window.openFeedbackModal = function(index) {
                 badgeClass = 'badge-encours';
                 badgeText = 'En cours';
             }
-            
+
             return `
                 <div class="eval-item">
                     <span class="eval-item-name">${crit.nom}</span>
@@ -839,15 +807,14 @@ window.openFeedbackModal = function(index) {
                 </div>
             `;
         }).join('');
-        
+
         catDiv.innerHTML = `
             <h5>${cat.titre}</h5>
             ${criteresHTML}
         `;
         matricesContainer.appendChild(catDiv);
     });
-    
-    // Affichage de la modale
+
     fbModal.classList.add('show');
     document.body.style.overflow = 'hidden';
 }
@@ -859,7 +826,7 @@ if (fbCloseBtn) {
     }
 }
 
-// Fermeture au clic à l'extérieur de la modale
+// on ferme aussi le rapport si on clique à côté
 window.addEventListener('click', function(event) {
     if (event.target == fbModal) {
         fbModal.classList.remove('show');
@@ -867,8 +834,7 @@ window.addEventListener('click', function(event) {
     }
 });
 
-// Fichier : script.js (à ajouter à la fin)
-
+// le carrousel des actualités
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.carousel-track');
     if (!track) return;
@@ -879,7 +845,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const dotsContainer = document.querySelector('.carousel-dots');
     let currentSlideIndex = 0;
 
-    // Points de pagination générés automatiquement (un par slide)
+    // un point de pagination par actu
     const dots = slides.map((slide, i) => {
         if (!dotsContainer) return null;
         const dot = document.createElement('button');
@@ -895,7 +861,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateSlidePosition = () => {
         track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
-        // Flèches désactivées en bout de course
+
+        // les flèches se grisent quand on arrive au bout
         prevButton.disabled = currentSlideIndex === 0;
         nextButton.disabled = currentSlideIndex === slides.length - 1;
         dots.forEach((dot, i) => {
@@ -914,7 +881,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nextButton.addEventListener('click', () => goTo(currentSlideIndex + 1));
     prevButton.addEventListener('click', () => goTo(currentSlideIndex - 1));
 
-    // Balayage tactile sur mobile
+    // pour pouvoir swiper sur téléphone
     let touchStartX = null;
     track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
     track.addEventListener('touchend', (e) => {
@@ -924,7 +891,7 @@ document.addEventListener('DOMContentLoaded', () => {
         touchStartX = null;
     });
 
-    // Une seule slide : pas de navigation à afficher
+    // s'il n'y a qu'une seule actu, pas besoin de navigation
     if (slides.length < 2) {
         prevButton.style.visibility = 'hidden';
         nextButton.style.visibility = 'hidden';

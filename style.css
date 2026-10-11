@@ -66,12 +66,12 @@ ul { list-style: none; }
     background-color: var(--accent-color);
     color: white;
     border: 2px solid var(--accent-color);
-    box-shadow: 0 0 15px rgba(194, 65, 12, 0.4); 
+    box-shadow: 0 0 15px rgba(194, 65, 12, 0.4);
     transition: all 0.3s ease;
 }
 
-.btn-primary:hover { 
-    background-color: transparent; 
+.btn-primary:hover {
+    background-color: transparent;
     box-shadow: 0 0 25px rgba(194, 65, 12, 0.7);
 }
 
@@ -170,25 +170,25 @@ ul { list-style: none; }
     border-color: var(--accent-color);
 }
 
-.skill-card h3 { 
-    color: var(--accent-color); 
-    margin-bottom: 1.5rem; 
+.skill-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
 }
 
-.skill-card li { 
-    margin-bottom: 0.8rem; 
-    color: var(--text-muted); 
+.skill-card li {
+    margin-bottom: 0.8rem;
+    color: var(--text-muted);
     transition: color 0.3s ease, transform 0.3s ease;
     cursor: default;
 }
 
 .skill-card li:hover {
-    color: var(--text-color); 
-    transform: translateX(10px); 
+    color: var(--text-color);
+    transform: translateX(10px);
 }
 
-.contact-section { 
-    text-align: center; 
+.contact-section {
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -200,7 +200,7 @@ ul { list-style: none; }
     max-width: 600px;
 }
 
-.contact-actions { 
+.contact-actions {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
@@ -356,7 +356,7 @@ footer {
     height: 70vw;
     max-width: 800px;
     max-height: 800px;
-    background: radial-gradient(circle, rgba(194, 65, 12, 0.25) 0%, rgba(12, 12, 12, 0) 70%); 
+    background: radial-gradient(circle, rgba(194, 65, 12, 0.25) 0%, rgba(12, 12, 12, 0) 70%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -390,14 +390,14 @@ footer {
     border: 2px solid var(--accent-color);
     display: block;
     margin: 0 auto;
-    box-shadow: 0 10px 30px rgba(194, 65, 12, 0.15); 
+    box-shadow: 0 10px 30px rgba(194, 65, 12, 0.15);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     animation: floatImage 6s ease-in-out infinite;
 }
 
 .about-img:hover {
-    box-shadow: 0 15px 40px rgba(194, 65, 12, 0.4); 
-    animation-play-state: paused; 
+    box-shadow: 0 15px 40px rgba(194, 65, 12, 0.4);
+    animation-play-state: paused;
     transform: translateY(-10px) scale(1.02);
 }
 
@@ -488,13 +488,13 @@ footer {
 }
 
 .btn-referee {
-    font-family: inherit; 
+    font-family: inherit;
     padding: 0.8rem 1.8rem;
     border-radius: 4px;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.9rem;
-    border: 2px solid #ffffff; 
+    border: 2px solid #ffffff;
     color: #ffffff;
     background: transparent;
     cursor: pointer;
@@ -503,8 +503,8 @@ footer {
 
 .btn-referee:hover {
     background: #ffffff;
-    color: var(--bg-color); 
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); 
+    color: var(--bg-color);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .nav-links-referee {
@@ -535,7 +535,7 @@ body.referee-mode .referee-content {
 body.referee-mode .referee-content h2 {
     font-size: 1.5rem;
     font-weight: 300;
-    color: #2ecc71; 
+    color: #2ecc71;
 }
 
 body.referee-mode .referee-content p {
@@ -564,12 +564,12 @@ body.referee-mode .nav-links-referee a:hover {
     display: flex;
     align-items: center;
     gap: 4rem;
-    max-width: 1000px;  
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .ref-about-img-col {
-    flex: 1;  
+    flex: 1;
 }
 
 .ref-about-img {
@@ -581,21 +581,21 @@ body.referee-mode .nav-links-referee a:hover {
 }
 
 .ref-about-text-col {
-    flex: 1;  
+    flex: 1;
     text-align: left;
 }
 
 .ref-about-text-col h3 {
     font-size: 2.2rem;
     color: #2ecc71;
-    margin-bottom: 1.5rem;  
+    margin-bottom: 1.5rem;
     font-weight: 700;
 }
 
 .ref-subtitle {
-    color: #2ecc71 !important; 
+    color: #2ecc71 !important;
     font-size: 1.3rem !important;
-    margin-left: 10px;  
+    margin-left: 10px;
     font-style: italic;
     font-weight: 300;
 }
@@ -605,7 +605,7 @@ body.referee-mode .nav-links-referee a:hover {
     line-height: 1.7;
     margin-bottom: 1rem;
     font-size: 1.05rem;
-    font-style: italic;  
+    font-style: italic;
 }
 
 .referee-title {
@@ -690,7 +690,7 @@ body.referee-mode .nav-links-referee a:hover {
     margin: 0 auto;
     border: 2px solid #ffffff;
     border-radius: 12px;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .ref-table {
@@ -915,8 +915,8 @@ body.referee-mode .nav-links-referee a:hover {
 .feedback-modal-content {
     max-width: 1000px;
     width: 90%;
-    position: relative; 
-    border: 2px solid #2ecc71; 
+    position: relative;
+    border: 2px solid #2ecc71;
 }
 
 .feedback-modal-header {
@@ -978,13 +978,13 @@ body.referee-mode .nav-links-referee a:hover {
     width: 50px;
     height: 50px;
     object-fit: contain;
-    background-color: #ffffff; 
-    border-radius: 50%;  
+    background-color: #ffffff;
+    border-radius: 50%;
     padding: 4px;
 }
 
 .referee-affiliations-text p {
-    margin: 0.2rem 0; 
+    margin: 0.2rem 0;
     line-height: 1.2;
 }
 
@@ -1036,7 +1036,7 @@ body.referee-mode .nav-links-referee a:hover {
 }
 
 .conseils-box h5 {
-    color: #2ecc71;  
+    color: #2ecc71;
     margin-bottom: 0.5rem;
 }
 
@@ -1136,7 +1136,7 @@ body.referee-mode .nav-links-referee a:hover {
         padding: 1rem;
         gap: 1rem;
     }
-    
+
     .nav-links, .nav-links-referee {
         flex-wrap: wrap;
         justify-content: center;
@@ -1146,7 +1146,7 @@ body.referee-mode .nav-links-referee a:hover {
     .nav-links a, .nav-links-referee a {
         font-size: 0.9rem;
     }
-    
+
     .cta-group, .contact-actions, .mode-toggle-container {
         display: flex;
         flex-direction: column;
@@ -1245,7 +1245,7 @@ body.referee-mode .nav-links-referee a:hover {
     .ref-timeline-item .ref-timeline-dot {
         top: 50% !important;
     }
-    
+
     .ref-timeline-item .ref-timeline-top,
     .ref-timeline-item .ref-timeline-bottom {
         top: 0 !important;
@@ -1256,13 +1256,11 @@ body.referee-mode .nav-links-referee a:hover {
         height: auto;
     }
 
-    /* Tableau « Matchs Joués » : voir le bloc responsive en fin de fichier */
     .carousel-img { height: 250px; }
     .carousel-wrapper { position: relative; }
     .carousel-btn { position: absolute; top: 40%; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); }
     .prev-btn { left: 10px; }
     .next-btn { right: 10px; }
-
 
 }
 
@@ -1285,7 +1283,7 @@ body.referee-mode .nav-links-referee a:hover {
 
 @media (max-width: 768px) {
     .navbar { padding: 1rem; }
-    .nav-links { display: none; } 
+    .nav-links { display: none; }
     .hero-content h1 { font-size: 2.5rem; }
     .hero-title-wrapper {
         flex-direction: column;
@@ -1298,12 +1296,11 @@ body.referee-mode .nav-links-referee a:hover {
     }
     .btn-secondary {
         margin-left: 0;
-        display: block; 
-        width: 100%; 
+        display: block;
+        width: 100%;
         text-align: center;
     }
 }
-
 
 .matches-cards-grid {
     display: flex;
@@ -1464,15 +1461,6 @@ body.referee-mode .nav-links-referee a:hover {
     font-size: 1rem;
 }
 
-/* Fichier : style.css (à ajouter DANS votre  existant) */
-
-
-/* ==========================================================
-   Univers arbitrage — ajouts septembre 2026
-   (placés en fin de fichier pour passer après les règles de base)
-   ========================================================== */
-
-/* --- Tableau de bord : lignes de discipline --- */
 .ref-stat-list li.ref-discipline {
     font-size: 1rem;
 }
@@ -1492,7 +1480,6 @@ body.referee-mode .nav-links-referee a:hover {
 .card-yellow { background-color: #f1c40f; }
 .card-red { background-color: #e74c3c; }
 
-/* --- Actualités : méta, pagination, flèches désactivées --- */
 .carousel-caption p + p {
     margin-top: 0.8rem;
 }
@@ -1507,7 +1494,6 @@ body.referee-mode .nav-links-referee a:hover {
 .carousel-caption .carousel-meta + h4 {
     margin-top: 0;
 }
-/* Le padding est porté par chaque slide : la slide suivante ne dépasse plus du cadre */
 .carousel-container {
     padding: 0;
 }
@@ -1543,7 +1529,6 @@ body.referee-mode .nav-links-referee a:hover {
     border-color: #2ecc71;
 }
 
-/* --- Matchs joués : rôle, date, sous-ligne --- */
 .m-col-left {
     min-width: 0;
     flex-wrap: wrap;
@@ -1581,7 +1566,6 @@ body.referee-mode .nav-links-referee a:hover {
     border: 1px solid #f1c40f;
 }
 
-/* --- Responsive : on garde libellé à gauche / nombre à droite --- */
 @media (max-width: 992px) {
     .m-card-header { padding: 1rem; }
     .m-card-header h3 { font-size: 1.1rem; }
@@ -1608,7 +1592,6 @@ body.referee-mode .nav-links-referee a:hover {
     .m-circle { width: 30px; height: 30px; font-size: 0.55rem; }
     .m-date { font-size: 0.75rem; }
     .carousel-img { height: 250px; }
-    /* Flèches centrées sur la photo et non plus sur toute la carte */
     .carousel-btn { top: 135px; background: rgba(0, 0, 0, 0.6); }
 }
 
@@ -1621,8 +1604,6 @@ body.referee-mode .nav-links-referee a:hover {
     .carousel-btn { top: 110px; width: 38px; height: 38px; }
 }
 
-
-/* --- Tableau de bord : maquette photo + statistiques --- */
 .ref-dash-list {
     display: flex;
     flex-direction: column;
@@ -1672,7 +1653,6 @@ body.referee-mode .nav-links-referee a:hover {
     padding-left: 0.5rem;
 }
 
-/* --- Logos de clubs et de compétitions --- */
 .m-circle {
     width: 44px;
     height: 44px;
@@ -1703,12 +1683,10 @@ body.referee-mode .nav-links-referee a:hover {
     .m-circle { width: 34px; height: 34px; }
 }
 @media (max-width: 480px) {
-    /* Logos des clubs conservés sur petit écran, en plus petit */
     .m-logos-inline { display: flex; }
     .m-circle { width: 28px; height: 28px; }
 }
 
-/* --- Retouches maquette tableau de bord + logos de coupes --- */
 .ref-dash-stats {
     justify-content: flex-start;
     padding-top: 2.5rem;
@@ -1746,10 +1724,6 @@ body.referee-mode .nav-links-referee a:hover {
     .m-logo-gambardella { height: 56px; }
 }
 
-
-/* ==========================================================
-   Accueil — nouvelle disposition (maquette septembre 2026)
-   ========================================================== */
 .hero-layout {
     display: flex;
     flex-direction: column;
@@ -1794,7 +1768,6 @@ body.referee-mode .hero-layout .referee-content {
     margin-top: 0;
 }
 
-/* Rangée de boutons : réalisations / deuxième métier / à propos */
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -1803,8 +1776,7 @@ body.referee-mode .hero-layout .referee-content {
 }
 .hero-actions .btn,
 .hero-actions .btn-referee {
-    flex: 1 0 auto; /* jamais plus étroit que son texte : l'emoji ne déborde plus */
-    min-width: 200px;
+    flex: 1 0 auto;    min-width: 200px;
     margin: 0;
     text-align: center;
     white-space: nowrap;
@@ -1813,7 +1785,6 @@ body.referee-mode .hero-actions .btn-referee {
     flex: 0 1 auto;
 }
 
-/* Flèche animée « Swipez pour en savoir plus ! » */
 .hero-scroll {
     display: flex;
     align-items: center;
@@ -1829,7 +1800,6 @@ body.referee-mode .hero-actions .btn-referee {
 body.referee-mode .hero-scroll {
     --arrow-color: #2ecc71;
 }
-/* Fenêtre dans laquelle la flèche descend en boucle */
 .hero-scroll-arrow {
     position: relative;
     display: block;
@@ -1885,8 +1855,6 @@ body.referee-mode .hero-scroll {
     .hero-scroll-arrow { height: 70px; }
 }
 
-
-/* --- Accueil, univers arbitrage : identité à gauche, bouton retour à droite --- */
 body.referee-mode .hero-layout {
     display: grid;
     grid-template-columns: max-content auto;
@@ -1905,8 +1873,7 @@ body.referee-mode .hero-identity-text h1 {
 body.referee-mode .hero-layout > .referee-content {
     grid-column: 1;
     grid-row: 2;
-    padding-left: 65px; /* décalé sous le nom, comme sur la maquette */
-}
+    padding-left: 65px;}
 body.referee-mode .hero-layout .hero-actions {
     grid-column: 2;
     grid-row: 1;
@@ -1919,7 +1886,6 @@ body.referee-mode .hero-layout .hero-scroll {
 }
 
 @media (max-width: 992px) {
-    /* Sur tablette / mobile on revient à l'empilement vertical */
     body.referee-mode .hero-layout {
         display: flex;
     }
@@ -1931,10 +1897,6 @@ body.referee-mode .hero-layout .hero-scroll {
     }
 }
 
-
-/* ==========================================================
-   Bandeau « Prochainement » (après les projets perso)
-   ========================================================== */
 .teaser-banner {
     display: grid;
     grid-template-columns: minmax(240px, 340px) 1fr;
@@ -1957,7 +1919,6 @@ body.referee-mode .hero-layout .hero-scroll {
     margin-bottom: 1.2rem;
 }
 .teaser-title {
-    /* taille adaptative : le mot et ses points doivent tenir dans la colonne */
     font-size: clamp(1.5rem, 2.3vw, 2rem);
     font-weight: 900;
     line-height: 1.1;
@@ -1967,7 +1928,6 @@ body.referee-mode .hero-layout .hero-scroll {
 .teaser-dots {
     white-space: nowrap;
 }
-/* Les trois points s'allument l'un après l'autre */
 .teaser-dots span {
     color: var(--accent-color);
     animation: teaser-dot 1.6s ease-in-out infinite;
@@ -1989,7 +1949,6 @@ body.referee-mode .hero-layout .hero-scroll {
     gap: 1.5rem;
     align-items: stretch;
 }
-/* Le cahier des charges occupe toute la largeur, les deux listes se partagent la ligne du dessous */
 .teaser-box:first-child {
     grid-column: 1 / -1;
 }
@@ -2036,12 +1995,6 @@ body.referee-mode .hero-layout .hero-scroll {
     .teaser-banner:hover { transform: none; }
 }
 
-
-/* ==========================================================
-   Animation d'arrivée sur l'accueil
-   ========================================================== */
-
-/* Accueil : les éléments apparaissent les uns après les autres */
 @keyframes hero-fade-up {
     from { opacity: 0; transform: translateY(22px); }
     to   { opacity: 1; transform: none; }
@@ -2062,7 +2015,6 @@ body.referee-mode .hero-layout .hero-scroll {
 .hero-animate .hero-scroll              { animation: hero-fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) 0.45s both; }
 .hero-section.hero-animate-glow .hero-glow { animation: hero-glow-in 1.4s ease both; }
 
-/* Actualités : logos des équipes à côté de leur nom */
 .carousel-caption .match-title {
     display: flex;
     flex-wrap: wrap;
@@ -2089,4 +2041,3 @@ body.referee-mode .hero-layout .hero-scroll {
     .hero-animate .hero-scroll,
     .hero-section.hero-animate-glow .hero-glow { animation: none; }
 }
-
