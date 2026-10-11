@@ -518,40 +518,53 @@ if (heroPic && heroPic.dataset.srcReferee) {
     window.addEventListener('load', () => { new Image().src = heroPic.dataset.srcReferee })
 }
 
+const heroSection = document.getElementById('about')
+const heroLayout = document.querySelector('.hero-layout')
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+// Rejoue l'animation d'arrivée de l'accueil (au chargement et à chaque changement d'univers)
+const playHeroIntro = () => {
+    if (!heroLayout || reduceMotion.matches) return
+    heroLayout.classList.remove('hero-animate')
+    if (heroSection) heroSection.classList.remove('hero-animate-glow')
+    void heroLayout.offsetWidth // force le navigateur à relancer l'animation
+    heroLayout.classList.add('hero-animate')
+    if (heroSection) heroSection.classList.add('hero-animate-glow')
+}
+playHeroIntro()
+
+// Affiche l'univers courant (informatique ou arbitrage)
+const applyWorld = () => {
+    if (isRefereeMode) {
+        document.body.classList.add('referee-mode')
+        setHeroPic('Referee')
+        if (heroScroll) heroScroll.setAttribute('href', '#ref-about')
+        worldDev.style.display = 'none'
+        worldReferee.style.display = 'block'
+        switchBtn.innerHTML = 'Retour en informatique 💻'
+        document.querySelectorAll('#world-referee .reveal').forEach(el => {
+            el.classList.add('active')
+        })
+    } else {
+        document.body.classList.remove('referee-mode')
+        setHeroPic('Dev')
+        if (heroScroll) heroScroll.setAttribute('href', '#perso-projects')
+        worldReferee.style.display = 'none'
+        worldDev.style.display = 'block'
+        switchBtn.innerHTML = 'Mon deuxième métier ⚽'
+    }
+    document.body.style.backgroundColor = 'var(--bg-color)'
+    // on reste en haut de page, sur l'accueil de l'univers choisi
+    window.scrollTo({ top: 0, behavior: 'instant' })
+    playHeroIntro()
+}
+
 if (switchBtn) {
     switchBtn.innerHTML = 'Mon deuxième métier ⚽'
     switchBtn.addEventListener('click', () => {
         isRefereeMode = !isRefereeMode
-        if (isRefereeMode) {
-            document.body.classList.add('referee-mode')
-            setHeroPic('Referee')
-            if (heroScroll) heroScroll.setAttribute('href', '#ref-about')
-            worldDev.style.display = 'none'
-            worldReferee.style.display = 'block'
-            switchBtn.innerHTML = 'Retour en informatique 💻'
-            document.body.style.backgroundColor = 'var(--bg-color)'
-            
-            document.querySelectorAll('#world-referee .reveal').forEach(el => {
-                el.classList.add('active')
-            })
-            
-            setTimeout(() => {
-                worldReferee.scrollIntoView({ behavior: 'smooth', block: 'start' })
-            }, 100)
-
-        } else {
-            document.body.classList.remove('referee-mode')
-            setHeroPic('Dev')
-            if (heroScroll) heroScroll.setAttribute('href', '#perso-projects')
-            worldReferee.style.display = 'none'
-            worldDev.style.display = 'block'
-            switchBtn.innerHTML = 'Mon deuxième métier ⚽'
-            document.body.style.backgroundColor = 'var(--bg-color)'
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-        }
+        applyWorld()
     })
-
 }
 
 
