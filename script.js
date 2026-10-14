@@ -2,6 +2,7 @@
 const saeProjects = [
     {
         title: "Installation de poste",
+        team: ["Rafaël Hocquel"],
         favorite: true,
         description: "Configuration d'une machine virtuelle Lubuntu optimisée (8 Go) pour développer.",
         analyse: {
@@ -20,6 +21,7 @@ const saeProjects = [
 
     {
         title: "Pixel IUT War",
+        team: [],
         favorite: true,
         description: "Création du client web d'une application collaborative (guerre des pixels) avec synchronisation continue d'une grille de 10 000 pixels.",
         analyse: {
@@ -40,6 +42,7 @@ const saeProjects = [
 
     {
         title: "Installation de Services Réseaux",
+        team: ["Rafaël Hocquel"],
         favorite: true,
         description: "Déploiement d'une infrastructure réseau virtuelle sécurisée et intégration de services collaboratifs (Nextcloud & OnlyOffice).",
         analyse: {
@@ -61,6 +64,7 @@ const saeProjects = [
 
     {
         title: "Coloration de graphes",
+        team: ["Thomas Lableigne"],
         favorite: true,
         description: "Développement de trois algorithmes de coloration (Welsh & Powell, 5-coloration, 6-coloration).",
         analyse: {
@@ -82,6 +86,7 @@ const saeProjects = [
 
     {
         title: "Labyrinthe",
+        team: [],
         favorite: false,
         wip: false,
         description: "Jeu de labyrinthe multi-étages en Java/JavaFX, développé seul : héros piloté au clavier, monstres autonomes et déplacements fluides.",
@@ -101,6 +106,7 @@ const saeProjects = [
 
     {
         title: "Capteurs : statistiques de température",
+        team: ["Rafaël Hocquel"],
         favorite: false,
         wip: false,
         description: "Outil en ligne de commande écrit en C qui analyse des relevés de capteurs de température (fichier JSON ou URL) et génère un rapport CSV.",
@@ -120,6 +126,7 @@ const saeProjects = [
 
     {
         title: "Comparaisons d'algorithmes",
+        team: ["Valentin Gues"],
         description: "Programmation des fonctionnalités d'un jeu de plateau et conception de deux Intelligence Artificielle capable de jouer contre ou à la place de l'utilisateur",
         analyse: {
             cahier: "Coder les règles d'un jeu de plateau (plantation d'un arbre, coupes, vitalité) et développement de deux Intelligences Artificielles capable de jouer, la première avec un algorithme glouton et une deuxième visionnaire capable d'anticiper les conséquences de ses actions sur le long terme.",
@@ -137,6 +144,7 @@ const saeProjects = [
 
     {
         title: "Création de Base de données",
+        team: ["Kenzo Palmade"],
         favorite: true,
         description: "Conception d'une Base de données pour une agence d'événements culturels fictive. Traduction du cahier des charges en contraintes.",
         analyse: {
@@ -154,6 +162,7 @@ const saeProjects = [
     },
     {
         title: "Recueil de besoin",
+        team: [],
         favorite: true,
         description: "Refactoring d'un site web legacy. Passage de tableaux à un CSS Grid (avec un Thème Windows XP).",
         analyse: {
@@ -175,6 +184,7 @@ const saeProjects = [
 
     {
         title: "Développement d'une application",
+        team: ["Walid Atro", "Mahdiullah Zahed"],
         description: "Application C# de gestion de personnages et simulateur de jeu de rôles avec architecture Orientée Objet intégrale.",
         analyse: {
             cahier: "Concevoir en équipe de 3 une application WinForms robuste traduisant des règles d'un jeu fictif.",
@@ -191,6 +201,7 @@ const saeProjects = [
 
     {
         title: "Implémentation",
+        team: [],
         description: "Programmation d'une station domotique en Java. Gestion de l'historique et des données.",
         analyse: {
             cahier: "Intégrer l'entièreté des fonctionnalités de gestion, de mise à jour des données météorologiques et de programmation du chauffage d'une station météo à partir d'un code incomplet.",
@@ -208,6 +219,7 @@ const saeProjects = [
 
     {
         title: "Environnement économique et écologique",
+        team: ["Thomas Lableigne", "Lucas Le Guennec", "Jeremy Cardoso", "Quentin Nguyen Pham"],
         description: "Analyse fonctionnelle et environnementale d'une entreprise locale face à une crise de crédibilité majeure (PESTEL & Porter).",
         analyse: {
             cahier: "En tant que Chef de Projet, coordonner une équipe de 5 personnes pour réaliser le diagnostic complet de l'entreprise Baillardran.",
@@ -223,6 +235,7 @@ const saeProjects = [
     },
     {
         title: "Réalisation d'une mission confié par une organisation",
+        team: ["Rafael Peeters", "Antonin Carpentier", "Thomas Lableigne", "Ihor Tykhoniuk"],
         description: "Conception de la campagne de communication visuelle pour la Journée Portes Ouvertes du département informatique, puis organisation de celle-ci avec les autres étudiants bénévoles.",
         analyse: {
             cahier: "Élaborer une identité visuelle complète (affiches A1/A2, programmes, signalétique) respectant la charte graphique de l'Université.",
