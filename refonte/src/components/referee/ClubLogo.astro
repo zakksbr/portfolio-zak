@@ -1,0 +1,16 @@
+---
+import Pic from '../Pic.astro'
+import Icon from '../Icon.astro'
+
+interface Props {
+    src?: string | null
+    alt: string
+    width?: number
+    class?: string
+}
+
+const { src, alt, width = 100, class: className = '' } = Astro.props
+---
+{src
+    ? <span class:list={['club-logo', className]}><Pic src={src} alt={alt} width={width} /></span>
+    : <span class:list={['flex flex-none items-center justify-center rounded-full bg-white/[0.08] text-[#8e8e93]', className]} aria-hidden="true"><Icon name="ball" size={20} /></span>}

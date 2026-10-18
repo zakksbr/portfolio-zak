@@ -1,0 +1,31 @@
+---
+import Pic from './Pic.astro'
+
+interface Props {
+    project: any
+    dialog: string
+}
+
+const { project, dialog } = Astro.props
+const search = [project.title, project.description, ...project.tags].join(' ')
+---
+<li data-finder-item data-tags={project.tags.join('|')} data-fav={String(!!project.favorite)} data-wip={String(!!project.wip)} data-search={search}>
+    <button type="button" class="finder-card" data-open-dialog={dialog} aria-haspopup="dialog">
+        <span class="finder-card-media">
+            <Pic src={project.image} alt="" width={560} class="finder-card-img" />
+            {(project.favorite || project.wip) && (
+                <span class="absolute left-2 top-2 flex flex-wrap gap-1.5">
+                    {project.favorite && <span class="finder-badge">🧡 Coup de cœur</span>}
+                    {project.wip && <span class="finder-badge">⏳ {project.wipLabel ?? 'En cours de finalisation'}</span>}
+                </span>
+            )}
+        </span>
+        <span class="flex min-w-0 flex-col gap-1 px-1 pb-1">
+            <span class="text-[15px] font-semibold leading-snug">{project.title}</span>
+            <span class="finder-card-desc text-[13px] text-[#a1a1a6]">{project.description}</span>
+            <span class="mt-1.5 flex flex-wrap gap-1.5">
+                {project.tags.map((tag: string) => <span class="rounded-full bg-white/10 px-2 py-0.5 text-[11px] text-[#d1d1d6]">{tag}</span>)}
+            </span>
+        </span>
+    </button>
+</li>

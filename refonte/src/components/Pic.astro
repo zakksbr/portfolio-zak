@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets'
+import { img, isSvg } from '../lib/images.js'
+
+interface Props {
+    src: string
+    alt: string
+    width?: number
+    class?: string
+    loading?: 'lazy' | 'eager'
+}
+
+const { src, alt, width = 800, class: className, loading = 'lazy' } = Astro.props
+const svg = isSvg(src)
+---
+{svg
+    ? <img src={img(src) as string} alt={alt} class={className} loading={loading} decoding="async" />
+    : <Image src={img(src) as any} alt={alt} width={width} class={className} loading={loading} decoding="async" />}

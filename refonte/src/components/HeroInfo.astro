@@ -1,0 +1,75 @@
+---
+import Window from './Window.astro'
+import Pic from './Pic.astro'
+import Icon from './Icon.astro'
+import { saeProjects, persoProjects } from '../data/projects.js'
+
+const lastPersoIndex = persoProjects.findIndex(p => p.title.startsWith('Tableau de bord'))
+const lastUnivIndex = saeProjects.findIndex(p => p.title.startsWith('Capteurs'))
+const lastPerso = persoProjects[lastPersoIndex]
+const lastUniv = saeProjects[lastUnivIndex]
+
+const widgets = [
+    { label: 'Mon dernier projet perso', project: lastPerso, dialog: `project-perso-${lastPersoIndex}`, position: 'object-center' },
+    { label: 'Mon dernier projet universitaire', project: lastUniv, dialog: `project-sae-${lastUnivIndex}`, position: 'object-top' },
+]
+---
+<section id="about" aria-label="Accueil" class="flex flex-wrap items-start justify-center gap-7 md:pt-6">
+    <Window title="zakariasabri.fr" class="min-w-0 max-w-[820px] flex-[999_1_560px]" label="Présentation">
+        <div class="flex flex-col gap-7 px-6 pb-9 pt-10 md:px-12 md:pt-11">
+            <div class="flex flex-wrap items-center gap-x-7 gap-y-5">
+                <Pic
+                    src="assets/img/ma-photo.jpg"
+                    alt="Photo de Zakaria"
+                    width={260}
+                    loading="eager"
+                    class="hero-pic h-24 w-24 rounded-full border-[3px] border-[var(--world)] object-cover shadow-[0_0_0_6px_var(--world-glow-soft)] md:h-[124px] md:w-[124px]"
+                />
+                <div class="hero-step flex min-w-0 flex-col gap-1.5">
+                    <h1 class="font-display text-[clamp(2rem,6vw,3.25rem)] font-black leading-[1.05]">Zakaria SABRI</h1>
+                    <p class="text-lg text-[#a1a1a6] md:text-[19px]">Étudiant en 2ème année de BUT Informatique</p>
+                </div>
+            </div>
+
+            <p class="hero-step delay-1 flex flex-wrap items-center gap-x-3.5 gap-y-2 rounded-[10px] border border-white/10 bg-white/5 px-4 py-3.5">
+                <strong class="text-xs tracking-[0.08em] text-[var(--world)]">OBJECTIF :</strong>
+                <span class="text-[#e5e5ea] md:text-base">Stage en informatique de 8 à 10 semaines, entre le 18 janvier et le 26 mars 2027, en développement et infrastructure</span>
+            </p>
+
+            <div class="hero-step delay-2 flex flex-wrap gap-3">
+                <a href="#perso-projects" class="btn btn-primary"><Icon name="folder" size={18} />Mes réalisations</a>
+                <a href="/arbitrage/" class="btn btn-secondary">Mon deuxième métier ⚽</a>
+                <a href="#presentation" class="btn btn-secondary"><Icon name="user" size={18} />À propos de moi</a>
+            </div>
+
+            <a href="#perso-projects" class="hero-step delay-3 inline-flex items-center gap-3 self-start text-sm font-semibold text-[#a1a1a6] hover:text-white" aria-label="Descendre vers la suite de la page">
+                <span class="scroll-arrow relative block h-[70px] w-5 overflow-hidden text-[var(--world)]" aria-hidden="true">
+                    <svg viewBox="0 0 20 60" width="20" height="60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-0 top-0">
+                        <line x1="10" y1="1" x2="10" y2="57"></line>
+                        <polyline points="3,49 10,57 17,49"></polyline>
+                    </svg>
+                </span>
+                Swipez pour en savoir plus !
+            </a>
+        </div>
+    </Window>
+
+    <aside aria-label="Widgets" class="hero-step delay-2 flex w-full flex-[1_1_280px] flex-col gap-4 md:max-w-[330px]">
+        <a href="#next-project" class="widget flex flex-col gap-2.5 p-5 transition-transform hover:-translate-y-0.5">
+            <span class="label-caps flex items-center gap-2"><Icon name="clock" size={14} strokeWidth={2} />En préparation</span>
+            <span class="font-display text-[26px] font-black leading-[1.1]">Prochainement<span class="blink-dots text-[var(--world)]"><span>.</span><span>.</span><span>.</span></span></span>
+            <span class="text-sm text-[#a1a1a6]">Mon plus gros projet, qui réunit toute ma polyvalence: le développement web, l'administration système, le réseau et l'automatisation.</span>
+        </a>
+
+        {widgets.map(w => (
+            <button type="button" data-open-dialog={w.dialog} class="widget flex flex-col overflow-hidden text-left transition-transform hover:-translate-y-0.5">
+                <Pic src={w.project.image} alt={w.project.title} width={660} class={`block h-32 w-full object-cover ${w.position}`} />
+                <span class="flex flex-col gap-1.5 px-[18px] pb-[18px] pt-3.5">
+                    <span class="label-caps">{w.label}</span>
+                    <span class="font-semibold">{w.project.title}</span>
+                    <span class="text-[13px] text-[#a1a1a6]">{w.project.tags.join(' · ')}</span>
+                </span>
+            </button>
+        ))}
+    </aside>
+</section>

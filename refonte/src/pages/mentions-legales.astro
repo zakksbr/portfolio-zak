@@ -1,0 +1,118 @@
+---
+import Base from '../layouts/Base.astro'
+import Window from '../components/Window.astro'
+
+const links = [
+    { href: '#editeur', label: 'Éditeur' },
+    { href: '#hebergeur', label: 'Hébergeur' },
+    { href: '#donnees', label: 'Données personnelles' },
+    { href: '#propriete', label: 'Propriété intellectuelle' },
+    { href: '#credits', label: 'Crédits' },
+]
+
+const dock = [
+    { href: '/', label: 'Accueil', icon: 'home' },
+    { href: '#editeur', label: 'Mentions légales', icon: 'doc', current: true },
+]
+
+const dockExtras = [
+    { href: '/arbitrage/', label: 'Mon deuxième métier ⚽', icon: 'flag', style: 'referee' },
+]
+
+const clubs = [
+    'SAM Football',
+    'Girondins de Bordeaux',
+    'Trélissac FC',
+    'ES Bruges',
+    'Lège Cap Ferret US',
+    'Bègles',
+    'FC Pays Aurosais',
+    'Saint-Loubès',
+    'Arsac Le Pian',
+    'Rive Droite',
+    'Cubnezais',
+]
+
+const instances = [
+    'District de la Gironde de Football',
+    'Ligue de Football Nouvelle-Aquitaine',
+    'Coupe de France Crédit Agricole',
+    'Coupe Gambardella Crédit Agricole',
+]
+---
+<Base
+    title="Mentions légales | Zakaria Sabri"
+    description="Mentions légales, données personnelles et crédits du portfolio de Zakaria Sabri."
+    world="informatique"
+    links={links}
+    dock={dock}
+    dockExtras={dockExtras}
+>
+    <section class="flex flex-col gap-8">
+        <h1 class="section-heading">Mentions légales</h1>
+
+        <Window title="Mentions légales" label="Mentions légales">
+            <div class="legal flex flex-col gap-10 p-6 md:p-10">
+                <section id="editeur" aria-labelledby="t-editeur">
+                    <h2 id="t-editeur">Éditeur du site</h2>
+                    <p>Ce site est un portfolio personnel, édité à titre non professionnel par <strong>Zakaria Sabri</strong>.</p>
+                    <ul>
+                        <li>Directeur de la publication : Zakaria Sabri</li>
+                        <li>Contact : <a href="mailto:zakaria.sabri@etu.u-bordeaux.fr">zakaria.sabri@etu.u-bordeaux.fr</a></li>
+                        <li>Adresse du site : <a href="https://zakariasabri.fr/">zakariasabri.fr</a></li>
+                    </ul>
+                </section>
+
+                <section id="hebergeur" aria-labelledby="t-hebergeur">
+                    <h2 id="t-hebergeur">Hébergeur</h2>
+                    <p>Le site est hébergé par <strong>GitHub, Inc.</strong> (service GitHub Pages).</p>
+                    <ul>
+                        <li>88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis</li>
+                        <li>Téléphone : +1 877 448 4820</li>
+                        <li>Site : <a href="https://github.com" target="_blank" rel="noopener">github.com</a></li>
+                    </ul>
+                </section>
+
+                <section id="donnees" aria-labelledby="t-donnees">
+                    <h2 id="t-donnees">Données personnelles et cookies</h2>
+                    <p>Ce site ne dépose <strong>aucun cookie</strong>, n'utilise <strong>aucun outil de mesure d'audience</strong> ni aucun traceur, et ne contient <strong>aucun formulaire</strong>.</p>
+                    <p>Pour afficher certaines ressources, votre navigateur contacte des services tiers, qui reçoivent alors votre adresse IP :</p>
+                    <ul>
+                        <li><strong>Google Fonts</strong> (Google) : chargement de la police Montserrat.</li>
+                        <li><strong>cdnjs</strong> (Cloudflare) : chargement de la bibliothèque D3.js pour le graphe du réseau, sur la page d'accueil.</li>
+                        <li><strong>GitHub Pages</strong> : comme tout hébergeur, GitHub peut enregistrer des journaux techniques de connexion.</li>
+                    </ul>
+                    <p>Si vous m'écrivez par e-mail, votre adresse et votre message servent uniquement à vous répondre et ne sont transmis à personne.</p>
+                    <p>Conformément au RGPD, vous pouvez demander l'accès, la rectification ou la suppression de vos données en m'écrivant à l'adresse ci-dessus. Vous pouvez aussi adresser une réclamation à la <a href="https://www.cnil.fr" target="_blank" rel="noopener">CNIL</a>.</p>
+                </section>
+
+                <section id="propriete" aria-labelledby="t-propriete">
+                    <h2 id="t-propriete">Propriété intellectuelle</h2>
+                    <p>Sauf mention contraire, les textes, captures d'écran et le code source de ce site sont la propriété de Zakaria Sabri (© 2026, tous droits réservés). Le code est consultable publiquement sur <a href="https://github.com/zakksbr/portfolio-zak" target="_blank" rel="noopener">GitHub</a>, à des fins de consultation uniquement.</p>
+                    <p>Toute reproduction ou réutilisation sans autorisation est interdite.</p>
+                </section>
+
+                <section id="credits" aria-labelledby="t-credits">
+                    <h2 id="t-credits">Crédits</h2>
+                    <h3>Photos</h3>
+                    <ul>
+                        <li>Photos d'arbitrage (portrait, arbitre central, arbitre assistant, présentation) : <strong>Tom Williot</strong> (@_twlt.prod_).</li>
+                        <li>Captures d'écran : réalisées à partir de mes propres projets.</li>
+                    </ul>
+                    <h3>Logos</h3>
+                    <p>Les logos des clubs ({clubs.join(', ')}) et des instances et compétitions ({instances.join(', ')}) appartiennent à leurs détenteurs respectifs. Ils servent uniquement à identifier les rencontres et compétitions citées, sans aucun lien de partenariat.</p>
+                    <h3>Polices et bibliothèques</h3>
+                    <ul>
+                        <li>Police <strong>Montserrat</strong> : Julieta Ulanovsky, sous licence SIL Open Font License.</li>
+                        <li><strong>D3.js</strong> : Mike Bostock, sous licence ISC.</li>
+                        <li>Site construit avec <strong>Astro</strong> et <strong>Tailwind CSS</strong> (licences MIT).</li>
+                    </ul>
+                    <h3>Archive</h3>
+                    <p>La page <a href="/archive/v1/index.html">/archive/v1/</a> est une copie figée de la première version de ce site, conservée pour montrer son évolution.</p>
+                </section>
+
+                <p class="text-sm text-[#8e8e93]">Dernière mise à jour : 16 octobre 2026.</p>
+            </div>
+        </Window>
+    </section>
+</Base>

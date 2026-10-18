@@ -1,0 +1,902 @@
+// ici je stocke toutes les données des projets, d'abord ceux de l'iut, puis les perso plus bas
+const saeProjects = [
+    {
+        title: "Installation de poste",
+        favorite: true,
+        description: "Configuration d'une machine virtuelle Lubuntu optimisée (8 Go) pour développer.",
+        analyse: {
+            cahier: "Créer un environnement de développement complet sur une machine virtuelle sous Lubuntu (LXQt) en respectant une contrainte stricte de 8 Go d'espace disque maximum.",
+            resultats: "Intégration d'un stack complet (Java, Git, VS Code) validée par la réussite du script de test bash. Consommation disque maîtrisée.",
+            competences: ["Administration Système", "Optimisation logicielle", "Analyse du besoin"],
+            outils: ["Linux (Lubuntu)", "Bash", "Machine Virtuelle"]
+        },
+        image: "assets/img/vm-install.png",
+        gallery: ["assets/img/vm-install.png"],
+        report: "#",
+        tags: ["Linux", "Bash", "Virtual Machine"],
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_butinformatique-administrationsystaeyme-clojure-ugcPost-7391106933803438081-mx4s?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
+        linkLabel: "Voir le post LinkedIn"
+    },
+
+    {
+        title: "Pixel IUT War",
+        favorite: true,
+        description: "Création du client web d'une application collaborative (guerre des pixels) avec synchronisation continue d'une grille de 10 000 pixels.",
+        analyse: {
+            cahier: "Développer le client JavaScript d'un jeu multijoueur. Gérer l'authentification par UID, le système de factions, la coloration de la grille et les restrictions temporelles (cooldown) en dialoguant avec une API REST.",
+            resultats: "Interface fluide sans reflow massif grâce à l'optimisation du DOM (DocumentFragment). Communications asynchrones non-bloquantes (Fetch API, async/await). Des évolutions vers les WebSockets et le LocalStorage ont été modélisées.",
+            competences: ["JavaScript Vanilla (ES6+)", "Programmation Asynchrone", "Optimisation du DOM", "Manipulation de structures de données"],
+            outils: ["Fetch API", "DocumentFragment", "Méthodes Array (.flat, .filter)"]
+        },
+        image: "assets/img/js2.png",
+        gallery: [
+            "assets/img/js1.png"
+        ],
+        report: "#",
+        tags: ["JavaScript", "API REST", "Front-End"],
+        link: "https://github.com/zakksbr/pixelWar",
+        linkLabel: "Code Source / GitHub"
+    },
+
+    {
+        title: "Installation de Services Réseaux",
+        favorite: true,
+        description: "Déploiement d'une infrastructure réseau virtuelle sécurisée et intégration de services collaboratifs (Nextcloud & OnlyOffice).",
+        analyse: {
+            cahier: "Simuler et configurer un environnement réseau professionnel avec deux sous-réseaux isolés (Client LAN et Server LAN) reliés par un routeur central. Déployer une suite collaborative auto-hébergée complète.",
+            resultats: "Routage inter-réseaux (IP forwarding) et persistance des configurations IP assurés. Sécurisation totale des flux via la génération de certificats TLS (HTTPS) et la mise en place d'une authentification double facteur (TOTP).",
+            competences: ["Administration Système (Linux)", "Routage Réseau", "Sécurité (TLS/HTTPS, 2FA)", "Déploiement de Services (Snap)"],
+            outils: ["NEmu", "Nextcloud", "OnlyOffice", "Bash/Shell"]
+        },
+        image: "assets/img/res1.png",
+        gallery: [
+            "assets/img/res2.png",
+            "assets/img/res3.png"
+        ],
+        report: "#",
+        tags: ["SysAdmin", "Réseau", "DevOps"],
+        link: "https://github.com/zakksbr/installation-services-reseau/wiki/2.3NetworkInstallation",
+        linkLabel: "Voir le wiki"
+    },
+
+    {
+        title: "Coloration de graphes",
+        favorite: true,
+        description: "Développement de trois algorithmes de coloration (Welsh & Powell, 5-coloration, 6-coloration).",
+        analyse: {
+            cahier: "Implémenter l'interface IGraph et programmer trois algorithmes de coloration (Welsh et Powell, 6-coloration et 5-coloration récursive pour graphes planaires).",
+            resultats: "Création d'une structure optimisée par liste d'adjacence (HashMap) avec une complexité en O(N+M). Algorithmes validés par des tests unitaires sous JUnit.",
+            competences: ["Développement orienté Objet", "Théorie des Graphes", "Analyse de Complexité", "Tests Unitaires"],
+            outils: ["Java", "JUnit", "NetBeans", "UML"]
+        },
+        image: "assets/img/sae-graphes1.png",
+        gallery: [
+            "assets/img/sae-graphes2.png",
+            "assets/img/sae-graphes3.png"
+        ],
+
+        tags: ["Java", "Algorithmique", "Graphes"],
+        link: "#",
+        linkLabel: "Code Source / GitHub"
+    },
+
+    {
+        title: "Labyrinthe",
+        favorite: false,
+        wip: false,
+        description: "Jeu de labyrinthe multi-étages en Java/JavaFX, développé seul : héros piloté au clavier, monstres autonomes et déplacements fluides.",
+        analyse: {
+            cahier: "Concevoir seul, en deux semaines, un jeu de labyrinthe complet en Java/JavaFX pour remobiliser la programmation orientée objet. Contraintes : implémenter des interfaces imposées sans les modifier, valider les objectifs dans l'ordre et livrer un programme sans erreur ni avertissement sur les postes de l'IUT.",
+            resultats: "Labyrinthe sur plusieurs étages chargé depuis des fichiers texte, héros jouable au clavier et monstres autonomes grâce au polymorphisme. La logique du jeu est séparée du rendu, ce qui donne un déplacement fluide au pixel près. Plus de 50 commits sur GitLab, projet validé sur les postes de l'IUT.",
+            competences: ["Programmation orientée objet", "Interface graphique événementielle", "Débogage", "Versionnage Git"],
+            outils: ["Java", "JavaFX", "Maven", "Git / GitLab"]
+        },
+        image: "assets/img/labyrinthe.jpg",
+        gallery: ["assets/img/labyrinthe-2.jpg"],
+        report: "#",
+        tags: ["Java", "JavaFX", "POO"],
+        link: "#",
+        linkLabel: "Code Source / GitHub"
+    },
+
+    {
+        title: "Capteurs : statistiques de température",
+        favorite: false,
+        wip: false,
+        description: "Outil en ligne de commande écrit en C qui analyse des relevés de capteurs de température (fichier JSON ou URL) et génère un rapport CSV.",
+        analyse: {
+            cahier: "Compléter en binôme un analyseur de capteurs en C : calcul des statistiques, série de mesures en mémoire dynamique, export CSV et programme principal. Contraintes : norme C11 compilée sans aucun warning (-Wall -Wextra -Wpedantic), modules réseau et JSON fournis à ne pas modifier, historique Git évalué.",
+            resultats: "Minimum, maximum, moyenne et écart intérieur/extérieur calculés, export CSV et gestion complète des options en ligne de commande. Tests unitaires et 12 scénarios en ligne de commande validés. Aucune fuite mémoire selon Valgrind (1 422 allocations, 1 422 libérations).",
+            competences: ["Gestion dynamique de la mémoire", "Pointeurs et structures", "Compilation séparée (Makefile)", "Arguments en ligne de commande", "Travail en binôme"],
+            outils: ["C11 / gcc", "Make", "Valgrind", "cppcheck", "Git / GitLab"]
+        },
+        image: "assets/img/capteurs-terminal.jpg",
+        gallery: [],
+        report: "#",
+        tags: ["C", "Makefile", "Valgrind"],
+        link: "#",
+        linkLabel: "Code Source / GitHub"
+    },
+
+    {
+        title: "Comparaisons d'algorithmes",
+        description: "Programmation des fonctionnalités d'un jeu de plateau et conception de deux Intelligence Artificielle capable de jouer contre ou à la place de l'utilisateur",
+        analyse: {
+            cahier: "Coder les règles d'un jeu de plateau (plantation d'un arbre, coupes, vitalité) et développement de deux Intelligences Artificielles capable de jouer, la première avec un algorithme glouton et une deuxième visionnaire capable d'anticiper les conséquences de ses actions sur le long terme.",
+            resultats: "Tactique de clonage de plateau opérationnelle pour anticiper les scores réels. Zéro disqualification grâce à un algorithme contre les coups illégaux",
+            competences: ["Java", "Intelligence Artificielle", "Développement de tests", "Algorithmie"],
+            outils: ["Tests unitaires", "Simulation algorithmique", "Java"]
+        },
+        image: "assets/img/biosphere.png",
+        gallery: ["assets/img/biosphere.png"],
+        report: "#",
+        tags: ["Java", "Algorithmie et Comparaison"],
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-intelligenceartificielle-algorithmique-share-7423392852463906817-jtZ3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
+        linkLabel: "Voir le post LinkedIn"
+    },
+
+    {
+        title: "Création de Base de données",
+        favorite: true,
+        description: "Conception d'une Base de données pour une agence d'événements culturels fictive. Traduction du cahier des charges en contraintes.",
+        analyse: {
+            cahier: "Créer une base de données pour une agence événementielle fictive en traduisant des règles textuelles complexes (horaires, formats) pour éviter les incohérences de planning.",
+            resultats: "Scripts SQL robustes implémentés avec une gestion fine des contraintes. Insertion réussie d'un jeu de données réaliste.",
+            competences: ["Modélisation relationnelle", "SQL"],
+            outils: ["SQL", "Win'Design", "Contraintes CHECK/UNIQUE", "Schéma entités associations (MCD)"]
+        },
+        image: "assets/img/bdd.png",
+        gallery: ["assets/img/bdd.png"],
+        report: "#",
+        tags: ["SQL", "Base de données"],
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_sqlserver-database-iutinformatique-ugcPost-7420940639481118720-z0sp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
+        linkLabel: "Voir le post LinkedIn"
+    },
+    {
+        title: "Recueil de besoin",
+        favorite: true,
+        description: "Refactoring d'un site web legacy. Passage de tableaux à un CSS Grid (avec un Thème Windows XP).",
+        analyse: {
+            cahier: "Moderniser le code source du site web d'une entreprise fictive de PC Rétro, en abandonnant l'ancienne mise en page en tableaux.",
+            resultats: "Refonte validée en HTML5 sémantique. Amélioration de l'accessibilité et réduction de la taille du code source, avec une petite touche Windows XP.",
+            competences: ["Intégration web", "Refactoring", "Écoute du client"],
+            outils: ["HTML5", "CSS Grid", "Design System"]
+        },
+        image: "assets/img/retro-pc.png",
+        gallery: [
+            "assets/img/retro-pc.png",
+            "assets/img/retro-pc1.png"
+        ],
+        report: "#",
+        tags: ["HTML/CSS", "Web"],
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_webdevelopment-html5-css3-ugcPost-7417162829536890880-ARre?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
+        linkLabel: "Voir le post LinkedIn"
+    },
+
+    {
+        title: "Développement d'une application",
+        description: "Application C# de gestion de personnages et simulateur de jeu de rôles avec architecture Orientée Objet intégrale.",
+        analyse: {
+            cahier: "Concevoir en équipe de 3 une application WinForms robuste traduisant des règles d'un jeu fictif.",
+            resultats: "Livrable, avec séparation Logique/IHM. Moteur de résolution des épreuves fictives validé par tests unitaires et interface ergonomique.",
+            competences: ["Programmation C#", "Conception UML", "Développement IHM", "Tests"],
+            outils: ["Visual Studio / .NET", "WinForms", "Git"]
+        },
+        image: "assets/img/butopia.png",
+        gallery: ["assets/img/butopia.png"],
+        report: "#",
+        tags: ["C#", ".NET", "Développement", "Git"],
+        link: "#"
+    },
+
+    {
+        title: "Implémentation",
+        description: "Programmation d'une station domotique en Java. Gestion de l'historique et des données.",
+        analyse: {
+            cahier: "Intégrer l'entièreté des fonctionnalités de gestion, de mise à jour des données météorologiques et de programmation du chauffage d'une station météo à partir d'un code incomplet.",
+            resultats: "Algorithme de décalage de tableaux implémenté. Intégrité des données garantie et saisie utilisateur sécurisée par boucle de contrôle.",
+            competences: ["Java", "Algorithmique", "Intégration des données"],
+            outils: ["Boucle do...while", "Tableaux", "Conditions"]
+        },
+        image: "assets/img/odomo.png",
+        gallery: ["assets/img/odomo.png"],
+        report: "#",
+        tags: ["Java", "Algorithmie"],
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-projet-domotique-ugcPost-7395203244312043521-TFbM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
+        linkLabel: "Voir le post LinkedIn"
+    },
+
+    {
+        title: "Environnement économique et écologique",
+        description: "Analyse fonctionnelle et environnementale d'une entreprise locale face à une crise de crédibilité majeure (PESTEL & Porter).",
+        analyse: {
+            cahier: "En tant que Chef de Projet, coordonner une équipe de 5 personnes pour réaliser le diagnostic complet de l'entreprise Baillardran.",
+            resultats: "Cartographie des 6 fonctions de l'entreprise et réalisation des matrices PESTEL et Porter. Formulation d'une stratégie de reconstruction éthique axée sur la transparence pour contrer la chute de rentabilité.",
+            competences: ["Gestion de Projet", "Analyse Stratégique", "Management d'équipe"],
+            outils: ["Outil PESTEL", "5 Forces de Porter", "Base de données Diane+"]
+        },
+        image: "assets/img/baillardran.png",
+        gallery: ["assets/img/baillardran.png"],
+        report: "#",
+        tags: ["Gestion", "Analyse"],
+        link: "#"
+    },
+    {
+        title: "Réalisation d'une mission confié par une organisation",
+        description: "Conception de la campagne de communication visuelle pour la Journée Portes Ouvertes du département informatique, puis organisation de celle-ci avec les autres étudiants bénévoles.",
+        analyse: {
+            cahier: "Élaborer une identité visuelle complète (affiches A1/A2, programmes, signalétique) respectant la charte graphique de l'Université.",
+            resultats: "Production de 3 versions d'affiches et d'un plan de signalétique complet pour les deux étages du bâtiment.",
+            competences: ["Communication Visuelle", "Gestion de Projet", "Travail d'équipe"],
+            outils: ["Canva", "Appareil Photo", "Adobe Lightroom"]
+        },
+        image: "assets/img/mission.png",
+        gallery: [
+            "assets/img/jpo1.png",
+            "assets/img/jpo2.png",
+            "assets/img/jpo3.png",
+            "assets/img/jpo4.png",
+            "assets/img/jpo5.png"
+        ],
+        report: "#",
+        tags: ["Communication", "Organisation"],
+        link: "#"
+    }
+
+];
+
+// et là les projets perso, ce que je bidouille de mon côté
+const persoProjects = [
+    {
+        title: "Réhabilitation d’un ordinateur obsolète",
+        favorite: true,
+        description: "Upgrade matériel et configuration d'un Triple Boot (Win 10/11, Ubuntu) sur un Alienware Area-51 R1 de 2010.",
+        analyse: {
+            cahier: "Rendre fonctionnelle une machine de 2010 pour du développement. Contraintes : Upgrade RAM/SSD, Triple Boot fonctionnel sur architecture Legacy/MBR, et boot rapide personnalisé via GRUB.",
+            resultats: "Temps de démarrage divisé par 4. Environnement de test multi-OS 100% stable et opérationnel. Machine sauvée de l'obsolescence pour un investissement de moins de 80€.",
+            competences: ["Maintenance Hardware", "Administration Système", "Gestion GRUB/MBR", "Troubleshooting"],
+            outils: ["Rufus", "Terminal Linux (Nano)", "Composants (RAM/SSD)"]
+        },
+        image: "assets/img/alienware1.jpg",
+        gallery: [
+            "assets/img/alienware2.jpg",
+            "assets/img/alienware1.jpg",
+            "assets/img/alienware.jpg"
+        ],
+        report: "#",
+        tags: ["Hardware", "SysAdmin", "Triple Boot"],
+        link: "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_iutdebordeaux-greenit-linux-activity-7429419448949784577-m7ho?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
+        linkLabel: "Voir le post LinkedIn"
+    },
+    {
+        title: "Assistant macOS (J.A.R.V.I.S.)" ,
+        wip: false,
+        description: "Assistant vocal hybride pilotant l'environnement de travail macOS (via AppleScript) et intégré à l'IA Gemini.",
+        analyse: {
+            cahier: "Développer un assistant capable de piloter physiquement macOS (écrans, apps) et de converser naturellement. Contraintes : mode Push-to-Talk pour la confidentialité.",
+            resultats: "Automatisation complète du déploiement du Workspace. Latence < 2s pour les requêtes Cloud et exécution système locale instantanée. Respect de la vie privée grâce à l'activation microphone à la demande.",
+            competences: ["Développement Python", "Intégration API Gemini", "Scripting AppleScript", "Conception d'Architecture"],
+            outils: ["Python 3", "API Google Gemini", "AppleScript", "Shell"]
+        },
+        image: "assets/img/jarvis2.png",
+        gallery: ["assets/img/jarvis1.png", "assets/img/jarvis2.png"],
+        report: "#",
+        tags: ["Python", "IA", "macOS"],
+        link: "#"
+    },
+    {
+        title: "Déploiement de macOS via Hackintosh sur un PC",
+        wip: true,
+        description: "Installation native de macOS Bigsur sur une tour PC HP en contournant les sécurités matérielles et logicielles.",
+        analyse: {
+            cahier: "Déployer macOS sur un matériel non-Apple (HP, Intel). Contraintes : créer un environnement matériel virtuel sans modifier le système d'exploitation cible, grâce à une base GitHub.",
+            resultats: "Création d'un Bootloader (OpenCore) sur-mesure. Stabilité garantie avec un minimum de kexts (4 pilotes, 2 patchs). Contournement des sécurités HP (Hard Freezes, erreurs ACPI) et amorçage réussi du noyau XNU.",
+            competences: ["Administration Système", "Troubleshooting", "Architecture Hardware"],
+            outils: ["OpenCore Bootloader", "ProperTree", "Terminal", "Scripts Python"]
+        },
+        image: "assets/img/hackintoch.jpg",
+        gallery: ["assets/img/hackintoch.jpg"],
+        report: "#",
+        tags: ["SysAdmin", "Hardware", "macOS"],
+        link: "#"
+    },
+    {
+        title: "Portfolio Professionnel",
+        description: "Conception et développement de mon portfolio pour valoriser mes projets et compétences.",
+        analyse: {
+            cahier: "Créer une plateforme fluide et performante avec le stack Vanilla (HTML5 CSS3 et JavaScript). Contraintes: présenter l'ensemble des projets avec un site responsive et une gestion dynamique.",
+            resultats: "Projets clairs, et Navigation intuitive via des fenetres d'analyse. Maintenance simple grâce à une architecture de données centralisée en JavaScript.",
+            competences: ["Développement Front-End", "UI/UX Design", "JavaScript", "Versionnage Git"],
+            outils: ["VS Code", "CSS Grid/Flexbox", "JavaScript", "Git/GitHub"]
+        },
+        image: "assets/img/portfolio1.png",
+        gallery: ["assets/img/portfolio.png", "assets/img/portfolio1.png"],
+        report: "#",
+        tags: ["Web", "Design", "Vanilla JS"],
+        link: "https://github.com/zakksbr/portfolio-zak.git",
+        linkLabel: "Voir le code sur GitHub"
+    }
+];
+
+// je récupère les blocs de la page où on va injecter les cartes
+const saeContainer = document.getElementById('sae-container');
+const persoContainer = document.getElementById('perso-container');
+const modal = document.getElementById('project-modal');
+const closeBtn = document.querySelector('.close-btn');
+
+// cette fonction fabrique les cartes des projets et les affiche dans le bon bloc
+function createCards(projectsArray, container, typeStr) {
+    if (!container) return;
+    container.innerHTML = "";
+
+    projectsArray.forEach((project, index) => {
+        const card = document.createElement('div');
+        card.classList.add('project-card');
+
+        // on ajoute les petits badges seulement si le projet est en coup de cœur ou en cours
+        let statusBadgesHTML = "";
+        if (project.favorite) {
+            statusBadgesHTML += `<span class="p-badge favorite">🧡 Coup de cœur</span>`;
+        }
+        if (project.wip) {
+            statusBadgesHTML += `<span class="p-badge wip">⏳ En cours de finalisation</span>`;
+        }
+        if (statusBadgesHTML) {
+            statusBadgesHTML = `<div class="project-badges">${statusBadgesHTML}</div>`;
+        }
+
+        card.innerHTML = `
+            <div class="card-img-holder">
+                <img src="${project.image}" alt="${project.title}" class="project-img">
+                ${statusBadgesHTML}
+            </div>
+            <div class="project-info">
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="project-tags">
+                    ${project.tags.map(tag => `<span>${tag}</span>`).join('')}
+                </div>
+                <button class="btn btn-secondary btn-sm" onclick="openModal('${typeStr}', ${index})" style="margin-top:1rem; width:100%">Plus de détails</button>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+function loadProjects() {
+    createCards(saeProjects, saeContainer, 'sae');
+    createCards(persoProjects, persoContainer, 'perso');
+}
+
+// ouverture de la grande fenêtre quand on clique sur "plus de détails"
+window.openModal = function(type, index) {
+    // on pioche dans le bon tableau selon si c'est une saé ou un projet perso
+    const project = (type === 'sae') ? saeProjects[index] : persoProjects[index];
+
+    document.getElementById('modal-title').innerText = project.title;
+    document.getElementById('modal-image').src = project.image;
+
+    document.getElementById('analysis-cahier-text').innerHTML = project.analyse.cahier;
+    document.getElementById('analysis-resultats-text').innerHTML = project.analyse.resultats;
+    document.getElementById('analysis-competences-list').innerHTML = project.analyse.competences.map(comp => `<li>${comp}</li>`).join('');
+    document.getElementById('analysis-outils-list').innerHTML = project.analyse.outils.map(outil => `<li>${outil}</li>`).join('');
+
+    // les boutons rapport et code ne s'affichent que si un vrai lien est renseigné (pas vide, pas "#")
+    const reportBtn = document.getElementById('modal-report');
+    if (project.report && project.report.trim() !== "" && project.report.trim() !== "#") {
+        reportBtn.href = project.report;
+        reportBtn.style.display = "inline-block";
+    } else {
+        reportBtn.style.display = "none";
+    }
+
+    const repoBtn = document.getElementById('modal-repo');
+    if (project.link && project.link.trim() !== "" && project.link.trim() !== "#") {
+        repoBtn.href = project.link;
+        repoBtn.innerText = project.linkLabel ? project.linkLabel : "Code Source / GitHub";
+        repoBtn.style.display = "inline-block";
+    } else {
+        repoBtn.style.display = "none";
+    }
+
+    document.getElementById('modal-tags').innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
+
+    const galleryContainer = document.getElementById('modal-gallery-grid');
+    galleryContainer.innerHTML = "";
+
+    // on met l'image principale avec celles de la galerie, en virant les doublons
+    const allImages = [project.image, ...(project.gallery || [])];
+    const uniqueImages = [...new Set(allImages)];
+
+    if (uniqueImages.length > 0) {
+        uniqueImages.forEach(imgSrc => {
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.classList.add('gallery-img');
+
+            img.onclick = function() {
+                document.getElementById('modal-image').src = this.src;
+            };
+            galleryContainer.appendChild(img);
+        });
+        document.querySelector('.modal-gallery').style.display = 'block';
+    } else {
+        document.querySelector('.modal-gallery').style.display = 'none';
+    }
+
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+// pour fermer la fenêtre avec la petite croix
+closeBtn.onclick = function() {
+    modal.classList.remove('show');
+    document.body.style.overflow = 'auto';
+}
+
+// ou en cliquant n'importe où dans le vide
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// très important, on attend que le html soit bien chargé avant de créer les cartes
+document.addEventListener('DOMContentLoaded', loadProjects);
+
+// les animations : chaque section apparaît quand elle arrive à l'écran
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const elementsToAnimate = document.querySelectorAll('.section-padding, .skill-card');
+    elementsToAnimate.forEach(el => {
+        el.classList.add('reveal');
+        observer.observe(el);
+    });
+});
+
+// gestion du switch entre les deux mondes (informatique et arbitrage)
+const switchBtn = document.getElementById('switch-world-btn')
+const worldDev = document.getElementById('world-dev')
+const worldReferee = document.getElementById('world-referee')
+const heroPic = document.getElementById('hero-profile-pic')
+const heroScroll = document.getElementById('hero-scroll')
+let isRefereeMode = false
+
+// chaque univers a sa propre photo de profil, rangée dans les attributs data- de l'image
+const setHeroPic = (world) => {
+    if (!heroPic) return
+    const src = heroPic.dataset[`src${world}`]
+    const alt = heroPic.dataset[`alt${world}`]
+    if (src) heroPic.src = src
+    if (alt) heroPic.alt = alt
+}
+
+// on précharge la photo arbitre pour que le changement soit instantané
+if (heroPic && heroPic.dataset.srcReferee) {
+    window.addEventListener('load', () => { new Image().src = heroPic.dataset.srcReferee })
+}
+
+const heroSection = document.getElementById('about')
+const heroLayout = document.querySelector('.hero-layout')
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+// rejoue l'animation d'arrivée de l'accueil, au chargement et à chaque changement d'univers
+// si la personne a désactivé les animations sur son appareil, on ne fait rien
+const playHeroIntro = () => {
+    if (!heroLayout || reduceMotion.matches) return
+    heroLayout.classList.remove('hero-animate')
+    if (heroSection) heroSection.classList.remove('hero-animate-glow')
+    // petite astuce : ça oblige le navigateur à relancer l'animation depuis le début
+    void heroLayout.offsetWidth
+    heroLayout.classList.add('hero-animate')
+    if (heroSection) heroSection.classList.add('hero-animate-glow')
+}
+playHeroIntro()
+
+const applyWorld = () => {
+    if (isRefereeMode) {
+        document.body.classList.add('referee-mode')
+        setHeroPic('Referee')
+        if (heroScroll) heroScroll.setAttribute('href', '#ref-about')
+        worldDev.style.display = 'none'
+        worldReferee.style.display = 'block'
+        switchBtn.innerHTML = 'Retour en informatique 💻'
+        document.querySelectorAll('#world-referee .reveal').forEach(el => {
+            el.classList.add('active')
+        })
+    } else {
+        document.body.classList.remove('referee-mode')
+        setHeroPic('Dev')
+        if (heroScroll) heroScroll.setAttribute('href', '#perso-projects')
+        worldReferee.style.display = 'none'
+        worldDev.style.display = 'block'
+        switchBtn.innerHTML = 'Mon deuxième métier ⚽'
+    }
+    document.body.style.backgroundColor = 'var(--bg-color)'
+
+    // on reste en haut de page, sur l'accueil de l'univers choisi
+    window.scrollTo({ top: 0, behavior: 'instant' })
+    playHeroIntro()
+}
+
+if (switchBtn) {
+    switchBtn.innerHTML = 'Mon deuxième métier ⚽'
+    switchBtn.addEventListener('click', () => {
+        isRefereeMode = !isRefereeMode
+        applyWorld()
+    })
+}
+
+// les retours de mes observateurs, match par match
+const feedbackData = [
+    {
+        team1: "BÈGLES",
+        team2: "PAYS AUROSAIS",
+        logo1: "assets/img/begles.png.webp",
+        logo2: "assets/img/fcpa.png",
+        date: "23/05/2026",
+        category: "U17 D4",
+        tutor: "GAGNAIRE Anthony",
+        appreciation: "Très bon match dans l'ensemble. Condition physique + placement trop axiale et loin des fautes.",
+        conseils: "Travail sur la condition physique et sur le placement    .",
+        evaluations: [
+            {
+                titre: "Condition Physique / Déplacements / Placements",
+                criteres: [
+                    { nom: "Échauffement", statut: "acquis" },
+                    { nom: "Suivre l'évolution du jeu et capacité à reproduire les efforts", statut: "en-cours" },
+                    { nom: "Utilisation des différentes courses", statut: "en-cours" },
+                    { nom: "Occupation adaptée de l'aire de jeu", statut: "acquis" },
+                    { nom: "Présence rapide sur faute importante ou conflit", statut: "acquis" },
+                    { nom: "Placement sur coup d'envoi", statut: "acquis" },
+                    { nom: "Placement coup de pied de but", statut: "acquis" },
+                    { nom: "Placement sur pénalty", statut: "acquis" },
+                    { nom: "Placement sur corner", statut: "en-cours" },
+                    { nom: "Placement sur rentrée de touche", statut: "acquis" },
+                    { nom: "Placement sur coups francs", statut: "acquis" }
+                ]
+            },
+            {
+                titre: "Compétences Techniques",
+                criteres: [
+                    { nom: "Application des lois du jeu", statut: "acquis" },
+                    { nom: "Exécution des remises en jeu", statut: "acquis" },
+                    { nom: "Détection des fautes", statut: "acquis" },
+                    { nom: "Utilisation du sifflet", statut: "acquis" },
+                    { nom: "Procédure des remplacements et blessés", statut: "acquis" },
+                    { nom: "Notion de l'avantage", statut: "acquis" },
+                    { nom: "Lisibilité des signalisations", statut: "acquis" },
+                    { nom: "Procédure CF avec placement d'un mur", statut: "acquis" },
+                    { nom: "Connaissance du hors-jeu", statut: "acquis" }
+                ]
+            },
+            {
+                titre: "Gestion Disciplinaire",
+                criteres: [
+                    { nom: "Gestion de la mise en garde (Forme/Méthode)", statut: "en-cours" },
+                    { nom: "Gestion des sanctions disciplinaires", statut: "en-cours" },
+                    { nom: "Autorité sur les acteurs du jeu", statut: "en-cours" }
+                ]
+            },
+            {
+                titre: "Attitude - Comportement",
+                criteres: [
+                    { nom: "Ponctualité (arrive à l'heure)", statut: "acquis" },
+                    { nom: "Détenir tous les outils nécessaires", statut: "acquis" },
+                    { nom: "Vérification du terrain", statut: "acquis" },
+                    { nom: "Vérification des licences et équipements", statut: "acquis" },
+                    { nom: "Consignes et collaboration avec AA", statut: "acquis" },
+                    { nom: "Maîtrise de la feuille de match", statut: "acquis" },
+                    { nom: "Relationnel avec les acteurs de la rencontre", statut: "acquis" },
+                    { nom: "Relation Tuteur - Arbitre stagiaire", statut: "acquis" }
+                ]
+            }
+        ]
+    },
+    {
+        team1: "ST LOUBÈS",
+        team2: "ARSAC LE PIAN",
+        logo1: "assets/img/loub.png",
+        logo2: "assets/img/arsa.png",
+        date: "15/03/2026",
+        category: "U15 D3",
+        tutor: "LAVOIE Gaëtan",
+        appreciation: "+ Prépa d'avant match, Bon placement, Avantage, Parle aux joueurs.\n- Mise en garde 'Bien écarter le joueur', Pas accorder sifflet à la bouche.",
+        conseils: "Aucun conseil prioritaire noté.",
+        evaluations: [
+            {
+                titre: "Condition Physique / Déplacements / Placements",
+                criteres: [
+                    { nom: "Échauffement", statut: "en-cours" },
+                    { nom: "Suivre l'évolution du jeu et capacité à reproduire les efforts", statut: "en-cours" },
+                    { nom: "Utilisation des différentes courses", statut: "en-cours" },
+                    { nom: "Occupation adaptée de l'aire de jeu", statut: "non-obs" },
+                    { nom: "Présence rapide sur faute importante ou conflit", statut: "en-cours" },
+                    { nom: "Placement sur coup d'envoi", statut: "acquis" },
+                    { nom: "Placement coup de pied de but", statut: "acquis" },
+                    { nom: "Placement sur pénalty", statut: "acquis" },
+                    { nom: "Placement sur corner", statut: "en-cours" },
+                    { nom: "Placement sur rentrée de touche", statut: "en-cours" },
+                    { nom: "Placement sur coups francs", statut: "acquis" }
+                ]
+            },
+            {
+                titre: "Compétences Techniques",
+                criteres: [
+                    { nom: "Application des lois du jeu", statut: "en-cours" },
+                    { nom: "Exécution des remises en jeu", statut: "acquis" },
+                    { nom: "Détection des fautes", statut: "en-cours" },
+                    { nom: "Utilisation du sifflet", statut: "en-cours" },
+                    { nom: "Procédure des remplacements et blessés", statut: "en-cours" },
+                    { nom: "Notion de l'avantage", statut: "acquis" },
+                    { nom: "Lisibilité des signalisations", statut: "en-cours" },
+                    { nom: "Procédure CF avec placement d'un mur", statut: "acquis" },
+                    { nom: "Connaissance du hors-jeu", statut: "acquis" }
+                ]
+            },
+            {
+                titre: "Gestion Disciplinaire",
+                criteres: [
+                    { nom: "Gestion de la mise en garde (Forme/Méthode)", statut: "en-cours" },
+                    { nom: "Gestion des sanctions disciplinaires", statut: "en-cours" },
+                    { nom: "Autorité sur les acteurs du jeu", statut: "en-cours" }
+                ]
+            },
+            {
+                titre: "Attitude - Comportement",
+                criteres: [
+                    { nom: "Ponctualité (arrive à l'heure)", statut: "acquis" },
+                    { nom: "Détenir tous les outils nécessaires", statut: "acquis" },
+                    { nom: "Vérification du terrain", statut: "acquis" },
+                    { nom: "Vérification des licences et équipements", statut: "acquis" },
+                    { nom: "Consignes et collaboration avec AA", statut: "acquis" },
+                    { nom: "Maîtrise de la feuille de match", statut: "en-cours" },
+                    { nom: "Relationnel avec les acteurs de la rencontre", statut: "en-cours" },
+                    { nom: "Relation Tuteur - Arbitre stagiaire", statut: "acquis" }
+                ]
+            }
+        ]
+    },
+    {
+        team1: "RIVE DROITE",
+        team2: "CUBNEZAIS",
+        logo1: "assets/img/rd.png",
+        logo2: "assets/img/cubnezais.jpg",
+        date: "25/04/2026",
+        category: "U17 D4",
+        tutor: "RAPET Jean Marie",
+        appreciation: "Bon échauffement. Contrôle des joueurs et consignes aux capitaines / assistants sont corrects.",
+        conseils: "Améillorer la condition physique. Se raprocher des actions",
+        evaluations: [
+            {
+                titre: "Condition Physique / Déplacements / Placements",
+                criteres: [
+                    { nom: "Échauffement", statut: "acquis" },
+                    { nom: "Suivre l'évolution du jeu et capacité à reproduire les efforts", statut: "en-cours" },
+                    { nom: "Utilisation des différentes courses", statut: "en-cours" },
+                    { nom: "Occupation adaptée de l'aire de jeu", statut: "en-cours" },
+                    { nom: "Présence rapide sur faute importante ou conflit", statut: "en-cours" },
+                    { nom: "Placement sur coup d'envoi", statut: "non-obs" },
+                    { nom: "Placement coup de pied de but", statut: "en-cours" },
+                    { nom: "Placement sur pénalty", statut: "acquis" },
+                    { nom: "Placement sur corner", statut: "en-cours" },
+                    { nom: "Placement sur rentrée de touche", statut: "en-cours" },
+                    { nom: "Placement sur coups francs", statut: "en-cours" }
+                ]
+            },
+            {
+                titre: "Compétences Techniques",
+                criteres: [
+                    { nom: "Application des lois du jeu", statut: "en-cours" },
+                    { nom: "Exécution des remises en jeu", statut: "acquis" },
+                    { nom: "Détection des fautes", statut: "en-cours" },
+                    { nom: "Utilisation du sifflet", statut: "acquis" },
+                    { nom: "Procédure des remplacements et blessés", statut: "acquis" },
+                    { nom: "Notion de l'avantage", statut: "en-cours" },
+                    { nom: "Lisibilité des signalisations", statut: "non-obs" },
+                    { nom: "Procédure CF avec placement d'un mur", statut: "non-obs" },
+                    { nom: "Connaissance du hors-jeu", statut: "en-cours" }
+                ]
+            },
+            {
+                titre: "Gestion Disciplinaire",
+                criteres: [
+                    { nom: "Gestion de la mise en garde (Forme/Méthode)", statut: "acquis" },
+                    { nom: "Gestion des sanctions disciplinaires", statut: "acquis" },
+                    { nom: "Autorité sur les acteurs du jeu", statut: "acquis" }
+                ]
+            },
+            {
+                titre: "Attitude - Comportement",
+                criteres: [
+                    { nom: "Ponctualité (arrive à l'heure)", statut: "acquis" },
+                    { nom: "Détenir tous les outils nécessaires", statut: "acquis" },
+                    { nom: "Vérification du terrain", statut: "acquis" },
+                    { nom: "Vérification des licences et équipements", statut: "acquis" },
+                    { nom: "Consignes et collaboration avec AA", statut: "acquis" },
+                    { nom: "Maîtrise de la feuille de match", statut: "acquis" },
+                    { nom: "Relationnel avec les acteurs de la rencontre", statut: "en-cours" },
+                    { nom: "Relation Tuteur - Arbitre stagiaire", statut: "en-cours" }
+                ]
+            }
+        ]
+    }
+];
+
+const feedbackContainer = document.getElementById('feedback-container');
+
+// on fabrique les cartes des retours dans la partie arbitrage
+if (feedbackContainer) {
+    feedbackContainer.innerHTML = "";
+    feedbackData.forEach((fb, index) => {
+        const card = document.createElement('div');
+        card.classList.add('feedback-card');
+        card.innerHTML = `
+            <div class="feedback-card-header">
+                <img src="${fb.logo1}" alt="Logo ${fb.team1}" class="match-logo">
+                <div class="feedback-match-info">
+                    <h4>${fb.team1} - ${fb.team2}</h4>
+                    <p>Le ${fb.date}</p>
+                </div>
+                <img src="${fb.logo2}" alt="Logo ${fb.team2}" class="match-logo">
+            </div>
+            <div class="feedback-card-body">
+                <h5>Appréciation générale :</h5>
+                <p>"${fb.appreciation}"</p>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="openFeedbackModal(${index})">Voir le rapport complet</button>
+        `;
+        feedbackContainer.appendChild(card);
+    });
+}
+const fbModal = document.getElementById('feedback-modal');
+const fbCloseBtn = document.querySelector('.close-feedback-btn');
+// ouverture du rapport complet d'un match
+window.openFeedbackModal = function(index) {
+    const data = feedbackData[index];
+
+    document.getElementById('modal-logo1').src = data.logo1;
+    document.getElementById('modal-logo2').src = data.logo2;
+
+    document.getElementById('modal-match-title').innerText = `${data.team1} - ${data.team2}`;
+    document.getElementById('modal-match-date').innerText = data.date;
+    document.getElementById('modal-match-cat').innerText = data.category;
+    document.getElementById('modal-match-tutor').innerText = `Tuteur : ${data.tutor}`;
+
+    document.getElementById('modal-appreciation').innerText = data.appreciation;
+    document.getElementById('modal-conseils').innerText = data.conseils;
+
+    const matricesContainer = document.getElementById('modal-matrices-container');
+    matricesContainer.innerHTML = "";
+
+    // on construit la grille d'évaluation catégorie par catégorie
+    data.evaluations.forEach(cat => {
+        const catDiv = document.createElement('div');
+        catDiv.classList.add('eval-category');
+
+        let criteresHTML = cat.criteres.map(crit => {
+            let badgeClass = 'badge-nonobs';
+            let badgeText = 'Non obs.';
+
+            if (crit.statut === 'acquis') {
+                badgeClass = 'badge-acquis';
+                badgeText = 'Acquis';
+            } else if (crit.statut === 'en-cours') {
+                badgeClass = 'badge-encours';
+                badgeText = 'En cours';
+            }
+
+            return `
+                <div class="eval-item">
+                    <span class="eval-item-name">${crit.nom}</span>
+                    <span class="eval-badge ${badgeClass}">${badgeText}</span>
+                </div>
+            `;
+        }).join('');
+
+        catDiv.innerHTML = `
+            <h5>${cat.titre}</h5>
+            ${criteresHTML}
+        `;
+        matricesContainer.appendChild(catDiv);
+    });
+
+    fbModal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+if (fbCloseBtn) {
+    fbCloseBtn.onclick = function() {
+        fbModal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// on ferme aussi le rapport si on clique à côté
+window.addEventListener('click', function(event) {
+    if (event.target == fbModal) {
+        fbModal.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// le carrousel des actualités
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    if (!track) return;
+
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next-btn');
+    const prevButton = document.querySelector('.prev-btn');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    let currentSlideIndex = 0;
+
+    // un point de pagination par actu
+    const dots = slides.map((slide, i) => {
+        if (!dotsContainer) return null;
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot';
+        dot.setAttribute('role', 'tab');
+        const title = slide.querySelector('h4');
+        dot.setAttribute('aria-label', title ? title.textContent : `Actualité ${i + 1}`);
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+        return dot;
+    });
+
+    const updateSlidePosition = () => {
+        track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+        // les flèches se grisent quand on arrive au bout
+        prevButton.disabled = currentSlideIndex === 0;
+        nextButton.disabled = currentSlideIndex === slides.length - 1;
+        dots.forEach((dot, i) => {
+            if (!dot) return;
+            dot.classList.toggle('active', i === currentSlideIndex);
+            dot.setAttribute('aria-selected', i === currentSlideIndex);
+        });
+        slides.forEach((slide, i) => slide.setAttribute('aria-hidden', i !== currentSlideIndex));
+    };
+
+    const goTo = (index) => {
+        currentSlideIndex = Math.max(0, Math.min(slides.length - 1, index));
+        updateSlidePosition();
+    };
+
+    nextButton.addEventListener('click', () => goTo(currentSlideIndex + 1));
+    prevButton.addEventListener('click', () => goTo(currentSlideIndex - 1));
+
+    // pour pouvoir swiper sur téléphone
+    let touchStartX = null;
+    track.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', (e) => {
+        if (touchStartX === null) return;
+        const delta = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(delta) > 50) goTo(currentSlideIndex + (delta < 0 ? 1 : -1));
+        touchStartX = null;
+    });
+
+    // s'il n'y a qu'une seule actu, pas besoin de navigation
+    if (slides.length < 2) {
+        prevButton.style.visibility = 'hidden';
+        nextButton.style.visibility = 'hidden';
+        if (dotsContainer) dotsContainer.style.display = 'none';
+    }
+
+    updateSlidePosition();
+});

@@ -1,0 +1,30 @@
+---
+import Icon from './Icon.astro'
+
+const cards = [
+    { title: 'Langages', icon: 'code', items: ['Java / Algorithmique', 'Python', 'C#', 'JavaScript', 'HTML5 / CSS3', 'SQL / Modélisation'] },
+    { title: 'Frameworks', icon: 'grid', items: ['Angular', 'Astro', 'Spring Boot'] },
+    { title: 'Système & Réseau', icon: 'terminal', items: ['Linux (Bash)', 'Administration système', 'Virtualisation', 'Auto-hébergement de services', 'Sous-réseaux et routage', 'Modèle OSI'] },
+    { title: 'Conception & Méthodes', icon: 'doc', items: ['Diagrammes UML', 'Analyse et conception', 'Analyse des besoins', 'Gestion de Projet'] },
+    { title: 'Outils & Logiciels', icon: 'folder', items: ['Git (GitLab / GitHub)', 'VS Code / Visual Studio / Netbeans', 'VMWare Workstation / Filius', 'Microsoft SQL Server'] },
+    { title: 'Soft skills', icon: 'handshake', items: ['Prise de décision rapide', 'Gestion de la pression', 'Sens des responsabilités', 'Écoute et remise en question', 'Autonomie', 'Polyvalence', 'Travail en équipe'] },
+]
+---
+<section id="skills" aria-labelledby="skills-heading" class="reveal flex flex-col gap-8">
+    <h2 id="skills-heading" class="section-heading">Compétences</h2>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {cards.map(card => (
+            <article class="widget flex flex-col gap-4 p-6">
+                <div class="flex items-center gap-3">
+                    <span class="flex h-11 w-11 flex-none items-center justify-center rounded-[11px] bg-[var(--world-glow)] text-[var(--world)]" aria-hidden="true"><Icon name={card.icon} size={22} /></span>
+                    <h3 class="m-0 text-lg font-bold">{card.title}</h3>
+                </div>
+                <ul class="m-0 flex list-none flex-col gap-2 p-0 text-[#d1d1d6]">
+                    {card.items.map(item => (
+                        <li class="flex items-start gap-2"><span aria-hidden="true" class="mt-[0.6em] h-1.5 w-1.5 flex-none rounded-full bg-[var(--world)]"></span>{item}</li>
+                    ))}
+                </ul>
+            </article>
+        ))}
+    </div>
+</section>

@@ -1,0 +1,18 @@
+---
+interface Props {
+    title?: string
+    id?: string
+    class?: string
+    label?: string
+}
+
+const { title, id, class: className = '', label } = Astro.props
+---
+<section id={id} class:list={['glass window', className]} aria-label={label ?? title}>
+    <div class="titlebar">
+        <div class="traffic" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="titlebar-title">{title}</div>
+        <div class="flex justify-end"><slot name="toolbar" /></div>
+    </div>
+    <slot />
+</section>

@@ -1,0 +1,58 @@
+---
+import Pic from '../Pic.astro'
+import Icon from '../Icon.astro'
+---
+<section id="ref-news" aria-labelledby="ref-news-heading" class="reveal flex flex-col gap-8">
+    <h2 id="ref-news-heading" class="section-heading">Actualités &amp; Derniers Matchs</h2>
+
+    <div data-carousel class="flex flex-col gap-5">
+        <div class="flex items-center gap-3">
+            <button type="button" class="carousel-arrow max-md:hidden" data-carousel-prev aria-label="Actualité précédente"><Icon name="chevronLeft" size={20} strokeWidth={2} /></button>
+
+            <div class="glass window min-w-0 flex-1">
+                <div class="titlebar">
+                    <div class="traffic" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <div class="titlebar-title" data-carousel-counter aria-hidden="true">1 / 2</div>
+                    <div></div>
+                </div>
+                <div class="overflow-hidden">
+                    <ul data-carousel-track aria-roledescription="carrousel" class="carousel-track m-0 flex list-none p-0 transition-transform duration-500 ease-out">
+                        <li class="flex w-full flex-none flex-col lg:flex-row" aria-roledescription="actualité">
+                            <div class="flex h-60 w-full items-center justify-center gap-5 bg-[radial-gradient(circle_at_30%_30%,rgba(46,204,113,0.22),transparent_60%),linear-gradient(160deg,#16261c,#0e1511)] lg:h-auto lg:w-[42%] lg:flex-none" aria-hidden="true">
+                                <span class="club-logo h-24 w-24 md:h-28 md:w-28"><Pic src="assets/img/SAM.svg" alt="" /></span>
+                                <span class="font-display text-2xl font-black text-white/70">VS</span>
+                                <span class="club-logo h-24 w-24 md:h-28 md:w-28"><Pic src="assets/img/FCGB.jpg.png" alt="" width={240} /></span>
+                            </div>
+                            <div class="flex flex-col gap-3 p-6 md:p-8">
+                                <p class="m-0 text-[13px] font-semibold text-[var(--world)]">Match amical · 04 Septembre 2026</p>
+                                <h3 class="m-0 flex items-center gap-2.5 text-xl font-bold md:text-2xl">
+                                    <span class="club-logo h-8 w-8"><Pic src="assets/img/SAM.svg" alt="" /></span>
+                                    <span class="min-w-0">SAM Football 6 - 2 Girondins de Bordeaux</span>
+                                    <span class="club-logo h-8 w-8"><Pic src="assets/img/FCGB.jpg.png" alt="" width={80} /></span>
+                                </h3>
+                                <p class="m-0 text-[#d1d1d6]">Officier pour le mythique club des Girondins de Bordeaux, c'est un honneur. Six titres de champion de France, un nom que tout le monde connaît. Voir ce maillot au scapulaire de près, sur le terrain c'est spécial.</p>
+                                <p class="m-0 text-[#d1d1d6]">Mais difficile de ne pas avoir un pincement au cœur en voyant un club de cette histoire aussi loin du haut niveau aujourd'hui. Sur le terrain, le SAM a fait la différence après la pause : 2-2 à la mi-temps, puis quatre buts en seconde période pour s'imposer 6-2. Un souvenir que je garderai, pour le match comme pour ce qu'il représente.</p>
+                            </div>
+                        </li>
+                        <li class="flex w-full flex-none flex-col lg:flex-row" aria-roledescription="actualité">
+                            <Pic src="assets/img/stade-pierre-royon.jpg" alt="Stade Pierre Royon" width={900} class="h-60 w-full object-cover lg:h-auto lg:w-[42%] lg:flex-none" />
+                            <div class="flex flex-col gap-3 p-6 md:p-8">
+                                <p class="m-0 text-[13px] font-semibold text-[var(--world)]">Coupe de France Crédit Agricole · 30 août 2026 · Arbitre assistant 2</p>
+                                <h3 class="m-0 text-xl font-bold md:text-2xl">Estuaire Haute Gironde 3 - 2 Cenon</h3>
+                                <p class="m-0 text-[#d1d1d6]">Mon premier match à l'échelon régional, et je ne vais pas mentir : au moment d'entrer sur la pelouse du stade Pierre Royon, il y avait un peu de pression. J'étais arbitre assistant 2, aux côtés de Saïd Boumlik au centre et d'Éric Bielle sur l'autre touche.</p>
+                                <p class="m-0 text-[#d1d1d6]">Le match, était intense et équilibré, Cenon ouvre le score dès la 10<sup>e</sup> minute (Usta), Estuaire renverse tout en quatre minutes (Araye à la 24<sup>e</sup>, Cailleau de la tête à la 28<sup>e</sup>), Jousseaume fait le break à la 82<sup>e</sup>... avant qu'Usta ne relance tout à la 85<sup>e</sup>, dans une minute chaude marquée par deux cartons jaunes. C'est sur ce genre de matchs qu'il faut rester concentré jusqu'au coup de sifflet final.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <button type="button" class="carousel-arrow max-md:hidden" data-carousel-next aria-label="Actualité suivante"><Icon name="chevronRight" size={20} strokeWidth={2} /></button>
+        </div>
+
+        <div class="flex justify-center gap-2" role="group" aria-label="Choisir une actualité">
+            <button type="button" class="carousel-dot" data-carousel-dot aria-label="SAM Football 6 - 2 Girondins de Bordeaux"></button>
+            <button type="button" class="carousel-dot" data-carousel-dot aria-label="Estuaire Haute Gironde 3 - 2 Cenon"></button>
+        </div>
+    </div>
+</section>

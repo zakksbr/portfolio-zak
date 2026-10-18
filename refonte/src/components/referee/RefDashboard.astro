@@ -1,0 +1,61 @@
+---
+import Pic from '../Pic.astro'
+
+const cards = [
+    {
+        title: 'Arbitre Central',
+        emoji: '⚽',
+        image: 'assets/img/arbitre-central.jpg',
+        alt: 'Zakaria Sabri arbitre central, bras levé',
+        stats: [
+            { value: '10', label: 'Matchs Officiés' },
+            { value: '953', label: 'Minutes' },
+            { value: '76', label: 'Km parcourus' },
+            { value: '8', label: 'Cartons jaunes', card: 'yellow' },
+            { value: '2', label: 'Cartons rouges', card: 'red' },
+        ],
+    },
+    {
+        title: 'Arbitre Assistant',
+        emoji: '🚩',
+        image: 'assets/img/arbitre-assistant.jpg',
+        alt: 'Zakaria Sabri arbitre assistant, drapeau levé',
+        stats: [
+            { value: '3', label: 'Matchs Officiés' },
+            { value: '285', label: 'Minutes' },
+        ],
+    },
+]
+---
+<section id="ref-dashboard" aria-labelledby="ref-dashboard-heading" class="flex flex-col gap-8">
+    <h2 id="ref-dashboard-heading" class="section-heading">Tableau de Bord</h2>
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        {cards.map(card => (
+            <article class="glass window reveal flex flex-col" aria-label={card.title}>
+                <div class="titlebar">
+                    <div class="traffic" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="flex flex-col gap-5 p-5 sm:flex-row sm:items-start md:p-6">
+                    <Pic src={card.image} alt={card.alt} width={640} class="block aspect-[4/5] w-full flex-none rounded-xl border border-white/[0.08] object-cover sm:w-[42%]" />
+                    <div class="flex min-w-0 flex-1 flex-col gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="flex h-10 w-10 flex-none items-center justify-center rounded-[10px] bg-[var(--world-glow)] text-lg" aria-hidden="true">{card.emoji}</span>
+                            <h3 class="m-0 font-display text-xl font-black md:text-2xl">{card.title}</h3>
+                        </div>
+                        <ul class="m-0 flex list-none flex-col gap-2.5 p-0">
+                            {card.stats.map(stat => (
+                                <li class="flex items-center gap-3 rounded-xl border border-white/[0.07] bg-white/[0.04] px-4 py-2.5">
+                                    {stat.card && <span aria-hidden="true" class:list={['h-6 w-[18px] flex-none rounded-[3px] shadow-[0_2px_6px_rgba(0,0,0,0.4)]', stat.card === 'yellow' ? 'bg-[#f1c40f]' : 'bg-[#e74c3c]']}></span>}
+                                    <strong class="font-display text-[26px] font-black leading-none text-[var(--world)]">{stat.value}</strong>
+                                    <span class="text-[#d1d1d6]">{stat.label}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        ))}
+    </div>
+</section>

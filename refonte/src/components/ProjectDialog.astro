@@ -1,0 +1,150 @@
+---
+import { getImage } from 'astro:assets'
+import Icon from './Icon.astro'
+import { img } from '../lib/images.js'
+
+interface Props {
+    project: any
+    id: string
+}
+
+const { project, id } = Astro.props
+
+const sources: string[] = [...new Set<string>([project.image, ...(project.gallery ?? [])])]
+const resize = (path: string, max: number) => {
+    const meta = img(path) as any
+    return getImage({ src: meta, width: Math.min(max, meta.width) })
+}
+const large = await Promise.all(sources.map(src => resize(src, 1200)))
+const thumbs = await Promise.all(sources.map(src => resize(src, 240)))
+
+const isRealLink = (value: unknown) => typeof value === 'string' && value.trim() !== '' && value.trim() !== '#'
+const report = isRealLink(project.report) ? project.report : null
+const link = isRealLink(project.link) ? project.link : null
+const titleId = `${id}-title`
+---
+<dialog id={id} class="quicklook" aria-labelledby={titleId}>
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2.5 border-b border-white/[0.07] px-4 py-2.5">
+        <div class="traffic" aria-hidden="true"><span></span><span></span><span></span></div>
+        <h2 id={titleId} class="m-0 min-w-[180px] flex-1 text-[15px] font-bold md:ml-2">{project.title}</h2>
+        <ul class="pill-list" aria-label="Tags">
+            {project.tags.map((tag: string) => <li class="rounded-full text-[#d1d1d6]">{tag}</li>)}
+        </ul>
+        <form method="dialog" class="m-0">
+            <button class="ql-close" aria-label="Fermer"><Icon name="close" size={16} strokeWidth={2} /></button>
+        </form>
+    </div>
+
+    <div class="flex flex-wrap">
+        <div class="flex min-w-0 flex-[1_1_360px] flex-col gap-3 bg-black/20 p-4 md:p-[22px]">
+            <img
+                data-ql-main
+                src={large[0].src}
+                width={large[0].attributes.width}
+                height={large[0].attributes.height}
+                alt={project.title}
+                loading="lazy"
+                decoding="async"
+                class="block aspect-[4/3] w-full rounded-[10px] border border-white/[0.08] bg-[#1c1c1e] object-contain"
+            />
+            {sources.length > 1 && (
+                <div class="flex gap-2.5 overflow-x-auto pb-1" role="group" aria-label="Galerie">
+                    {thumbs.map((thumb, i) => (
+                        <button
+                            type="button"
+                            class="ql-thumb"
+                            data-ql-thumb
+                            data-src={large[i].src}
+                            data-width={large[i].attributes.width}
+                            data-height={large[i].attributes.height}
+                            aria-pressed={i === 0 ? 'true' : 'false'}
+                            aria-label={`Image ${i + 1}`}
+                        >
+                            <img src={thumb.src} alt="" loading="lazy" decoding="async" class="block h-full w-full object-cover" />
+                        </button>
+                    ))}
+                </div>
+            )}
+        </div>
+
+        <div class="flex min-w-0 flex-[999_1_440px] flex-col gap-4 p-5 md:px-7 md:py-6">
+            {(project.favorite || project.wip) && (
+                <p class="m-0 flex flex-wrap gap-1.5">
+                    {project.favorite && <span class="finder-badge">🧡 Coup de cœur</span>}
+                    {project.wip && <span class="finder-badge">⏳ {project.wipLabel ?? 'En cours de finalisation'}</span>}
+                </p>
+            )}
+            <p class="m-0 text-base text-[#e5e5ea]">{project.description}</p>
+
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div class="info-box sm:col-span-2">
+                    <h3>Cahier des charges</h3>
+                    <p class="m-0 text-[#d1d1d6]">{project.analyse.cahier}</p>
+                </div>
+                <div class="info-box sm:col-span-2">
+                    <h3>Résultats (KPIs)</h3>
+                    <p class="m-0 text-[#d1d1d6]">{project.analyse.resultats}</p>
+                </div>
+                <div class="info-box">
+                    <h3>Compétences Acquises</h3>
+                    <ul class="pill-list">{project.analyse.competences.map((c: string) => <li>{c}</li>)}</ul>
+                </div>
+                <div class="info-box">
+                    <h3>Outils et méthodes</h3>
+                    <ul class="pill-list">{project.analyse.outils.map((o: string) => <li>{o}</li>)}</ul>
+                </div>
+            </div>
+
+            {project.versions && (
+                <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                    {project.versions.map((v: any) => (
+                        <div class="info-box">
+                            <h3 class="flex flex-wrap items-center gap-2">{v.label}{v.current && <span class="finder-badge">Actuelle</span>}</h3>
+                            <p class="m-0 mb-2.5 text-sm text-[#d1d1d6]">{v.text}</p>
+                            <ul class="pill-list">{v.stack.map((t: string) => <li>{t}</li>)}</ul>
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            <div class="mt-1 flex flex-wrap justify-end gap-2.5">
+                <form method="dialog" class="m-0"><button class="btn btn-secondary">Fermer</button></form>
+                {report && <a href={report} target="_blank" rel="noopener" class="btn btn-primary"><Icon name="doc" size={16} strokeWidth={2} />Voir le Rapport (PDF)</a>}
+                {link && <a href={link} target="_blank" rel="noopener" class="btn btn-primary"><Icon name="external" size={16} strokeWidth={2} />{project.linkLabel ?? 'Code Source / GitHub'}</a>}
+            </div>
+        </div>
+    </div>
+
+    {project.archive && (
+        <section class="border-t border-white/[0.07] p-5 md:p-7" data-archive aria-label={project.archive.title}>
+            <div class="mb-4 flex flex-wrap items-center gap-3">
+                <div class="flex min-w-0 flex-1 flex-col">
+                    <h3 class="m-0 text-base font-bold">{project.archive.title}</h3>
+                    <p class="m-0 text-sm text-[#a1a1a6]">{project.archive.text}</p>
+                </div>
+                <div role="group" aria-label="Format d'affichage" class="flex gap-0.5 rounded-[7px] bg-white/[0.06] p-0.5">
+                    <button type="button" class="finder-toolbar-btn w-auto px-3 text-xs" data-archive-mode="desktop" aria-pressed="true">Ordinateur</button>
+                    <button type="button" class="finder-toolbar-btn w-auto px-3 text-xs" data-archive-mode="mobile" aria-pressed="false">Mobile</button>
+                </div>
+                <a href={project.archive.src} target="_blank" rel="noopener" class="btn btn-secondary min-h-[34px] px-3.5 text-[13px]"><Icon name="external" size={15} strokeWidth={2} />Ouvrir dans un onglet</a>
+            </div>
+            <div class="archive-frame">
+                <div class="archive-toolbar" aria-hidden="true">
+                    <div class="traffic"><span></span><span></span><span></span></div>
+                    <span class="archive-url">zakariasabri.fr <span class="text-[#8e8e93]">· v1</span></span>
+                    <span></span>
+                </div>
+                <div class="archive-viewport" data-archive-viewport>
+                    <iframe
+                        data-archive-frame
+                        src={project.archive.src}
+                        title={project.archive.title}
+                        loading="lazy"
+                        referrerpolicy="no-referrer"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+    )}
+</dialog>

@@ -5,6 +5,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://zakariasabri.fr',
+  build: {
+    inlineStylesheets: 'never'
+  },
   vite: {
     plugins: [tailwindcss()]
   }

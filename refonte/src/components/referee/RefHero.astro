@@ -1,0 +1,46 @@
+---
+import Window from '../Window.astro'
+import Pic from '../Pic.astro'
+---
+<section id="about" aria-label="Accueil arbitrage" class="flex justify-center md:pt-6">
+    <Window title="zakariasabri.fr" class="w-full max-w-[880px]" label="Présentation">
+        <div class="flex flex-col gap-7 px-6 pb-9 pt-10 md:px-12 md:pt-11">
+            <div class="flex flex-wrap items-center gap-x-7 gap-y-5">
+                <Pic
+                    src="assets/img/arbitre-profil.jpg"
+                    alt="Zakaria Sabri en tenue d'arbitre"
+                    width={260}
+                    loading="eager"
+                    class="hero-pic h-24 w-24 rounded-full border-[3px] border-[var(--world)] object-cover shadow-[0_0_0_6px_var(--world-glow-soft)] md:h-[124px] md:w-[124px]"
+                />
+                <div class="hero-step flex min-w-0 flex-col gap-1.5">
+                    <h1 class="font-display text-[clamp(2rem,6vw,3.25rem)] font-black leading-[1.05]">Zakaria SABRI</h1>
+                    <p class="text-lg text-[#a1a1a6] md:text-[19px]">Jeune Arbitre District</p>
+                </div>
+            </div>
+
+            <div class="hero-step delay-1 flex flex-wrap items-center gap-4 self-start rounded-[14px] border border-white/10 bg-white/5 px-4 py-3">
+                <Pic src="assets/img/DISTRICT.png" alt="Logo District Gironde" width={120} class="h-12 w-12 object-contain" />
+                <div class="flex flex-col text-sm font-semibold leading-snug">
+                    <span>District de la Gironde</span>
+                    <span>SAM Football</span>
+                </div>
+                <Pic src="assets/img/SAM.svg" alt="Logo SAM Football" class="h-12 w-12 object-contain" />
+            </div>
+
+            <div class="hero-step delay-2 flex flex-wrap gap-3">
+                <a href="/" class="btn btn-primary">Retour en informatique 💻</a>
+            </div>
+
+            <a href="#ref-about" class="hero-step delay-3 inline-flex items-center gap-3 self-start text-sm font-semibold text-[#a1a1a6] hover:text-white" aria-label="Descendre vers la suite de la page">
+                <span class="scroll-arrow relative block h-[70px] w-5 overflow-hidden text-[var(--world)]" aria-hidden="true">
+                    <svg viewBox="0 0 20 60" width="20" height="60" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-0 top-0">
+                        <line x1="10" y1="1" x2="10" y2="57"></line>
+                        <polyline points="3,49 10,57 17,49"></polyline>
+                    </svg>
+                </span>
+                Swipez pour en savoir plus !
+            </a>
+        </div>
+    </Window>
+</section>

@@ -1,0 +1,92 @@
+---
+import ClubLogo from './ClubLogo.astro'
+import Icon from '../Icon.astro'
+
+interface Props {
+    feedback: any
+    id: string
+}
+
+const { feedback: fb, id } = Astro.props
+
+const observation: Record<string, { cls: string; text: string }> = {
+    PF: { cls: 'badge-pf', text: 'Point Fort' },
+    QA: { cls: 'badge-acquis', text: 'Qualité Acquise' },
+    PA: { cls: 'badge-encours', text: 'Point à Améliorer' },
+    MS: { cls: 'badge-ms', text: 'Manquement Significatif' },
+}
+
+const status = (statut: string) => {
+    if (observation[statut]) return observation[statut]
+    if (statut === 'acquis') return { cls: 'badge-acquis', text: 'Acquis' }
+    if (statut === 'en-cours') return { cls: 'badge-encours', text: 'En cours' }
+    return { cls: 'badge-nonobs', text: 'Non obs.' }
+}
+const titleId = `${id}-title`
+---
+<dialog id={id} class="quicklook" aria-labelledby={titleId}>
+    <div class="flex items-center gap-4 border-b border-white/[0.07] px-4 py-2.5">
+        <div class="traffic" aria-hidden="true"><span></span><span></span><span></span></div>
+        <span class="flex-1 text-center text-[13px] font-semibold text-ink/70">Rapport complet</span>
+        <form method="dialog" class="m-0">
+            <button class="ql-close" aria-label="Fermer"><Icon name="close" size={16} strokeWidth={2} /></button>
+        </form>
+    </div>
+
+    <div class="flex items-center justify-between gap-4 border-b border-white/[0.07] px-5 py-6 md:px-10">
+        <ClubLogo src={fb.logo1} alt="Logo Domicile" width={160} class="h-14 w-14 md:h-20 md:w-20" />
+        <div class="flex min-w-0 flex-col items-center gap-2 text-center">
+            <div class="flex flex-wrap justify-center gap-2">
+                <span class="finder-badge">{fb.date}</span>
+                <span class="finder-badge">{fb.category}</span>
+                {fb.score && <span class="finder-badge">{fb.score}</span>}
+            </div>
+            <h2 id={titleId} class="m-0 font-display text-lg font-black md:text-2xl">{fb.team1} - {fb.team2}</h2>
+            {fb.competition && <p class="m-0 text-sm text-[#d1d1d6]">{fb.competition}</p>}
+            <p class="m-0 text-sm text-[#a1a1a6]">{fb.observateur ? `Observateur : ${fb.observateur}` : `Tuteur : ${fb.tutor}`}</p>
+        </div>
+        <ClubLogo src={fb.logo2} alt="Logo Extérieur" width={160} class="h-14 w-14 md:h-20 md:w-20" />
+    </div>
+
+    <div class="flex flex-wrap gap-5 p-5 md:p-7">
+        <div class="flex min-w-0 flex-[1_1_300px] flex-col gap-4">
+            <div class="info-box">
+                <h3>Appréciation Générale</h3>
+                <p class="m-0 text-[#d1d1d6]">{fb.appreciation}</p>
+            </div>
+            <div class="info-box">
+                <h3>Conseils Prioritaires :</h3>
+                <p class="m-0 text-[#d1d1d6]">{fb.conseils}</p>
+            </div>
+        </div>
+
+        <div class="flex min-w-0 flex-[2_1_420px] flex-col gap-3">
+            <h3 class="label-caps m-0">Détail des Évaluations</h3>
+            {fb.bareme === 'observation' && <p class="m-0 text-xs text-[#8e8e93]">PF : Point Fort - QA : Qualité Acquise - PA : Point à Améliorer - MS : Manquement Significatif</p>}
+            <div class="grid grid-cols-1 gap-3 lg:grid-cols-2">
+                {fb.evaluations.map((cat: any) => (
+                    <div class="info-box">
+                        <h4 class="m-0 mb-2 text-[13px] font-bold text-[var(--world)]">{cat.titre}</h4>
+                        <ul class="m-0 flex list-none flex-col p-0">
+                            {cat.criteres.map((crit: any) => {
+                                const s = status(crit.statut)
+                                return (
+                                    <li class="flex items-center justify-between gap-3 border-t border-white/[0.06] py-1.5 text-[13px] first:border-t-0">
+                                        <span class="text-[#d1d1d6]">{crit.nom}</span>
+                                        <span class:list={['eval-badge', s.cls]}>{s.text}</span>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                        {cat.constats && (
+                            <div class="mt-3 border-t border-white/[0.06] pt-3">
+                                <h5 class="label-caps m-0 mb-1.5">Constats et conseils</h5>
+                                <p class="m-0 text-[13px] text-[#d1d1d6]">{cat.constats}</p>
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+</dialog>

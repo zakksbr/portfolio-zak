@@ -1,0 +1,98 @@
+---
+import Icon from './Icon.astro'
+import ProjectCard from './ProjectCard.astro'
+import { saeProjects, persoProjects } from '../data/projects.js'
+
+interface Props {
+    id: string
+    heading: string
+    title: string
+    type: 'perso' | 'sae'
+}
+
+const { id, heading, title, type } = Astro.props
+const projects: any[] = type === 'perso' ? persoProjects : saeProjects
+
+const folders = [
+    { href: '#perso-projects', label: 'Projets perso', count: persoProjects.length, current: type === 'perso' },
+    { href: '#projects', label: 'Projets universitaires', count: saeProjects.length, current: type === 'sae' },
+]
+
+const favCount = projects.filter(p => p.favorite).length
+const wipCount = projects.filter(p => p.wip).length
+
+const tagCounts = new Map<string, number>()
+projects.forEach(p => p.tags.forEach((t: string) => tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1)))
+const tags = [...tagCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'fr'))
+
+const searchId = `${id}-search`
+---
+<section id={id} aria-labelledby={`${id}-heading`} class="flex flex-col gap-8">
+    <h2 id={`${id}-heading`} class="section-heading">{heading}</h2>
+
+    <div class="glass window" data-finder>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-3 border-b border-white/[0.07] bg-white/[0.02] px-4 py-2.5">
+            <div class="traffic" aria-hidden="true"><span></span><span></span><span></span></div>
+            <h3 class="m-0 min-w-[120px] flex-1 text-[15px] font-bold md:ml-3">{title}</h3>
+            <div role="group" aria-label="Présentation" class="flex gap-0.5 rounded-[7px] bg-white/[0.06] p-0.5">
+                <button type="button" class="finder-toolbar-btn" data-finder-view="gallery" aria-pressed="true" aria-label="Galerie"><Icon name="grid" size={15} strokeWidth={2} /></button>
+                <button type="button" class="finder-toolbar-btn" data-finder-view="list" aria-pressed="false" aria-label="Liste"><Icon name="list" size={15} strokeWidth={2} /></button>
+            </div>
+            <label for={searchId} class="flex h-[30px] min-w-[180px] flex-1 items-center gap-1.5 rounded-[7px] border border-white/[0.08] bg-white/[0.07] px-2.5 text-[#a1a1a6] sm:flex-none">
+                <Icon name="search" size={14} strokeWidth={2} />
+                <span class="sr-only">Rechercher un projet</span>
+                <input id={searchId} type="search" placeholder="Rechercher" data-finder-search class="w-full border-0 bg-transparent text-[13px] text-ink outline-none placeholder:text-[#8e8e93]" />
+            </label>
+        </div>
+
+        <div class="flex flex-col md:flex-row">
+            <nav aria-label={`Filtres — ${title}`} class="flex flex-col gap-4 border-b border-white/[0.06] bg-black/20 px-2.5 py-4 md:w-[230px] md:flex-none md:border-b-0 md:border-r">
+                <div class="flex flex-col gap-0.5">
+                    <span class="px-2.5 pb-1.5 text-[11px] font-bold text-[#8e8e93]">Favoris</span>
+                    <div class="flex gap-1.5 max-md:overflow-x-auto max-md:pb-1 md:flex-col md:gap-0.5">
+                    {folders.map(f => (
+                        <a href={f.href} class="finder-side-link max-md:w-auto max-md:flex-none max-md:whitespace-nowrap max-md:bg-white/[0.06]" aria-current={f.current ? 'true' : undefined}>
+                            <Icon name="folder" size={16} strokeWidth={2} class="text-[var(--world)]" />
+                            {f.label}
+                            <span class="finder-side-count">{f.count}</span>
+                        </a>
+                    ))}
+                    {favCount > 0 && (
+                        <button type="button" class="finder-side-link max-md:w-auto max-md:flex-none max-md:whitespace-nowrap max-md:bg-white/[0.06]" data-finder-filter="fav" aria-pressed="false">
+                            <span aria-hidden="true">🧡</span>Coup de cœur
+                            <span class="finder-side-count">{favCount}</span>
+                        </button>
+                    )}
+                    {wipCount > 0 && (
+                        <button type="button" class="finder-side-link max-md:w-auto max-md:flex-none max-md:whitespace-nowrap max-md:bg-white/[0.06]" data-finder-filter="wip" aria-pressed="false">
+                            <span aria-hidden="true">⏳</span>En cours
+                            <span class="finder-side-count">{wipCount}</span>
+                        </button>
+                    )}
+                    </div>
+                </div>
+                <div class="flex min-h-0 flex-col gap-0.5">
+                    <span class="px-2.5 pb-1.5 text-[11px] font-bold text-[#8e8e93]">Tags</span>
+                    <div class="flex gap-1.5 max-md:overflow-x-auto max-md:pb-1 md:max-h-[340px] md:flex-col md:gap-0.5 md:overflow-y-auto">
+                        {tags.map(([tag, n]) => (
+                            <button type="button" class="finder-side-link max-md:w-auto max-md:flex-none max-md:whitespace-nowrap max-md:bg-white/[0.06]" data-finder-filter={`tag:${tag}`} aria-pressed="false">
+                                <span aria-hidden="true" class="h-2.5 w-2.5 flex-none rounded-full bg-[var(--world)] opacity-70"></span>
+                                {tag}
+                                <span class="finder-side-count max-md:ml-1">{n}</span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </nav>
+
+            <div class="min-w-0 flex-1 px-4 pb-7 pt-5 md:px-6">
+                <ul role="list" data-finder-grid data-view="gallery" class="finder-grid m-0 grid list-none grid-cols-[repeat(auto-fill,minmax(230px,1fr))] gap-5 p-0">
+                    {projects.map((project, index) => <ProjectCard project={project} dialog={`project-${type}-${index}`} />)}
+                </ul>
+                <p data-finder-empty hidden class="py-10 text-center text-[#a1a1a6]">Aucun projet ne correspond à ta recherche.</p>
+            </div>
+        </div>
+
+        <p data-finder-count aria-live="polite" class="m-0 border-t border-white/[0.06] px-4 py-1.5 text-center text-xs text-[#8e8e93]">{projects.length} éléments</p>
+    </div>
+</section>

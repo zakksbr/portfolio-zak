@@ -1,0 +1,82 @@
+---
+import '../styles/global.css'
+import MenuBar from '../components/MenuBar.astro'
+import Dock from '../components/Dock.astro'
+
+interface Props {
+    title: string
+    description: string
+    world: 'informatique' | 'arbitrage'
+    links: { href: string; label: string }[]
+    dock: any[]
+    dockExtras: any[]
+}
+
+const { title, description, world, links, dock, dockExtras } = Astro.props
+const site = 'https://zakariasabri.fr'
+const url = new URL(Astro.url.pathname, site).href
+const ogImage = `${site}/assets/img/og-image.png`
+// la politique de sécurité n'est mise qu'en production : en dev, vite injecte ses styles et scripts directement dans la page et elle les bloquerait
+const csp = "default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"
+---
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={csp} />}
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <script is:inline src="/loader.js"></script>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/img/site.webmanifest" />
+
+    <meta name="theme-color" content="#0c0c0c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zakaria Sabri" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo ZS. de Zakaria Sabri" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="image_src" href={ogImage} />
+</head>
+<body data-world={world}>
+    <div class="loader" aria-hidden="true">
+        <div class="loader-inner">
+            <span class="loader-logo"><span class="loader-letter">Z</span><span class="loader-letter">S</span><span class="loader-dot">.</span></span>
+            <span class="loader-bar"><span></span></span>
+        </div>
+    </div>
+    <MenuBar world={world} links={links} />
+    <main class="mx-auto flex w-full max-w-[1240px] flex-col gap-16 px-4 pb-36 pt-10 md:gap-24 md:px-6 md:pt-16">
+        <slot />
+    </main>
+    <footer class="pb-32 text-center text-sm text-muted">
+        <p>&copy; 2026 Zakaria Sabri. · <a href="/mentions-legales/" class="underline decoration-white/30 underline-offset-4 hover:text-white">Mentions légales</a></p>
+    </footer>
+    <Dock items={dock} extras={dockExtras} />
+    <slot name="dialogs" />
+    <script>
+        import '../scripts/ui.js'
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+---
+import Window from './Window.astro'
+
+const competences = [
+    'Développement web (front & back)',
+    'Administration Système (Linux)',
+    'Réseaux',
+    'Méthodologie DevOps',
+    'Automatisation',
+    'Analyse du besoin',
+]
+
+const outils = [
+    'HTML / CSS / JavaScript',
+    'SQL',
+    'Linux',
+    'Bash',
+    'Git',
+    'Virtualisation',
+    'Intégration continue',
+]
+---
+<section id="next-project" aria-labelledby="next-project-title" class="reveal">
+    <Window title="En préparation" label="Prochain projet">
+        <div class="flex flex-col gap-6 p-6 md:gap-8 md:p-9">
+            <div class="flex min-w-0 flex-col gap-3">
+                <span class="finder-badge self-start">⏳ En préparation</span>
+                <h2 id="next-project-title" class="m-0 font-display text-[clamp(1.9rem,6vw,3rem)] font-black leading-[1.05]">
+                    Prochainement<span class="blink-dots whitespace-nowrap text-[var(--world)]"><span>.</span><span>.</span><span>.</span></span>
+                </h2>
+                <p class="m-0 max-w-[760px] text-[#a1a1a6] md:text-[17px]">Mon plus gros projet, qui réunit toute ma polyvalence: le développement web, l'administration système, le réseau et l'automatisation.</p>
+            </div>
+
+            <div class="grid min-w-0 grid-cols-1 gap-3 md:grid-cols-3">
+                <div class="info-box">
+                    <h3>Cahier des charges</h3>
+                    <p class="m-0 text-sm text-[#d1d1d6]">Concevoir et maintenir des solutions de bout en bout : des interfaces web soignées et accessibles jusqu'à l'infrastructure qui les héberge, avec une démarche d'industrialisation environnements reproductibles, déploiements automatisés, documentation et suivi des incidents.</p>
+                </div>
+                <div class="info-box">
+                    <h3>Compétences</h3>
+                    <ul class="pill-list">{competences.map(c => <li>{c}</li>)}</ul>
+                </div>
+                <div class="info-box">
+                    <h3>Outils et méthodes</h3>
+                    <ul class="pill-list">{outils.map(o => <li>{o}</li>)}</ul>
+                </div>
+            </div>
+        </div>
+    </Window>
+</section>

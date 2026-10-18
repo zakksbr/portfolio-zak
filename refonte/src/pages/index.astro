@@ -1,16 +1,59 @@
 ---
----
+import Base from '../layouts/Base.astro'
+import HeroInfo from '../components/HeroInfo.astro'
+import FinderWindow from '../components/FinderWindow.astro'
+import Teaser from '../components/Teaser.astro'
+import Network from '../components/Network.astro'
+import Skills from '../components/Skills.astro'
+import About from '../components/About.astro'
+import Contact from '../components/Contact.astro'
+import ProjectDialog from '../components/ProjectDialog.astro'
+import { saeProjects, persoProjects } from '../data/projects.js'
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+const links = [
+    { href: '#about', label: 'Accueil' },
+    { href: '#perso-projects', label: 'Projets Perso' },
+    { href: '#projects', label: 'Projets Universitaires' },
+    { href: '#reseau', label: 'Réseau' },
+    { href: '#skills', label: 'Compétences' },
+    { href: '#presentation', label: 'Qui suis-je' },
+    { href: '#contact', label: 'Contact' },
+]
+
+const dock = [
+    { href: '#about', label: 'Accueil', icon: 'home', current: true },
+    { href: '#perso-projects', label: 'Projets perso', icon: 'folder' },
+    { href: '#projects', label: 'Projets universitaires', icon: 'school', mobile: false },
+    { href: '#reseau', label: 'Réseau', icon: 'network', mobile: false },
+    { href: '#skills', label: 'Compétences', icon: 'terminal' },
+    { href: '#presentation', label: 'À propos', icon: 'user', mobile: false },
+    { href: '#contact', label: 'Contact', icon: 'mail' },
+]
+
+const dockExtras = [
+    { href: '/arbitrage/', label: 'Mon deuxième métier ⚽', icon: 'flag', style: 'referee' },
+    { href: '/assets/pdf/CV_Zakaria_Sabri.pdf', label: 'Consulter mon CV', icon: 'doc', style: 'light', external: true, mobile: false },
+]
+---
+<Base
+    title="Zakaria Sabri | Portfolio"
+    description="Portfolio de Zakaria Sabri - Étudiant en BUT Informatique"
+    world="informatique"
+    links={links}
+    dock={dock}
+    dockExtras={dockExtras}
+>
+    <HeroInfo />
+    <FinderWindow id="perso-projects" heading="Projets Personnels" title="Projets perso" type="perso" />
+    <Teaser />
+    <FinderWindow id="projects" heading="Projets Universitaires" title="Projets universitaires" type="sae" />
+    <Network />
+    <Skills />
+    <About />
+    <Contact />
+
+    <Fragment slot="dialogs">
+        {persoProjects.map((project, index) => <ProjectDialog project={project} id={`project-perso-${index}`} />)}
+        {saeProjects.map((project, index) => <ProjectDialog project={project} id={`project-sae-${index}`} />)}
+    </Fragment>
+</Base>

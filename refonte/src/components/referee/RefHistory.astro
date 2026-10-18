@@ -1,0 +1,36 @@
+---
+import Icon from '../Icon.astro'
+
+const steps = [
+    { season: 'Saison 25/26', date: '08 Février 2026', text: 'Débuts en JAS (Jeune Arbitre Stagiaire)' },
+    { season: 'Saison 26/27', date: '23 Juin 2026', text: 'Titularisation en JAD (Jeune Arbitre District)' },
+    { season: 'Saison 26/27', date: '30 Juin 2026', text: 'SAM Football' },
+]
+---
+<section id="ref-history" aria-labelledby="ref-history-heading" class="reveal flex flex-col items-center gap-8">
+    <h2 id="ref-history-heading" class="section-heading">Précédemment...</h2>
+    <p class="m-0 flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-[#d1d1d6]">
+        <Icon name="arrowRight" size={18} strokeWidth={2} class="text-[var(--world)]" />
+        Formation obtenue le : <strong class="text-ink">08 Février 2026</strong>
+    </p>
+
+    <div class="glass window w-full max-w-[980px] px-6 py-8 md:px-10 md:py-10">
+        <div class="relative">
+        <span aria-hidden="true" class="absolute bottom-2 left-[7px] top-2 w-0.5 bg-white/15 md:bottom-auto md:left-[16.66%] md:right-[16.66%] md:top-[76px] md:h-0.5 md:w-auto"></span>
+        <ol class="relative m-0 grid list-none grid-cols-1 gap-8 p-0 md:grid-cols-3 md:gap-6">
+            {steps.map(step => (
+                <li class="relative flex gap-5 md:flex-col md:items-center md:gap-3 md:text-center">
+                    <span aria-hidden="true" class="relative z-10 mt-1 h-4 w-4 flex-none rounded-full border-[3px] border-[var(--color-ground)] bg-[var(--world)] shadow-[0_0_0_4px_var(--world-glow)] md:order-2 md:mt-0"></span>
+                    <div class="flex flex-col gap-2 md:contents">
+                        <div class="flex flex-col gap-1 md:order-1 md:h-[58px] md:justify-end">
+                            <h3 class="m-0 font-display text-lg font-black text-[var(--world)]">{step.season}</h3>
+                            <p class="m-0 text-sm text-[#a1a1a6]">{step.date}</p>
+                        </div>
+                        <p class="m-0 font-medium md:order-3">{step.text}</p>
+                    </div>
+                </li>
+            ))}
+        </ol>
+        </div>
+    </div>
+</section>

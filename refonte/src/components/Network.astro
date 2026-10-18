@@ -1,0 +1,51 @@
+---
+import Window from './Window.astro'
+import { saeProjects } from '../data/projects.js'
+
+const graphData = saeProjects.map(p => ({ title: p.title, team: p.team ?? [] }))
+
+const stats = [
+    { key: 'collaborators', label: 'collaborateurs' },
+    { key: 'team', label: 'projets en équipe' },
+    { key: 'solo', label: 'projets en solo' },
+]
+---
+<section id="reseau" aria-labelledby="reseau-heading" class="flex flex-col gap-8">
+    <div class="flex flex-col items-center gap-4 text-center">
+        <h2 id="reseau-heading" class="section-heading">Mes collaborateurs</h2>
+        <p class="m-0 max-w-[680px] text-[#a1a1a6]">Chaque cercle est une personne avec qui j'ai travaillé sur un projet universitaire. Plus le trait est épais, plus on a fait de projets ensemble.</p>
+    </div>
+
+    <div class="flex flex-wrap items-start gap-6">
+        <Window title="Réseau" class="min-w-0 flex-[999_1_560px]" label="Graphe du réseau">
+            <div class="p-3 md:p-4">
+                <div id="network-graph" class="min-h-[320px]"></div>
+                <p class="network-fallback m-0 p-6 text-center text-[#a1a1a6]" hidden>Le graphe n'a pas pu se charger, mais la fiche et les filtres restent disponibles.</p>
+            </div>
+        </Window>
+
+        <aside aria-label="Détails du réseau" class="flex min-w-0 flex-[1_1_300px] flex-col gap-4 lg:max-w-[360px]">
+            <div class="grid grid-cols-3 gap-2.5">
+                {stats.map(s => (
+                    <div class="widget flex flex-col items-center gap-0.5 px-2 py-3.5 text-center">
+                        <span class="font-display text-[28px] font-black leading-none text-[var(--world)]" data-stat={s.key}>–</span>
+                        <span class="text-xs text-[#a1a1a6]">{s.label}</span>
+                    </div>
+                ))}
+            </div>
+
+            <div id="network-detail" aria-live="polite" class="widget p-5"></div>
+
+            <div class="widget p-5">
+                <h3 class="label-caps m-0 mb-3">Filtrer par projet</h3>
+                <div id="network-filters" role="group" aria-label="Filtrer le graphe par projet" class="flex flex-wrap gap-1.5"></div>
+            </div>
+        </aside>
+    </div>
+
+    <script type="application/json" id="network-data" set:html={JSON.stringify(graphData)}></script>
+    <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" integrity="sha512-vc58qvvBdrDR4etbxMdlTt4GBQk1qjvyORR2nrsPsFPyrs+/u5c3+1Ct6upOgdZoIl7eq6k3a1UPDSNAQi/32A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        import '../scripts/network.js'
+    </script>
+</section>

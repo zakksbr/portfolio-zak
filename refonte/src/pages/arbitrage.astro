@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro'
+import Window from '../components/Window.astro'
+import Pic from '../components/Pic.astro'
+import RefHero from '../components/referee/RefHero.astro'
+import RefDashboard from '../components/referee/RefDashboard.astro'
+import RefNews from '../components/referee/RefNews.astro'
+import RefMatches from '../components/referee/RefMatches.astro'
+import RefHistory from '../components/referee/RefHistory.astro'
+import RefFeedbacks from '../components/referee/RefFeedbacks.astro'
+import FeedbackDialog from '../components/referee/FeedbackDialog.astro'
+import { feedbacks } from '../data/feedbacks.js'
+
+const links = [
+    { href: '#ref-dashboard', label: 'Tableau de bord' },
+    { href: '#ref-news', label: 'Actualités' },
+    { href: '#ref-matches', label: 'Matchs Joués' },
+    { href: '#ref-history', label: 'Précédemment' },
+    { href: '#ref-feedbacks', label: 'Retours' },
+]
+
+const dock = [
+    { href: '#ref-dashboard', label: 'Tableau de bord', icon: 'dashboard', current: true },
+    { href: '#ref-news', label: 'Actualités', icon: 'news' },
+    { href: '#ref-matches', label: 'Matchs Joués', icon: 'ball' },
+    { href: '#ref-history', label: 'Précédemment', icon: 'timeline' },
+    { href: '#ref-feedbacks', label: 'Retours', icon: 'chat' },
+]
+
+const dockExtras = [
+    { href: '/', label: 'Retour en informatique 💻', icon: 'code', style: 'info' },
+]
+---
+<Base
+    title="Zakaria Sabri | Arbitrage"
+    description="Portfolio de Zakaria Sabri - Jeune Arbitre District"
+    world="arbitrage"
+    links={links}
+    dock={dock}
+    dockExtras={dockExtras}
+>
+    <RefHero />
+
+    <section id="ref-about" aria-labelledby="ref-about-title" class="reveal">
+        <Window title="À propos" label="À propos de l'arbitre">
+            <div class="flex flex-wrap items-center gap-8 p-6 md:gap-12 md:p-10">
+                <div class="flex flex-[1_1_240px] justify-center md:max-w-[340px]">
+                    <Pic src="assets/img/arbitre-about.jpg" alt="Zakaria Sabri - Arbitre" width={680} class="aspect-[4/5] w-full max-w-[340px] rounded-2xl border border-white/10 object-cover shadow-[0_20px_60px_rgba(0,0,0,0.45)]" />
+                </div>
+                <div class="flex min-w-0 flex-[999_1_380px] flex-col gap-4 text-[#d1d1d6] md:text-[17px]">
+                    <h2 id="ref-about-title" class="m-0 font-display text-[clamp(1.5rem,3vw,2rem)] font-black text-ink">Salut ! Moi c'est Zakaria <span class="text-[var(--world)]">(L'arbitre)</span></h2>
+                    <p class="m-0">Passionné de football depuis l'âge de 6 ans, j'ai commencé mon parcours au sifflet en <strong class="text-ink">février 2026</strong>. Affilié au <strong class="text-ink">SAM Football</strong> depuis <strong class="text-ink">Juin 2026</strong> et officiant pour le <strong class="text-ink">District de la Gironde</strong>, j'ai à cœur de veiller au bon déroulement des rencontres et au respect des lois du jeu.</p>
+                    <p class="m-0">L'arbitrage m'a enseigné plein de choses, comme par exemple la prise de décision rapide et la gestion de la pression, mais c'est aussi une école de la vie qui complète mon temps libre en plus de ma formation en Informatique.</p>
+                </div>
+            </div>
+        </Window>
+    </section>
+
+    <RefDashboard />
+    <RefNews />
+    <RefMatches />
+    <RefHistory />
+    <RefFeedbacks />
+
+    <Fragment slot="dialogs">
+        {feedbacks.map((feedback, index) => <FeedbackDialog feedback={feedback} id={`feedback-${index}`} />)}
+    </Fragment>
+</Base>

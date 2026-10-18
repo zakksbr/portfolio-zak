@@ -1,0 +1,41 @@
+---
+import Icon from './Icon.astro'
+
+interface DockItem {
+    href: string
+    label: string
+    icon: string
+    current?: boolean
+    external?: boolean
+    style?: 'default' | 'referee' | 'info' | 'light'
+    mobile?: boolean
+}
+
+interface Props {
+    items: DockItem[]
+    extras: DockItem[]
+}
+
+const { items, extras } = Astro.props
+
+---
+<nav aria-label="Dock" class="glass fixed bottom-3 left-1/2 z-40 flex max-w-[calc(100vw-24px)] -translate-x-1/2 items-end gap-1.5 rounded-[22px] px-2.5 pb-1.5 pt-2.5 md:bottom-4 md:gap-2 md:px-3">
+    {[...items, null, ...extras].map(item => item === null
+        ? <span aria-hidden="true" class="mx-1 mb-2.5 h-[46px] w-px bg-white/20"></span>
+        : (
+            <a
+                href={item.href}
+                aria-label={item.label}
+                aria-current={item.current ? (item.href.startsWith('#') ? 'location' : 'page') : undefined}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noopener' : undefined}
+                class:list={['dock-item relative flex flex-col items-center gap-1', { 'is-current': item.current, 'max-md:hidden': item.mobile === false }]}
+            >
+                <span class="dock-tooltip" aria-hidden="true">{item.label}</span>
+                <span class:list={['dock-icon', item.style && item.style !== 'default' && `dock-icon-${item.style}`]}>
+                    <Icon name={item.icon} size={24} />
+                </span>
+                <span class="dock-dot" aria-hidden="true"></span>
+            </a>
+        ))}
+</nav>
