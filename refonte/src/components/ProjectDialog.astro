@@ -79,12 +79,22 @@ const titleId = `${id}-title`
             <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div class="info-box sm:col-span-2">
                     <h3>Cahier des charges</h3>
-                    <p class="m-0 text-[#d1d1d6]">{project.analyse.cahier}</p>
+                    {Array.isArray(project.analyse.cahier) ? (
+                        <ul class="m-0 flex list-none flex-col gap-2.5 p-0 text-[#d1d1d6]">
+                            {project.analyse.cahier.map((c: any) => (
+                                <li><strong class="text-ink">{c.label} :</strong> {c.text}</li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p class="m-0 text-[#d1d1d6]">{project.analyse.cahier}</p>
+                    )}
                 </div>
-                <div class="info-box sm:col-span-2">
-                    <h3>Résultats (KPIs)</h3>
-                    <p class="m-0 text-[#d1d1d6]">{project.analyse.resultats}</p>
-                </div>
+                {project.analyse.resultats && (
+                    <div class="info-box sm:col-span-2">
+                        <h3>Résultats (KPIs)</h3>
+                        <p class="m-0 text-[#d1d1d6]">{project.analyse.resultats}</p>
+                    </div>
+                )}
                 <div class="info-box">
                     <h3>Compétences Acquises</h3>
                     <ul class="pill-list">{project.analyse.competences.map((c: string) => <li>{c}</li>)}</ul>

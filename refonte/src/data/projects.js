@@ -452,10 +452,16 @@ export const saeProjects = [
 export const persoProjects = [
     {
         "title": "Tableau de bord personnel",
-        "description": "Une page web qui affiche mes prochains trains, la météo, mon emploi du temps et une fiche d'arbitrage du jour.",
+        "description": "Projet en cours de conception : une page web affichée en continu sur un écran, qui montrera d'un coup d'œil la météo, les trains, les bus et tram, mes cours du jour, mes matchs et une fiche d'arbitrage.",
         "analyse": {
-            "cahier": "Réunir sur une seule page mes prochains trains (API SNCF Navitia), la météo à Lormont (Open-Meteo), mon emploi du temps (export iCal de l'ENT) et une fiche d'arbitrage du jour. Back en Java 21 / Spring Boot 3.3.5, front en Angular 19, configuration par variables d'environnement.",
-            "resultats": "Back et front fonctionnels en local. Chaque bloc se rafraîchit automatiquement et une source en panne n'affiche une erreur que dans son propre bloc. Cache par source (trains 60 s, météo 10 min, emploi du temps 1 h) et parseur iCal écrit en Java pur, couvert par 4 tests JUnit. Reste à brancher la clé SNCF, ma gare et le lien iCal.",
+            "cahier": [
+                { "label": "Contexte", "text": "Chaque matin je consulte une demi-douzaine de sources (appli SNCF, appli TBM, météo, ENT, site des officiels FFF, mes notes d'arbitrage). L'idée : tout réunir sur une seule page, lisible sans aucun clic sur un écran fixe de 16 pouces." },
+                { "label": "Blocs prévus (V1)", "text": "météo de Lormont et Gradignan, 5 prochains trains depuis la gare de Bassens avec les retards, prochains passages du bus 60 et du tram A, cours du jour depuis l'export iCal de l'ENT, mes prochains matchs et une fiche d'arbitrage différente chaque heure parmi 30 rédigées par moi." },
+                { "label": "Exigences", "text": "rafraîchissement automatique sans recharger la page, une source en panne ne bloque que son propre bloc, clés d'API et lien iCal jamais dans le code ni dans Git, réponses gardées en mémoire pour respecter les quotas des API, tests JUnit sur la logique métier." },
+                { "label": "Stack", "text": "back en Java 21 / Spring Boot 3.3 (Maven), front en Angular 19, API Open-Meteo, SNCF (Navitia) et données temps réel TBM." },
+                { "label": "Et ensuite", "text": "V1.1 : déploiement sur un mini PC transformé en serveur (Debian, Docker, Chromium en mode kiosque, réseau local uniquement). V2 : consommation électrique de ma chambre et une interface de saisie pour les fiches, matchs et tâches." },
+                { "label": "Où j'en suis", "text": "cahier des charges V1 rédigé, diagrammes UML en cours." }
+            ],
             "competences": [
                 "Développement back-end Java",
                 "Développement front-end Angular",
