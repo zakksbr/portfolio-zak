@@ -495,6 +495,60 @@ export const persoProjects = [
         "wipLabel": "En cours de développement"
     },
     {
+        "title": "Homelab auto-hébergé sous Debian",
+        "description": "Serveur domestique sur un mini-PC reconditionné : drive Nextcloud, sauvegardes automatiques et supervision, accessible partout via Tailscale.",
+        "analyse": {
+            "cahier": [
+                { "label": "Contexte", "text": "Héberger moi-même mes fichiers et mes outils au lieu de dépendre de services tiers. Le projet a d'abord été pensé comme un Hackintosh, puis réorienté vers un serveur dédié." },
+                { "label": "Objectifs", "text": "un drive personnel (agenda, contacts, notes), un écran branché au serveur pour afficher mon tableau de bord, un accès depuis n'importe où, des sauvegardes automatiques et une surveillance de l'état de la machine." },
+                { "label": "Contraintes", "text": "budget le plus bas possible, connexion en IPv4 CGNAT donc aucune redirection de ports, aucun service exposé sur Internet, 8 Go de RAM, disques durs de récupération âgés, pilotage à distance depuis mon Mac sans clavier ni écran au quotidien." },
+                { "label": "Matériel", "text": "Lenovo ThinkCentre M720q Tiny reconditionné (156 €), Intel Core i3-8100T, 8 Go de RAM, SSD 256 Go, station d'accueil double baie Sabrent (39,99 €) et deux disques durs de 1 To récupérés sur des PC de 2010 et 2017." },
+                { "label": "Architecture", "text": "Debian 13 en installation minimale, services en conteneurs Docker Compose (Nextcloud + MariaDB + Redis, Beszel), accès par réseau privé Tailscale avec HTTPS, SSH par clé uniquement, bureau à distance xrdp, mises à jour de sécurité automatiques et un écran en mode kiosque sur un utilisateur sans droits d'administration." },
+                { "label": "Où j'en suis", "text": "services en place. Reste à afficher mon tableau de bord en kiosque, puis plus tard une médiathèque Jellyfin et une sauvegarde hors site." }
+            ],
+            "resultats": "Première sauvegarde restic : 34 948 fichiers (1,08 Gio) compressés à 422 Mio en 9 secondes. Sauvegarde automatique chaque nuit (rétention 7 jours, 4 semaines, 12 mois) avec copie sur un second disque. Au repos : CPU 0,74 %, RAM 21,9 %, 29 °C. L'audit SMART a révélé 920 secteurs en attente sur le disque de 2010 : les données restent sur le SSD et ce disque ne sert plus qu'à une copie bonus surveillée par smartd. Deux incidents résolus : l'agent de supervision hors ligne au redémarrage (DNS pas encore prêt) et le bureau à distance cassé par l'installation minimale (paquets manquants identifiés dans les journaux).",
+            "competences": [
+                "Administration Linux (Debian)",
+                "Docker Compose",
+                "Accès distant sécurisé (VPN, HTTPS, SSH)",
+                "Stratégie de sauvegarde",
+                "Supervision et diagnostic SMART",
+                "Résolution d'incidents réseau et DNS"
+            ],
+            "outils": [
+                "Debian 13",
+                "Docker Compose",
+                "Tailscale",
+                "Nextcloud",
+                "MariaDB",
+                "Redis",
+                "Beszel",
+                "ntfy",
+                "restic",
+                "rsync",
+                "smartd",
+                "xrdp",
+                "Chromium (kiosque)"
+            ]
+        },
+        "image": "assets/img/homelab-beszel.png",
+        "gallery": [
+            "assets/img/homelab-beszel.png",
+            "assets/img/homelab-beszel-2.png",
+            "assets/img/homelab-nextcloud.png"
+        ],
+        "report": "#",
+        "tags": [
+            "SysAdmin",
+            "Linux",
+            "Docker",
+            "Auto-hébergement"
+        ],
+        "link": "#",
+        "wip": true,
+        "wipLabel": "En cours"
+    },
+    {
         "title": "Réhabilitation d’un ordinateur obsolète",
         "favorite": true,
         "description": "Upgrade matériel et configuration d'un Triple Boot (Win 10/11, Ubuntu) sur un Alienware Area-51 R1 de 2010.",

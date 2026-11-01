@@ -4,13 +4,13 @@ import Pic from './Pic.astro'
 import Icon from './Icon.astro'
 import { saeProjects, persoProjects } from '../data/projects.js'
 
-const lastPersoIndex = persoProjects.findIndex(p => p.title.startsWith('Tableau de bord'))
+const lastPersoIndex = persoProjects.findIndex(p => p.title.startsWith('Homelab'))
 const lastUnivIndex = saeProjects.findIndex(p => p.title.startsWith('Capteurs'))
 const lastPerso = persoProjects[lastPersoIndex]
 const lastUniv = saeProjects[lastUnivIndex]
 
 const widgets = [
-    { label: 'Mon dernier projet perso', project: lastPerso, dialog: `project-perso-${lastPersoIndex}`, position: 'object-center' },
+    { label: 'Mon dernier projet perso', project: lastPerso, dialog: `project-perso-${lastPersoIndex}`, position: 'object-left-top' },
     { label: 'Mon dernier projet universitaire', project: lastUniv, dialog: `project-sae-${lastUnivIndex}`, position: 'object-top' },
 ]
 ---
