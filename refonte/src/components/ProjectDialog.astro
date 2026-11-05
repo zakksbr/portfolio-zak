@@ -17,6 +17,7 @@ const resize = (path: string, max: number) => {
 }
 const large = await Promise.all(sources.map(src => resize(src, 1200)))
 const thumbs = await Promise.all(sources.map(src => resize(src, 240)))
+const full = await Promise.all(sources.map(src => resize(src, 2400)))
 
 const isRealLink = (value: unknown) => typeof value === 'string' && value.trim() !== '' && value.trim() !== '#'
 const report = isRealLink(project.report) ? project.report : null
@@ -25,36 +26,43 @@ const titleId = `${id}-title`
 ---
 <dialog id={id} class="quicklook" aria-labelledby={titleId}>
     <div class="flex flex-wrap items-center gap-x-4 gap-y-2.5 border-b border-white/[0.07] px-4 py-2.5">
-        <div class="traffic" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="traffic traffic-actions">
+            <button type="button" data-ql-red aria-label="Fermer la fiche"></button>
+            <span aria-hidden="true"></span>
+            <button type="button" data-ql-max aria-label="Mettre la fiche en grand écran" aria-pressed="false"></button>
+        </div>
         <h2 id={titleId} class="m-0 min-w-[180px] flex-1 text-[15px] font-bold md:ml-2">{project.title}</h2>
         <ul class="pill-list" aria-label="Tags">
             {project.tags.map((tag: string) => <li class="rounded-full text-[#d1d1d6]">{tag}</li>)}
         </ul>
         <form method="dialog" class="m-0">
-            <button class="ql-close" aria-label="Fermer"><Icon name="close" size={16} strokeWidth={2} /></button>
+            <button class="ql-close" data-ql-x aria-label="Fermer"><Icon name="close" size={16} strokeWidth={2} /></button>
         </form>
     </div>
 
     <div class="flex flex-wrap">
-        <div class="flex min-w-0 flex-[1_1_360px] flex-col gap-3 bg-black/20 p-4 md:p-[22px]">
-            <img
-                data-ql-main
-                src={large[0].src}
-                width={large[0].attributes.width}
-                height={large[0].attributes.height}
-                alt={project.title}
-                loading="lazy"
-                decoding="async"
-                class="block aspect-[4/3] w-full rounded-[10px] border border-white/[0.08] bg-[#1c1c1e] object-contain"
-            />
+        <div class="flex min-w-0 flex-[1_1_360px] flex-col gap-3 bg-black/20 p-4 md:p-[22px]" data-ql-media>
+            <button type="button" class="ql-zoom" data-ql-zoom data-full={full[0].src} aria-label="Agrandir l'image" aria-pressed="false">
+                <img
+                    data-ql-main
+                    src={large[0].src}
+                    width={large[0].attributes.width}
+                    height={large[0].attributes.height}
+                    alt={project.title}
+                    loading="lazy"
+                    decoding="async"
+                    class="block aspect-[4/3] w-full rounded-[10px] border border-white/[0.08] bg-[#1c1c1e] object-contain"
+                />
+            </button>
             {sources.length > 1 && (
-                <div class="flex gap-2.5 overflow-x-auto pb-1" role="group" aria-label="Galerie">
+                <div class="ql-thumbs flex gap-2.5 overflow-x-auto pb-1" role="group" aria-label="Galerie" data-ql-thumbs>
                     {thumbs.map((thumb, i) => (
                         <button
                             type="button"
                             class="ql-thumb"
                             data-ql-thumb
                             data-src={large[i].src}
+                            data-full={full[i].src}
                             data-width={large[i].attributes.width}
                             data-height={large[i].attributes.height}
                             aria-pressed={i === 0 ? 'true' : 'false'}
@@ -67,7 +75,7 @@ const titleId = `${id}-title`
             )}
         </div>
 
-        <div class="flex min-w-0 flex-[999_1_440px] flex-col gap-4 p-5 md:px-7 md:py-6">
+        <div class="flex min-w-0 flex-[999_1_440px] flex-col gap-4 p-5 md:px-7 md:py-6" data-ql-info>
             {(project.favorite || project.wip) && (
                 <p class="m-0 flex flex-wrap gap-1.5">
                     {project.favorite && <span class="finder-badge">💙 Coup de cœur</span>}
@@ -119,7 +127,7 @@ const titleId = `${id}-title`
 
             <div class="mt-1 flex flex-wrap justify-end gap-2.5">
                 <form method="dialog" class="m-0"><button class="btn btn-secondary">Fermer</button></form>
-                {report && <a href={report} target="_blank" rel="noopener" class="btn btn-primary"><Icon name="doc" size={16} strokeWidth={2} />Voir le Rapport (PDF)</a>}
+                {report && <a href={report} target="_blank" rel="noopener" class="btn btn-primary"><Icon name="doc" size={16} strokeWidth={2} />{project.reportLabel ?? 'Voir le Rapport (PDF)'}</a>}
                 {link && <a href={link} target="_blank" rel="noopener" class="btn btn-primary"><Icon name="external" size={16} strokeWidth={2} />{project.linkLabel ?? 'Code Source / GitHub'}</a>}
             </div>
         </div>

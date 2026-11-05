@@ -540,6 +540,7 @@
     }
 
     .network-node.tier-me circle { fill: #ffffff; stroke: #ffffff; }
+    .network-node.tier-top circle { fill: #f2c14e; stroke: #f2c14e; }
     .network-node.tier-frequent circle { fill: #7aa2e3; stroke: #7aa2e3; }
     .network-node.tier-regular circle { fill: #2a2a2a; stroke: #7aa2e3; }
     .network-node.tier-occasional circle { fill: #2a2a2a; stroke: #a0a0a0; }
@@ -574,6 +575,7 @@
     }
 
     .network-node.tier-me .network-label,
+    .network-node.tier-top .network-label,
     .network-node.tier-frequent .network-label {
         fill: #ffffff;
         font-weight: 700;
@@ -1101,4 +1103,84 @@ html:has(dialog[open]) {
     .network-node, .network-link, .finder-card, .carousel-track { transition: none; }
     .blink-dots span { opacity: 1; }
     .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+.ql-zoom {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    border-radius: 10px;
+    cursor: zoom-in;
+}
+
+.ql-zoom:focus-visible {
+    outline: 2px solid var(--world);
+    outline-offset: 3px;
+}
+
+.quicklook.is-zoomed [data-ql-info],
+.quicklook.is-zoomed [data-ql-thumbs],
+.quicklook.is-zoomed [data-archive] {
+    display: none;
+}
+
+.quicklook.is-zoomed [data-ql-media] {
+    flex-basis: 100%;
+}
+
+.quicklook.is-zoomed .ql-zoom {
+    cursor: zoom-out;
+}
+
+.quicklook.is-zoomed [data-ql-main] {
+    aspect-ratio: auto;
+    height: auto;
+    max-height: calc(100dvh - 140px);
+}
+
+.ql-thumbs {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+}
+
+.traffic-actions button {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+.traffic-actions button:nth-child(1) { background: #ff5f57; }
+.traffic-actions button:nth-child(3) { background: #28c840; }
+
+.traffic-actions button:hover {
+    filter: brightness(1.15);
+}
+
+.traffic-actions button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+.quicklook.is-max {
+    width: 100vw;
+    height: 100dvh;
+    max-height: 100dvh;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+}
+
+.quicklook.is-max.is-zoomed [data-ql-main] {
+    max-height: calc(100dvh - 110px);
+}
+
+.quicklook.is-max.is-zoomed [data-ql-media] {
+    min-height: calc(100dvh - 58px);
+    justify-content: center;
 }

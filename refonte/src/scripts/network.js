@@ -60,8 +60,8 @@ function initNetwork() {
         .filter(n => !n.isMe)
         .sort((x, y) => y.shared - x.shared || x.id.localeCompare(y.id, 'fr'))
 
-    const tier = n => n.isMe ? 'me' : n.shared >= 3 ? 'frequent' : n.shared === 2 ? 'regular' : 'occasional'
-    const radius = n => ({ me: 34, frequent: 22, regular: 17, occasional: 12 })[tier(n)]
+    const tier = n => n.isMe ? 'me' : n.shared >= 4 ? 'top' : n.shared >= 3 ? 'frequent' : n.shared === 2 ? 'regular' : 'occasional'
+    const radius = n => ({ me: 34, top: 26, frequent: 22, regular: 17, occasional: 12 })[tier(n)]
     const plural = (count, word) => `${count} ${word}${count > 1 ? 's' : ''}`
 
     // les chiffres clés

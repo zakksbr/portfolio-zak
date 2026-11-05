@@ -61,19 +61,64 @@ export function initDialogs() {
 
         // la galerie : on clique sur une miniature, elle passe en grand
         const main = dialog.querySelector('[data-ql-main]')
+        const zoom = dialog.querySelector('[data-ql-zoom]')
         const thumbs = [...dialog.querySelectorAll('[data-ql-thumb]')]
+
+        // on clique sur l'image : elle prend toute la fiche (seul le bandeau du haut reste)
+        // on reclique dessus : elle reprend sa place
+        const setZoom = on => {
+            if (!zoom || !main) return
+            dialog.classList.toggle('is-zoomed', on)
+            zoom.setAttribute('aria-pressed', String(on))
+            zoom.setAttribute('aria-label', on ? "Réduire l'image" : "Agrandir l'image")
+            if (on) {
+                main.dataset.preview = main.src
+                main.src = zoom.dataset.full
+                dialog.scrollTop = 0
+            } else if (main.dataset.preview) {
+                main.src = main.dataset.preview
+            }
+        }
+        zoom?.addEventListener('click', () => setZoom(!dialog.classList.contains('is-zoomed')))
+
+        // la croix : si une image est zoomée elle ferme juste l'image, sinon elle ferme la fiche
+        dialog.querySelector('[data-ql-x]')?.addEventListener('click', event => {
+            if (!dialog.classList.contains('is-zoomed')) return
+            event.preventDefault()
+            setZoom(false)
+        })
+
+        // les pastilles comme sur mac : le rouge ferme la fiche, le vert la met en grand écran (et reclic pour revenir)
+        dialog.querySelector('[data-ql-red]')?.addEventListener('click', () => dialog.close())
+        const max = dialog.querySelector('[data-ql-max]')
+        const setMax = on => {
+            dialog.classList.toggle('is-max', on)
+            max?.setAttribute('aria-pressed', String(on))
+            max?.setAttribute('aria-label', on ? 'Quitter le grand écran' : 'Mettre la fiche en grand écran')
+        }
+        max?.addEventListener('click', () => setMax(!dialog.classList.contains('is-max')))
+
+        // échap pendant le zoom : on dézoome au lieu de fermer la fiche
+        dialog.addEventListener('cancel', event => {
+            if (!dialog.classList.contains('is-zoomed')) return
+            event.preventDefault()
+            setZoom(false)
+        })
         thumbs.forEach(thumb => {
             thumb.addEventListener('click', () => {
                 if (!main) return
                 main.src = thumb.dataset.src
                 main.width = Number(thumb.dataset.width)
                 main.height = Number(thumb.dataset.height)
+                if (zoom) zoom.dataset.full = thumb.dataset.full
                 thumbs.forEach(t => t.setAttribute('aria-pressed', String(t === thumb)))
             })
         })
 
         // quand on referme, on remet la première image pour la prochaine ouverture
         dialog.addEventListener('close', () => {
+            setZoom(false)
+            setMax(false)
             if (main && thumbs[0]) thumbs[0].click()
         })
     })
