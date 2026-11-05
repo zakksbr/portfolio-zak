@@ -5,13 +5,13 @@ import Icon from './Icon.astro'
 import { saeProjects, persoProjects } from '../data/projects.js'
 
 const lastPersoIndex = persoProjects.findIndex(p => p.title.startsWith('Homelab'))
-const lastUnivIndex = saeProjects.findIndex(p => p.title.startsWith('Capteurs'))
+const lastUnivIndex = saeProjects.findIndex(p => p.title.startsWith('Outil de préparation'))
 const lastPerso = persoProjects[lastPersoIndex]
 const lastUniv = saeProjects[lastUnivIndex]
 
 const widgets = [
     { label: 'Mon dernier projet perso', project: lastPerso, dialog: `project-perso-${lastPersoIndex}`, position: 'object-left-top' },
-    { label: 'Mon dernier projet universitaire', project: lastUniv, dialog: `project-sae-${lastUnivIndex}`, position: 'object-top' },
+    { label: 'Mon dernier projet universitaire', project: lastUniv, dialog: `project-sae-${lastUnivIndex}`, position: 'object-center' },
 ]
 ---
 <section id="about" aria-label="Accueil" class="flex flex-wrap items-start justify-center gap-7 md:pt-6">

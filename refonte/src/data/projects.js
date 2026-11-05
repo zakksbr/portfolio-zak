@@ -446,6 +446,60 @@ export const saeProjects = [
             "Organisation"
         ],
         "link": "#"
+    },
+    {
+        "title": "Outil de préparation de déménagement",
+        "team": [
+            "Jean-Paul Melisse",
+            "Camille Gitton",
+            "Mahdiullah Zahed",
+            "Axel Boulanger",
+            "Thomas Lableigne"
+        ],
+        "description": "Analyse et conception UML d'un outil d'inventaire, d'implantation et d'étiquetage du mobilier pour une entreprise de déménagement.",
+        "analyse": {
+            "cahier": [
+                { "label": "Cadre", "text": "SAÉ S3.07 « Analyse et Gestion » du semestre 3, du 28 septembre au 5 novembre 2026, en équipe de 6." },
+                { "label": "Contexte", "text": "Legas Déménagements déménage des établissements publics (lycées, universités). Leurs clients inventoriaient le mobilier à la main, jusqu'à trois mois sous Excel pour environ 500 lignes et une cinquantaine de salles, avec du mal à repérer les meubles identiques, à faire des plans réalisables et à bien étiqueter. Résultat : des allers-retours pour les déménageurs." },
+                { "label": "Objectifs", "text": "concevoir un outil indépendant du système de Legas pour inventorier le mobilier, simuler son implantation dans le nouveau bâtiment et indiquer aux déménageurs « quel objet va où » grâce à des étiquettes de couleur par étage et des plans par salle." },
+                { "label": "Démarche", "text": "deux itérations de design thinking (cartes d'empathie, 3 personas, parcours client avec courbe de tension, BPMN, 5 maquettes d'écran), un planning « qui fait quoi quand », puis la modélisation UML : 5 classes, 4 acteurs, 3 paquets et 15 cas d'utilisation décrits avec scénario nominal et scénarios alternatifs." },
+                { "label": "Mon rôle", "text": "gestion des ressources, mise en forme et dépôt du dossier de gestion, co-auteur du diagramme de classes et des diagrammes de cas d'utilisation, rédaction d'une partie des scénarios, intégration et mise en forme du dossier de conception." }
+            ],
+            "resultats": "Trois livrables rendus : le dossier de gestion (12 octobre), un dossier de conception de 16 pages avec 6 diagrammes et 15 cas d'utilisation décrits, et une fiche de capitalisation comparant le planning prévu et le planning réel (5 novembre). Le diagramme de classes préliminaire a été présenté au chargé de TD le 20 octobre puis corrigé : découpage en paquets revu (Demander, Préparer, Exécuter le déménagement), scénarios alignés sur les attributs réels et ajout du cas manquant « Retirer un meuble ».",
+            "competences": [
+                "Modélisation UML",
+                "Rédaction de cas d'utilisation",
+                "Modélisation BPMN",
+                "Design thinking",
+                "Analyse des besoins",
+                "Gestion de projet en équipe"
+            ],
+            "outils": [
+                "UML",
+                "BPMN",
+                "UMLet / UMLetino",
+                "Excalidraw",
+                "Google Docs",
+                "Personas et parcours client"
+            ]
+        },
+        "image": "assets/img/sae-demenagement-parcours.png",
+        "gallery": [
+            "assets/img/sae-demenagement-parcours.png",
+            "assets/img/sae-demenagement-maquettes.png",
+            "assets/img/sae-demenagement-ecrans.png",
+            "assets/img/sae-demenagement-bpmn.png",
+            "assets/img/sae-demenagement-classes.png"
+        ],
+        "report": "/assets/pdf/SAE-S3.07-livrables.pdf",
+        "reportLabel": "Voir les livrables (PDF)",
+        "tags": [
+            "UML",
+            "Analyse",
+            "Design thinking",
+            "Gestion de projet"
+        ],
+        "link": "#"
     }
 ];
 
