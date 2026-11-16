@@ -77,8 +77,9 @@ const titleId = `${id}-title`
         </div>
 
         <div class="flex min-w-0 flex-[999_1_440px] flex-col gap-4 p-5 md:px-7 md:py-6" data-ql-info>
-            {(project.favorite || project.wip) && (
+            {(project.latest || project.favorite || project.wip) && (
                 <p class="m-0 flex flex-wrap gap-1.5">
+                    {project.latest && <span class="finder-badge finder-badge-latest"><span class="latest-dot" aria-hidden="true"></span>Dernier projet</span>}
                     {project.favorite && <span class="finder-badge">💙 Coup de cœur</span>}
                     {project.wip && <span class="finder-badge">⏳ {project.wipLabel ?? 'En cours de finalisation'}</span>}
                 </p>

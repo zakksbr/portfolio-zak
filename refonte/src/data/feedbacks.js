@@ -592,3 +592,10 @@ export const feedbacks = [
         ]
     }
 ];
+
+// du plus récent au plus ancien
+const toTime = date => {
+    const [day, month, year] = date.split('/').map(Number)
+    return new Date(year, month - 1, day).getTime()
+}
+feedbacks.sort((a, b) => toTime(b.date) - toTime(a.date))

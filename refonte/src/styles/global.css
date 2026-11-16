@@ -423,6 +423,30 @@
         color: #ffffff;
     }
 
+    /* étiquette « Dernier projet » : pleine, couleur de l'univers, bien visible */
+    .finder-badge-latest {
+        padding: 4px 11px;
+        font-size: 12px;
+        letter-spacing: 0.01em;
+        background: var(--world-fill);
+        color: var(--world-on-fill);
+        border-color: transparent;
+        box-shadow: 0 0 0 3px var(--world-glow), 0 4px 14px rgba(0, 0, 0, 0.45);
+    }
+
+    .latest-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: currentColor;
+        animation: latest-pulse 1.6s ease-in-out infinite;
+    }
+
+    .finder-card[data-latest] {
+        border-color: var(--world);
+        box-shadow: 0 0 0 1px var(--world-glow), 0 8px 24px var(--world-glow-soft);
+    }
+
     .finder-grid[data-view="list"] {
         grid-template-columns: minmax(0, 1fr);
         gap: 10px;
@@ -1081,6 +1105,11 @@ html:has(dialog[open]) {
     100% { transform: translateY(90px); opacity: 0; }
 }
 
+@keyframes latest-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+}
+
 @keyframes dot-blink {
     0%, 60%, 100% { opacity: 0.25; }
     30% { opacity: 1; }
@@ -1099,7 +1128,7 @@ html:has(dialog[open]) {
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .hero-step, .hero-pic, .scroll-arrow svg, .blink-dots span, .quicklook[open] { animation: none; }
+    .hero-step, .hero-pic, .scroll-arrow svg, .blink-dots span, .quicklook[open], .latest-dot { animation: none; }
     .network-node, .network-link, .finder-card, .carousel-track { transition: none; }
     .blink-dots span { opacity: 1; }
     .reveal { opacity: 1; transform: none; transition: none; }

@@ -5,6 +5,7 @@ const steps = [
     { season: 'Saison 25/26', date: '08 Février 2026', text: 'Débuts en JAS (Jeune Arbitre Stagiaire)' },
     { season: 'Saison 26/27', date: '23 Juin 2026', text: 'Titularisation en JAD (Jeune Arbitre District)' },
     { season: 'Saison 26/27', date: '30 Juin 2026', text: 'SAM Football' },
+    { season: 'Saison 26/27', date: '11 Octobre 2026', text: 'Premier match observé (rapport officiel)' },
 ]
 ---
 <section id="ref-history" aria-labelledby="ref-history-heading" class="reveal flex flex-col items-center gap-8">
@@ -16,8 +17,8 @@ const steps = [
 
     <div class="glass window w-full max-w-[980px] px-6 py-8 md:px-10 md:py-10">
         <div class="relative">
-        <span aria-hidden="true" class="absolute bottom-2 left-[7px] top-2 w-0.5 bg-white/15 md:bottom-auto md:left-[16.66%] md:right-[16.66%] md:top-[76px] md:h-0.5 md:w-auto"></span>
-        <ol class="relative m-0 grid list-none grid-cols-1 gap-8 p-0 md:grid-cols-3 md:gap-6">
+        <span aria-hidden="true" class="absolute bottom-2 left-[7px] top-2 w-0.5 bg-white/15 md:bottom-auto md:left-[12.5%] md:right-[12.5%] md:top-[76px] md:h-0.5 md:w-auto"></span>
+        <ol class="relative m-0 grid list-none grid-cols-1 gap-8 p-0 md:grid-cols-4 md:gap-6">
             {steps.map(step => (
                 <li class="relative flex gap-5 md:flex-col md:items-center md:gap-3 md:text-center">
                     <span aria-hidden="true" class="relative z-10 mt-1 h-4 w-4 flex-none rounded-full border-[3px] border-[var(--color-ground)] bg-[var(--world)] shadow-[0_0_0_4px_var(--world-glow)] md:order-2 md:mt-0"></span>

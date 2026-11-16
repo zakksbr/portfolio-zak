@@ -2,17 +2,6 @@
 import Window from './Window.astro'
 import Pic from './Pic.astro'
 import Icon from './Icon.astro'
-import { saeProjects, persoProjects } from '../data/projects.js'
-
-const lastPersoIndex = persoProjects.findIndex(p => p.title.startsWith('Homelab'))
-const lastUnivIndex = saeProjects.findIndex(p => p.title.startsWith('Outil de préparation'))
-const lastPerso = persoProjects[lastPersoIndex]
-const lastUniv = saeProjects[lastUnivIndex]
-
-const widgets = [
-    { label: 'Mon dernier projet perso', project: lastPerso, dialog: `project-perso-${lastPersoIndex}`, position: 'object-left-top' },
-    { label: 'Mon dernier projet universitaire', project: lastUniv, dialog: `project-sae-${lastUnivIndex}`, position: 'object-center' },
-]
 ---
 <section id="about" aria-label="Accueil" class="flex flex-wrap items-start justify-center gap-7 md:pt-6">
     <Window title="zakariasabri.fr" class="min-w-0 max-w-[820px] flex-[999_1_560px]" label="Présentation">
@@ -53,23 +42,4 @@ const widgets = [
             </a>
         </div>
     </Window>
-
-    <aside aria-label="Widgets" class="hero-step delay-2 flex w-full flex-[1_1_280px] flex-col gap-4 md:max-w-[330px]">
-        <a href="#next-project" class="widget flex flex-col gap-2.5 p-5 transition-transform hover:-translate-y-0.5">
-            <span class="label-caps flex items-center gap-2"><Icon name="clock" size={14} strokeWidth={2} />En préparation</span>
-            <span class="font-display text-[26px] font-black leading-[1.1]">Prochainement<span class="blink-dots text-[var(--world)]"><span>.</span><span>.</span><span>.</span></span></span>
-            <span class="text-sm text-[#a1a1a6]">Mon plus gros projet, qui réunit toute ma polyvalence: le développement web, l'administration système, le réseau et l'automatisation.</span>
-        </a>
-
-        {widgets.map(w => (
-            <button type="button" data-open-dialog={w.dialog} class="widget flex flex-col overflow-hidden text-left transition-transform hover:-translate-y-0.5">
-                <Pic src={w.project.image} alt={w.project.title} width={660} class={`block h-32 w-full object-cover ${w.position}`} />
-                <span class="flex flex-col gap-1.5 px-[18px] pb-[18px] pt-3.5">
-                    <span class="label-caps">{w.label}</span>
-                    <span class="font-semibold">{w.project.title}</span>
-                    <span class="text-[13px] text-[#a1a1a6]">{w.project.tags.join(' · ')}</span>
-                </span>
-            </button>
-        ))}
-    </aside>
 </section>

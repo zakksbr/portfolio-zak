@@ -455,6 +455,7 @@ export const saeProjects = [
     },
     {
         "title": "Outil de préparation de déménagement",
+        "latest": true,
         "team": [
             "Jean-Paul Melisse",
             "Camille Gitton",
@@ -556,6 +557,7 @@ export const persoProjects = [
     },
     {
         "title": "Homelab auto-hébergé sous Debian",
+        "latest": true,
         "description": "Serveur domestique sur un mini-PC reconditionné : drive Nextcloud, sauvegardes automatiques et supervision, accessible partout via Tailscale.",
         "analyse": {
             "cahier": [
