@@ -137,6 +137,7 @@ export const saeProjects = [
             "Algorithmique",
             "Graphes"
         ],
+        "repo": "https://github.com/zakksbr/s2.02-exploration-algo",
         "link": "#",
         "linkLabel": "Code Source / GitHub"
     },
@@ -172,6 +173,7 @@ export const saeProjects = [
             "JavaFX",
             "POO"
         ],
+        "repo": "https://github.com/zakksbr/2026-projetreprise-zakariasabri",
         "link": "#",
         "linkLabel": "Code Source / GitHub"
     },
@@ -209,6 +211,7 @@ export const saeProjects = [
             "Makefile",
             "Valgrind"
         ],
+        "repo": "https://github.com/zakksbr/s3.04-c-zakariasabri-rafaelhocquel",
         "link": "#",
         "linkLabel": "Code Source / GitHub"
     },
@@ -242,6 +245,7 @@ export const saeProjects = [
             "Java",
             "Algorithmie et Comparaison"
         ],
+        "repo": "https://github.com/zakksbr/biosphere7",
         "link": "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-intelligenceartificielle-algorithmique-share-7423392852463906817-jtZ3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
         "linkLabel": "Voir le post LinkedIn"
     },
@@ -343,6 +347,7 @@ export const saeProjects = [
             "Développement",
             "Git"
         ],
+        "repo": "https://github.com/zakksbr/sae.01_26",
         "link": "#"
     },
     {
@@ -372,6 +377,7 @@ export const saeProjects = [
             "Java",
             "Algorithmie"
         ],
+        "repo": "https://github.com/zakksbr/odomo",
         "link": "https://www.linkedin.com/posts/zakaria-sabri-33b81b35b_java-projet-domotique-ugcPost-7395203244312043521-TFbM?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFmk7R8BGB6Ucqb-_IBX3_twewPXeAl8Ung",
         "linkLabel": "Voir le post LinkedIn"
     },

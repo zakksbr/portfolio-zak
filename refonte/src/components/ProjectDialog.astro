@@ -22,6 +22,7 @@ const full = await Promise.all(sources.map(src => resize(src, 2400)))
 const isRealLink = (value: unknown) => typeof value === 'string' && value.trim() !== '' && value.trim() !== '#'
 const report = isRealLink(project.report) ? project.report : null
 const link = isRealLink(project.link) ? project.link : null
+const repo = isRealLink(project.repo) ? project.repo : null
 const titleId = `${id}-title`
 ---
 <dialog id={id} class="quicklook" aria-labelledby={titleId}>
@@ -128,6 +129,7 @@ const titleId = `${id}-title`
             <div class="mt-1 flex flex-wrap justify-end gap-2.5">
                 <form method="dialog" class="m-0"><button class="btn btn-secondary">Fermer</button></form>
                 {report && <a href={report} target="_blank" rel="noopener" class="btn btn-primary"><Icon name="doc" size={16} strokeWidth={2} />{project.reportLabel ?? 'Voir le Rapport (PDF)'}</a>}
+                {repo && <a href={repo} target="_blank" rel="noopener" class="btn btn-primary"><Icon name="code" size={16} strokeWidth={2} />Code source (GitHub)</a>}
                 {link && <a href={link} target="_blank" rel="noopener" class="btn btn-primary"><Icon name="external" size={16} strokeWidth={2} />{project.linkLabel ?? 'Code Source / GitHub'}</a>}
             </div>
         </div>
